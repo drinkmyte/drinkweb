@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Drinkmyte — Hemsidor för företag som vill synas i Göteborg</title>
+
+<!-- ═══════════════════════════════════════════════════
+     SEO — GRUNDLÄGGANDE METADATA
+     Byt ut URL:erna nedan mot din riktiga domän när den är live.
+════════════════════════════════════════════════════ -->
+<meta name="description" content="Drinkmyte bygger professionella hemsidor för småföretag i Göteborg och hela Sverige. Snabb leverans, fast pris, löpande support. Bas från 899 kr engång + 299 kr/mån." />
+<meta name="keywords" content="hemsida Göteborg, webbyrå Göteborg, hemsida småföretag, webbdesign Göteborg, hemsida hantverkare, restaurang hemsida" />
+<meta name="author" content="Drinkmyte — Te Penson" />
+<link rel="canonical" href="https://drinkmyte.se/" />
+
+<!-- Open Graph (Facebook, LinkedIn, iMessage-förhandsvisning) -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://drinkmyte.se/" />
+<meta property="og:title" content="Drinkmyte — Hemsidor för företag som vill synas" />
+<meta property="og:description" content="Professionella hemsidor för småföretag i Göteborg. Snabb leverans, fast pris, löpande support. Bas från 899 kr." />
+<meta property="og:image" content="https://drinkmyte.se/og-image.jpg" />
+<meta property="og:locale" content="sv_SE" />
+<meta property="og:site_name" content="Drinkmyte" />
+
+<!-- Twitter / X Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Drinkmyte — Hemsidor för företag som vill synas" />
+<meta name="twitter:description" content="Professionella hemsidor för småföretag i Göteborg. Snabb leverans, fast pris." />
+<meta name="twitter:image" content="https://drinkmyte.se/og-image.jpg" />
+
+<!-- Strukturerad data — Google Lokalt Företag (JSON-LD)
+     Hjälper Google förstå att det är ett lokalt företag i Göteborg.
+     Byt ut telefon/adress om du lägger till det. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Drinkmyte",
+  "description": "Webbyrå som bygger hemsidor för småföretag i Göteborg och hela Sverige.",
+  "url": "https://drinkmyte.se",
+  "email": "drinkmyte@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Göteborg",
+    "addressRegion": "Västra Götaland",
+    "addressCountry": "SE"
+  },
+  "areaServed": ["Göteborg", "Sverige"],
+  "priceRange": "899–3199 kr",
+  "sameAs": []
+}
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+     GOOGLE ANALYTICS 4
+     ──────────────────────────────────────────────────
+     HUR DU HITTAR DITT MÄTNINGS-ID (G-XXXXXXXX):
+     1. Gå till https://analytics.google.com
+     2. Klicka "Skapa konto" (eller välj befintligt)
+     3. Skapa en "Egendom" (Property) → välj Webb
+     4. Under "Datainsamling" → "Dataströmmar" → klicka på din ström
+     5. Kopiera "Mätnings-ID" som börjar med G-
+     6. Klistra in det på BÅDA ställena nedan (ersätt G-KP8Y3EQEKJ)
+════════════════════════════════════════════════════ -->
+<!-- GA4 — analytics blockeras tills besökaren ger samtycke -->
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('consent', 'default', { analytics_storage: 'denied' });
+</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-KP8Y3EQEKJ"></script>
+<script>
+  gtag('js', new Date());
+  gtag('config', 'G-KP8Y3EQEKJ', { page_title: 'Drinkmyte \u2014 Hemsida', send_page_view: true });
+</script>
+
+<!-- ═══════════════════════════════════════════════════
+     EMAILJS SDK
+     ──────────────────────────────────────────────────
+     HUR DU KONFIGURERAR EMAILJS (steg-för-steg):
+     1. Gå till https://www.emailjs.com och logga in
+     2. TJÄNST-ID: Klicka "Email Services" → "Add New Service"
+        → Välj Gmail → Anslut ditt konto → Kopiera "Service ID"
+        → Ersätt service_q7vufim nedan
+     3. PUBLIC KEY: Klicka på ditt kontonamn (uppe till höger)
+        → "Account" → under "API Keys" hittar du "Public Key"
+        → Ersätt DpeZ9IZHsvSxIroyM nedan (på TWÅ ställen)
+     4. MALL/TEMPLATE: Klicka "Email Templates" → "Create New Template"
+        → Sätt Subject till: "Hemsideförfrågan från {{from_name}}"
+        → Klistra in mallen nedan i "Content"-fältet:
+        ┌─────────────────────────────────────────────
+        │ Namn/Företag: {{from_name}}
+        │ E-post: {{from_email}}
+        │ Verksamhetstyp: {{biz_type}}
+        │ Funktioner: {{features}}
+        │ Känsla/stil: {{feel}}
+        │ Prisindikation: {{budget}}
+        │ Befintligt innehåll: {{content}}
+        │ Målgrupp: {{audience}}
+        │ Domännamn: {{domain}}
+        │
+        │ Projektbeskrivning:
+        │ {{message}}
+        └─────────────────────────────────────────────
+        → Klicka "Save" → Kopiera "Template ID"
+        → Ersätt template_6i09csd nedan
+════════════════════════════════════════════════════ -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init('DpeZ9IZHsvSxIroyM');</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --ink: #14213d;
+  --ink-soft: #2b4462;
+  --sand: #f6f0e6;
+  --paper: #fffdfa;
+  --apricot: #e86b30;
+  --apricot-soft: #ffe5d7;
+  --gold: #f1bd60;
+  --text: #2e3138;
+  --muted: #68707a;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 8px 32px rgba(20,33,61,0.08);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  color: var(--text);
+  line-height: 1.6;
+  background: var(--sand);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img, svg { display: block; }
+
+/* ── SHELL ── */
+.shell {
+  width: min(1120px, calc(100vw - 32px));
+  margin: 0 auto;
+}
+
+/* ── EYEBROW ── */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(232,107,48,0.2);
+  color: var(--apricot);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+.eyebrow::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+/* ── HEADER ── */
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(246,240,230,0.88);
+  border-bottom: 1px solid rgba(20,33,61,0.07);
+}
+.site-header .shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 60px;
+}
+.brand {
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand span { color: var(--apricot); }
+
+.nav-links {
+  display: flex; align-items: center; gap: 4px;
+  list-style: none; padding: 0; margin: 0;
+  overflow-x: auto; scrollbar-width: none;
+}
+.nav-links::-webkit-scrollbar { display: none; }
+.nav-links a {
+  display: inline-flex; align-items: center;
+  min-height: 36px; padding: 0 10px;
+  border-radius: 999px;
+  color: var(--ink-soft);
+  font-size: 13px; font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.18s, color 0.18s;
+}
+.nav-links a:hover { background: rgba(20,33,61,0.07); color: var(--ink); }
+
+.btn, .nav-cta {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 0 20px;
+  border-radius: 999px; border: 0;
+  font-family: var(--font-body); font-weight: 700; font-size: 14px;
+  cursor: pointer; text-decoration: none;
+  transition: transform 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+.btn-primary, .nav-cta {
+  background: var(--ink); color: #fff;
+  box-shadow: 0 6px 20px rgba(20,33,61,0.18);
+}
+.btn-secondary {
+  background: transparent; color: var(--ink);
+  border: 1.5px solid rgba(20,33,61,0.16);
+}
+.btn-apricot {
+  background: var(--apricot); color: #fff;
+  box-shadow: 0 6px 20px rgba(232,107,48,0.22);
+}
+.btn:hover, .nav-cta:hover { transform: translateY(-2px); }
+
+/* ── SECTIONS ── */
+main section { padding: 60px 0; }
+@media (max-width: 680px) { main section { padding: 44px 0; } }
+
+.section-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--apricot); margin-bottom: 10px;
+}
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.9rem, 4vw, 3.2rem);
+  line-height: 1.02; letter-spacing: -0.04em;
+  color: var(--ink); margin: 0 0 14px;
+}
+.section-title em { font-style: normal; color: var(--apricot); }
+.section-sub {
+  color: var(--muted); max-width: 560px;
+  font-size: 15px; margin: 0;
+}
+
+/* ── HERO ── */
+.hero { padding: 44px 0 56px; }
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 24px; align-items: center;
+}
+.hero-eyebrow { margin-bottom: 16px; }
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+  line-height: 0.96; letter-spacing: -0.06em;
+  color: var(--ink); margin: 0 0 18px;
+}
+.hero h1 em { font-style: normal; color: var(--apricot); }
+.hero-sub { color: var(--muted); font-size: 16px; max-width: 500px; margin: 0 0 24px; }
+.hero-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.hero-stats {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 10px; margin-top: 28px;
+}
+.hero-stat {
+  padding: 14px 16px;
+  background: rgba(255,255,255,0.62);
+  border: 1px solid rgba(20,33,61,0.07);
+  border-radius: var(--radius-sm);
+}
+.hero-stat strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.8rem; line-height: 1;
+  color: var(--ink);
+}
+.hero-stat span { font-size: 13px; color: var(--muted); margin-top: 4px; display: block; }
+
+/* Hero card */
+.hero-card {
+  position: relative; overflow: hidden;
+  padding: 24px; border-radius: 24px;
+  background: linear-gradient(160deg, #14213d 0%, #1e3a5f 100%);
+  color: #fff; box-shadow: var(--shadow);
+}
+.hero-card::after {
+  content: "";
+  position: absolute; right: -50px; bottom: -60px;
+  width: 200px; height: 200px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(232,107,48,0.28), transparent 70%);
+}
+.hero-card > * { position: relative; }
+.mini-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.55); margin-bottom: 10px;
+}
+.hero-card h2 {
+  font-family: var(--font-display);
+  font-size: 1.65rem; line-height: 1.1;
+  letter-spacing: -0.04em; margin: 0 0 10px;
+}
+.hero-card p { color: rgba(255,255,255,0.65); font-size: 14px; margin: 0; }
+.hero-list {
+  list-style: none; padding: 0; margin: 18px 0 0;
+  display: grid; gap: 10px;
+}
+.hero-list li {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+.hero-list li:first-child { border-top: 0; padding-top: 0; }
+.hero-marker {
+  width: 10px; height: 10px; margin-top: 4px;
+  border-radius: 50%; flex-shrink: 0;
+  background: linear-gradient(135deg, var(--gold), var(--apricot));
+}
+.hero-list strong { display: block; font-size: 14px; }
+.hero-list span { font-size: 13px; color: rgba(255,255,255,0.6); }
+
+/* ── WHY SECTION (GRAPHS) ── */
+.why-section { background: var(--paper); }
+.graphs-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 32px;
+}
+.graph-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(20,33,61,0.08);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow);
+}
+.graph-card h4 {
+  font-size: 14px; font-weight: 700;
+  color: var(--ink); margin: 0 0 4px;
+}
+.graph-card p {
+  font-size: 12px; color: var(--muted);
+  margin: 0 0 18px;
+}
+.graph-source {
+  font-size: 11px; color: var(--muted);
+  margin-top: 10px; opacity: 0.7;
+}
+
+/* Bar chart */
+.bar-chart { display: grid; gap: 8px; }
+.bar-row { display: grid; grid-template-columns: 90px 1fr 40px; align-items: center; gap: 8px; }
+.bar-label { font-size: 12px; color: var(--muted); text-align: right; }
+.bar-track {
+  height: 26px; background: rgba(20,33,61,0.06);
+  border-radius: 6px; overflow: hidden;
+  position: relative;
+}
+.bar-fill {
+  height: 100%; border-radius: 6px;
+  background: linear-gradient(90deg, var(--apricot), var(--gold));
+  width: 0;
+  transition: width 1.2s cubic-bezier(0.23,1,0.32,1);
+  display: flex; align-items: center; padding-left: 8px;
+}
+.bar-fill.dark { background: linear-gradient(90deg, var(--ink), var(--ink-soft)); }
+.bar-val { font-size: 12px; font-weight: 700; color: var(--ink); }
+
+/* Donut chart */
+.donut-wrap {
+  display: flex; align-items: center; gap: 20px;
+}
+.donut { position: relative; width: 100px; height: 100px; flex-shrink: 0; }
+.donut svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.donut-center {
+  position: absolute; inset: 0;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  line-height: 1.1;
+}
+.donut-center strong {
+  font-family: var(--font-display);
+  font-size: 1.5rem; color: var(--ink);
+}
+.donut-center span { font-size: 10px; color: var(--muted); }
+.donut-legend { display: grid; gap: 8px; flex: 1; }
+.legend-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
+.legend-dot {
+  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* Trend chart */
+.trend-chart { position: relative; height: 80px; margin-top: 4px; }
+.trend-chart svg { width: 100%; height: 100%; }
+
+/* ── PORTFOLIO ── */
+.portfolio-section { background: var(--sand); }
+.portfolio-tabs {
+  display: flex; gap: 8px; margin: 24px 0 20px;
+}
+.tab-btn {
+  padding: 8px 16px; border-radius: 999px;
+  border: 1.5px solid rgba(20,33,61,0.14);
+  background: transparent; cursor: pointer;
+  font-family: var(--font-body); font-size: 13px;
+  font-weight: 700; color: var(--ink-soft);
+  transition: all 0.18s;
+}
+.tab-btn.active {
+  background: var(--ink); color: #fff; border-color: var(--ink);
+}
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* Client card */
+.portfolio-card {
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(20,33,61,0.08);
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+.portfolio-card-header {
+  padding: 20px 20px 0;
+}
+.portfolio-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  height: 26px; padding: 0 10px;
+  border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  margin-bottom: 12px;
+}
+.tag-client { background: rgba(232,107,48,0.12); color: var(--apricot); }
+.tag-concept { background: rgba(20,33,61,0.08); color: var(--ink-soft); }
+
+.portfolio-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.6rem; letter-spacing: -0.03em;
+  color: var(--ink); margin: 0 0 6px;
+}
+.portfolio-card .meta { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
+
+.portfolio-features {
+  list-style: none; padding: 0; margin: 0 0 16px;
+  display: grid; gap: 8px;
+}
+.portfolio-features li {
+  display: flex; gap: 8px; font-size: 13px;
+  align-items: flex-start;
+}
+.portfolio-features li::before {
+  content: "+"; color: var(--apricot);
+  font-weight: 700; flex-shrink: 0;
+}
+
+.portfolio-actions {
+  display: flex; gap: 10px; flex-wrap: wrap;
+  padding: 0 20px 20px;
+}
+
+/* Screenshots */
+.portfolio-screenshots {
+  display: grid; gap: 1px;
+  background: rgba(20,33,61,0.06);
+  margin-top: 16px;
+}
+.portfolio-shot {
+  background: #f0ebe0;
+  aspect-ratio: 16/7;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden; position: relative;
+}
+.portfolio-shot img {
+  width: 100%; height: 100%; object-fit: cover;
+}
+.shot-placeholder {
+  display: flex; flex-direction: column; align-items: center;
+  gap: 8px; padding: 20px; text-align: center;
+  color: var(--muted); font-size: 12px;
+}
+.shot-placeholder svg { opacity: 0.35; }
+
+/* Concept card */
+.concept-card {
+  background: linear-gradient(160deg, var(--ink) 0%, #1e3a5f 100%);
+  border-radius: var(--radius);
+  padding: 24px;
+  color: #fff;
+  box-shadow: var(--shadow);
+  position: relative; overflow: hidden;
+  display: flex; flex-direction: column; gap: 12px;
+  min-height: 320px;
+}
+.concept-card::before {
+  content: "";
+  position: absolute; right: -40px; top: -40px;
+  width: 180px; height: 180px; border-radius: 50%;
+  background: radial-gradient(circle, rgba(241,189,96,0.18), transparent 70%);
+}
+.concept-card > * { position: relative; }
+.concept-card h3 {
+  font-family: var(--font-display);
+  font-size: 2rem; letter-spacing: -0.04em;
+  margin: 0;
+}
+.concept-card p { color: rgba(255,255,255,0.64); font-size: 14px; margin: 0; }
+.concept-card .concept-features {
+  list-style: none; padding: 0; margin: 0;
+  display: grid; gap: 6px;
+}
+.concept-features li {
+  font-size: 13px; color: rgba(255,255,255,0.72);
+  display: flex; gap: 8px;
+}
+.concept-features li::before { content: "→"; color: var(--gold); flex-shrink: 0; }
+.concept-spacer { flex: 1; }
+
+/* ── SERVICES ── */
+.services-section { background: var(--paper); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 28px;
+}
+.service-card {
+  padding: 20px;
+  background: rgba(255,255,255,0.8);
+  border: 1px solid rgba(20,33,61,0.07);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.icon-box {
+  width: 44px; height: 44px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 12px; margin-bottom: 14px;
+  background: linear-gradient(135deg, rgba(232,107,48,0.14), rgba(241,189,96,0.16));
+  color: var(--apricot);
+}
+.icon-box svg { width: 20px; height: 20px; stroke: currentColor; fill: none; stroke-width: 1.8; }
+.service-card h3 { font-size: 15px; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+.service-card p { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* ── PROCESS ── */
+.process-section { background: var(--sand); }
+.process-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 12px; margin-top: 28px;
+}
+.step {
+  padding: 20px 18px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(20,33,61,0.07);
+  border-radius: var(--radius);
+  position: relative;
+}
+.step-num {
+  width: 36px; height: 36px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 50%;
+  background: var(--ink); color: #fff;
+  font-family: var(--font-display); font-size: 1rem;
+  margin-bottom: 12px;
+}
+.step h3 { font-size: 14px; font-weight: 700; color: var(--ink); margin: 0 0 6px; }
+.step p { font-size: 13px; color: var(--muted); margin: 0; }
+.step-highlight {
+  background: linear-gradient(135deg, var(--apricot) 0%, #c8521e 100%);
+  color: #fff; border-color: transparent;
+}
+.step-highlight .step-num { background: rgba(255,255,255,0.22); }
+.step-highlight h3, .step-highlight p { color: #fff; }
+.step-highlight p { color: rgba(255,255,255,0.75); }
+.step-badge {
+  display: inline-flex; align-items: center;
+  height: 24px; padding: 0 10px; border-radius: 999px;
+  background: rgba(255,255,255,0.22);
+  font-size: 11px; font-weight: 700;
+  margin-top: 10px;
+}
+
+/* ── PRICING ── */
+.pricing-section { background: var(--paper); }
+.pricing-note {
+  margin-top: 10px; padding: 12px 16px;
+  background: rgba(241,189,96,0.15);
+  border: 1px solid rgba(241,189,96,0.3);
+  border-radius: var(--radius-sm);
+  font-size: 13px; color: var(--ink-soft);
+}
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(3,1fr);
+  gap: 12px; margin-top: 28px;
+}
+.price-card {
+  padding: 22px;
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(20,33,61,0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  display: flex; flex-direction: column;
+}
+.price-card.featured {
+  background: linear-gradient(160deg, var(--ink) 0%, #1e3a5f 100%);
+  color: #fff; transform: translateY(-8px);
+}
+.price-badge {
+  display: inline-flex; align-items: center;
+  height: 26px; padding: 0 10px; border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  background: var(--apricot-soft); color: var(--apricot);
+  margin-bottom: 12px; align-self: flex-start;
+}
+.price-card.featured .price-badge {
+  background: rgba(255,255,255,0.14); color: var(--gold);
+}
+.price-card h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin: 0 0 4px; }
+.price-card.featured h3 { color: #fff; }
+.price-amount {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1; letter-spacing: -0.05em;
+  color: var(--ink); margin: 10px 0 4px;
+}
+.price-card.featured .price-amount { color: #fff; }
+.price-meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
+.price-card.featured .price-meta { color: rgba(255,255,255,0.6); }
+.price-tagline { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
+.price-card.featured .price-tagline { color: rgba(255,255,255,0.65); }
+.price-list {
+  list-style: none; padding: 0; margin: 0 0 20px;
+  display: grid; gap: 8px; flex: 1;
+}
+.price-list li {
+  display: flex; gap: 8px; font-size: 13px;
+  align-items: flex-start; color: var(--text);
+}
+.price-card.featured .price-list li { color: rgba(255,255,255,0.8); }
+.price-list strong { color: var(--apricot); flex-shrink: 0; font-size: 13px; }
+.price-card.featured .price-list strong { color: var(--gold); }
+
+.price-from {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 2px; margin-top: 10px;
+}
+.price-card.featured .price-from { color: rgba(255,255,255,0.45); }
+
+.price-subscription {
+  display: flex; flex-direction: column; gap: 3px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: rgba(232,107,48,0.09);
+  border: 1px solid rgba(232,107,48,0.22);
+  margin-bottom: 16px;
+}
+.price-card.featured .price-subscription {
+  background: rgba(255,255,255,0.1);
+  border-color: rgba(255,255,255,0.18);
+}
+.sub-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.07em; text-transform: uppercase;
+  color: var(--apricot);
+}
+.price-card.featured .sub-label { color: var(--gold); }
+.sub-amount {
+  font-family: var(--font-display);
+  font-size: 1.4rem; line-height: 1;
+  letter-spacing: -0.04em; color: var(--ink);
+}
+.price-card.featured .sub-amount { color: #fff; }
+.sub-desc {
+  font-size: 12px; color: var(--muted); margin-top: 2px;
+}
+.price-card.featured .sub-desc { color: rgba(255,255,255,0.5); }
+
+/* Hover lift */
+.price-card {
+  transition: transform 0.22s cubic-bezier(0.23,1,0.32,1), box-shadow 0.22s;
+}
+.price-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 48px rgba(20,33,61,0.13);
+}
+.price-card.featured {
+  transition: transform 0.22s cubic-bezier(0.23,1,0.32,1), box-shadow 0.22s;
+}
+.price-card.featured:hover {
+  transform: translateY(-14px);
+  box-shadow: 0 0 0 1px rgba(241,189,96,0.5), 0 28px 64px rgba(20,33,61,0.32);
+}
+
+/* Komplett gold glow ring */
+.price-card.featured {
+  border: 1px solid rgba(241,189,96,0.3);
+  box-shadow: 0 8px 32px rgba(20,33,61,0.12), 0 0 0 1px rgba(241,189,96,0.15);
+}
+
+/* Exclusions list */
+.price-exclude {
+  list-style: none; padding: 10px 0 0; margin: 0 0 12px;
+  display: grid; gap: 6px;
+  border-top: 1px solid rgba(20,33,61,0.07);
+}
+.price-exclude li {
+  display: flex; gap: 8px; font-size: 12px;
+  align-items: flex-start; color: var(--muted); opacity: 0.65;
+}
+.price-exclude li::before {
+  content: "×"; color: #c0392b;
+  font-weight: 700; flex-shrink: 0;
+}
+
+/* Add-ons */
+.addons-wrap {
+  margin-top: 24px; padding: 22px 24px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(20,33,61,0.08);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+.addons-header {
+  display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px;
+}
+.addons-header h4 {
+  font-size: 14px; font-weight: 700; color: var(--ink); margin: 0;
+}
+.addons-header span {
+  font-size: 12px; color: var(--muted);
+}
+.addons-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
+}
+.addon-item {
+  display: flex; flex-direction: column; gap: 4px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid rgba(20,33,61,0.07);
+  border-radius: var(--radius-sm);
+  font-size: 12px; color: var(--muted);
+}
+.addon-item strong {
+  font-size: 13px; color: var(--ink); font-weight: 700;
+}
+.addon-price {
+  font-family: var(--font-display);
+  font-size: 1rem; color: var(--apricot);
+  letter-spacing: -0.03em; margin-top: 2px;
+}
+@media (max-width: 900px) { .addons-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 500px) { .addons-grid { grid-template-columns: 1fr; } }
+
+/* ── CONTACT / INTAKE ── */
+.contact-section { padding-bottom: 80px; }
+.contact-wrap {
+  padding: 32px;
+  border-radius: 28px;
+  background: linear-gradient(160deg, var(--ink) 0%, #1a304d 100%);
+  box-shadow: 0 20px 60px rgba(20,33,61,0.2);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 24px;
+  margin-top: 28px;
+}
+.form-card {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius);
+  padding: 22px;
+}
+.form-intro {
+  font-size: 13px; color: rgba(255,255,255,0.6);
+  margin: 0 0 18px;
+  padding: 12px 14px;
+  background: rgba(255,255,255,0.06);
+  border-radius: var(--radius-sm);
+  border-left: 3px solid var(--gold);
+}
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.field { margin-bottom: 12px; }
+.field label {
+  display: block; font-size: 12px; font-weight: 700;
+  color: rgba(255,255,255,0.75); margin-bottom: 6px;
+  letter-spacing: 0.04em;
+}
+.field input, .field select, .field textarea {
+  width: 100%; padding: 10px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: var(--radius-sm);
+  color: #fff; font-family: var(--font-body); font-size: 14px;
+  outline: none; transition: border-color 0.18s, background 0.18s;
+}
+.field textarea { min-height: 90px; resize: vertical; }
+.field input::placeholder, .field textarea::placeholder { color: rgba(255,255,255,0.35); }
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: rgba(241,189,96,0.6);
+  background: rgba(255,255,255,0.12);
+}
+.field select option { background: var(--ink); }
+.field select { appearance: none; cursor: pointer; }
+
+/* Checkbox group */
+.check-group {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 6px; margin-top: 6px;
+}
+.check-item {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: rgba(255,255,255,0.7);
+  cursor: pointer;
+}
+.check-item input[type="checkbox"] {
+  width: 16px; height: 16px; padding: 0;
+  border-radius: 4px; flex-shrink: 0;
+  accent-color: var(--apricot);
+}
+
+/* Contact sidebar */
+.contact-sidebar { display: flex; flex-direction: column; gap: 12px; }
+.info-card {
+  padding: 16px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+}
+.info-card h4 {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 0.1em; text-transform: uppercase;
+  color: rgba(255,255,255,0.45); margin: 0 0 6px;
+}
+.info-card p { font-size: 14px; color: #fff; margin: 0; }
+.tip-card {
+  padding: 14px 16px;
+  background: rgba(232,107,48,0.14);
+  border: 1px solid rgba(232,107,48,0.25);
+  border-radius: var(--radius-sm);
+  font-size: 13px; color: rgba(255,255,255,0.8);
+}
+.domain-card {
+  padding: 16px;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: var(--radius-sm);
+}
+.domain-card strong { display: block; font-size: 13px; color: #fff; margin-bottom: 4px; }
+.domain-card p { font-size: 12px; color: rgba(255,255,255,0.55); margin: 0 0 10px; }
+.domain-form { display: flex; gap: 8px; }
+.domain-form input {
+  flex: 1; padding: 8px 12px; border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.08);
+  color: #fff; font: inherit; font-size: 13px; outline: none;
+}
+.domain-form input::placeholder { color: rgba(255,255,255,0.35); }
+.domain-form button {
+  padding: 8px 14px; border-radius: 999px; border: 0;
+  background: var(--apricot); color: #fff;
+  font: inherit; font-size: 12px; font-weight: 700; cursor: pointer;
+}
+
+/* Contact header text */
+.contact-wrap .section-label { color: rgba(255,255,255,0.5); }
+.contact-wrap .section-title { color: #fff; }
+.contact-wrap .section-sub { color: rgba(255,255,255,0.6); }
+
+/* ── FOOTER ── */
+.site-footer {
+  padding: 20px 0 36px;
+  border-top: 1px solid rgba(20,33,61,0.1);
+}
+.site-footer .shell {
+  display: flex; align-items: center;
+  justify-content: space-between; gap: 16px; flex-wrap: wrap;
+}
+.site-footer p { font-size: 13px; color: var(--muted); margin: 0; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  .hero-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .price-card.featured { transform: none; }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .shell { width: calc(100vw - 24px); }
+  .site-header .shell { min-height: 54px; }
+  .brand { font-size: 22px; }
+
+  .hero h1 { font-size: clamp(2.4rem, 10vw, 3.2rem); }
+  .hero-stats { grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .hero-stat { padding: 10px 12px; }
+  .hero-stat strong { font-size: 1.5rem; }
+
+  .graphs-grid { grid-template-columns: 1fr; }
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+  .process-grid { grid-template-columns: repeat(2, 1fr); }
+  .pricing-grid { grid-template-columns: 1fr; }
+  .price-card.featured { transform: none; }
+  .field-row { grid-template-columns: 1fr; }
+  .check-group { grid-template-columns: 1fr; }
+  .contact-wrap { padding: 20px; border-radius: 20px; }
+  .contact-wrap .section-title { font-size: 1.7rem; }
+
+  .nav-links { display: none; }
+}
+
+/* ── LIGHTBOX ── */
+.lightbox-overlay {
+  display: none;
+  position: fixed; inset: 0; z-index: 1000;
+  background: rgba(10,16,28,0.92);
+  align-items: center; justify-content: center;
+  cursor: zoom-out;
+  backdrop-filter: blur(6px);
+}
+.lightbox-overlay.open { display: flex; }
+.lightbox-img {
+  max-width: min(92vw, 1100px);
+  max-height: 88vh;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.5);
+  cursor: default;
+  animation: lb-in 0.22s cubic-bezier(0.23,1,0.32,1);
+}
+@keyframes lb-in {
+  from { opacity: 0; transform: scale(0.94); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.lightbox-close {
+  position: fixed; top: 16px; right: 20px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.2);
+  color: #fff; font-size: 20px; line-height: 40px;
+  text-align: center; cursor: pointer;
+  transition: background 0.15s;
+}
+.lightbox-close:hover { background: rgba(255,255,255,0.22); }
+.portfolio-shot img, .concept-card img {
+  cursor: zoom-in;
+}
+
+/* ── ANIMATE IN ── */
+.reveal {
+  opacity: 0; transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal.visible { opacity: 1; transform: none; }
+.reveal-d1 { transition-delay: 0.1s; }
+.reveal-d2 { transition-delay: 0.2s; }
+.reveal-d3 { transition-delay: 0.3s; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="#top">Drink<span>myte</span></a>
+    <ul class="nav-links" aria-label="Navigation">
+      <li><a href="#why">Varför</a></li>
+      <li><a href="#portfolio">Portfolio</a></li>
+      <li><a href="#services">Tjänster</a></li>
+      <li><a href="#pricing">Priser</a></li>
+      <li><a href="#contact">Kontakt</a></li>
+    </ul>
+    <a class="btn btn-primary nav-cta" href="#contact">Starta projekt</a>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="shell">
+      <div class="hero-grid">
+        <div>
+          <div class="eyebrow hero-eyebrow">Göteborg — distansprojekt välkomna</div>
+          <h1>Seriös<br>känsla.<br><em>Riktig</em> sida.</h1>
+          <p class="hero-sub">Drinkmyte bygger hemsidor som faktiskt hjälper verksamheter att synas, växa och litas på — oavsett bransch.</p>
+          <div class="hero-actions">
+            <a class="btn btn-apricot" href="#contact">Berätta om ditt företag</a>
+            <a class="btn btn-secondary" href="#portfolio">Se vårt arbete</a>
+          </div>
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <strong>3–5</strong>
+              <span>arbetsdagar från start till live</span>
+            </div>
+            <div class="hero-stat">
+              <strong>100%</strong>
+              <span>mobilanpassat från dag ett</span>
+            </div>
+            <div class="hero-stat">
+              <strong>Bas</strong>
+              <span>i Göteborg, kunder i hela Sverige</span>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <div class="mini-label">Om Drinkmyte</div>
+          <h2>Drinkmyte drivs av Te Penson.</h2>
+          <p>Målet är hemsidor som känns premium utan att bli opersonliga — tydliga, snygga och enkla att lita på.</p>
+          <ul class="hero-list">
+            <li>
+              <div class="hero-marker"></div>
+              <div>
+                <strong>Rätt första känsla</strong>
+                <span>Besökaren förstår snabbt att företaget är seriöst och aktivt.</span>
+              </div>
+            </li>
+            <li>
+              <div class="hero-marker"></div>
+              <div>
+                <strong>Gjort för verkliga kunder</strong>
+                <span>Kontakt, öppettider och erbjudanden är alltid enkla att hitta.</span>
+              </div>
+            </li>
+            <li>
+              <div class="hero-marker"></div>
+              <div>
+                <strong>Lokal fördel</strong>
+                <span>Perfekt för Göteborg-baserade verksamheter som vill synas starkare.</span>
+              </div>
+            </li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY SECTION WITH GRAPHS -->
+  <section class="why-section" id="why">
+    <div class="shell">
+      <p class="section-label">Varför det spelar roll</p>
+      <h2 class="section-title">Siffrorna säger<br>mer än löften.</h2>
+      <p class="section-sub">Inte branschjargong — faktiska data om varför en genomtänkt hemsida är en av de bästa investeringarna ett företag kan göra.</p>
+
+      <div class="graphs-grid">
+
+        <!-- Graph 1: Local search -->
+        <div class="graph-card reveal">
+          <h4>Lokala sökningar driver besök</h4>
+          <p>Andel konsumenter som söker lokala tjänster online innan de bestämmer sig</p>
+          <div class="bar-chart" id="chart-local">
+            <div class="bar-row">
+              <span class="bar-label">Hittar online</span>
+              <div class="bar-track"><div class="bar-fill" data-width="97"></div></div>
+              <span class="bar-val">97%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Besöker sedan</span>
+              <div class="bar-track"><div class="bar-fill" data-width="76"></div></div>
+              <span class="bar-val">76%</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Köper samma dag</span>
+              <div class="bar-track"><div class="bar-fill dark" data-width="28"></div></div>
+              <span class="bar-val">28%</span>
+            </div>
+          </div>
+          <p class="graph-source">Källa: BrightLocal Local Consumer Survey / Google Think</p>
+        </div>
+
+        <!-- Graph 2: Mobile -->
+        <div class="graph-card reveal reveal-d1">
+          <h4>Mobilen är din butiksskylt</h4>
+          <p>Fördelning av global webbtrafik 2024</p>
+          <div class="donut-wrap">
+            <div class="donut">
+              <svg viewBox="0 0 36 36">
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f0ebe0" stroke-width="3.2"/>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--apricot)" stroke-width="3.2"
+                  stroke-dasharray="0 100" stroke-dashoffset="0" id="donut-mobile"
+                  stroke-linecap="round"/>
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--gold)" stroke-width="3.2"
+                  stroke-dasharray="0 100" stroke-dashoffset="-59" id="donut-tablet"
+                  stroke-linecap="round"/>
+              </svg>
+              <div class="donut-center">
+                <strong>58%</strong>
+                <span>Mobil</span>
+              </div>
+            </div>
+            <div class="donut-legend">
+              <div class="legend-row"><div class="legend-dot" style="background:var(--apricot)"></div><span>Mobil — 58%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:var(--gold)"></div><span>Dator — 40%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:rgba(20,33,61,0.15)"></div><span>Surfplatta — 2%</span></div>
+              <br>
+              <div style="font-size:12px;color:var(--muted);line-height:1.5">En sida som inte funkar på mobil<br>tappar <strong style="color:var(--apricot)">mer än hälften</strong> av sina besökare.</div>
+            </div>
+          </div>
+          <p class="graph-source">Källa: Statista Global Mobile Traffic Share 2024</p>
+        </div>
+
+        <!-- Graph 3: Trust / first impression -->
+        <div class="graph-card reveal">
+          <h4>Första intrycket avgör</h4>
+          <p>Hur snabbt besökare bedömer ett företags trovärdighet baserat på hemsidan</p>
+          <div class="bar-chart">
+            <div class="bar-row">
+              <span class="bar-label">0.05 sek</span>
+              <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+              <span class="bar-val">Förtroende</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Litar ej</span>
+              <div class="bar-track"><div class="bar-fill dark" data-width="75"></div></div>
+              <span class="bar-val">75% p.g.a. design</span>
+            </div>
+            <div class="bar-row">
+              <span class="bar-label">Stannar kvar</span>
+              <div class="bar-track"><div class="bar-fill" data-width="55"></div></div>
+              <span class="bar-val">Bra design</span>
+            </div>
+          </div>
+          <p class="graph-source">Källa: Google Research / Stanford Web Credibility Study</p>
+        </div>
+
+        <!-- Graph 4: ROI trend -->
+        <div class="graph-card reveal reveal-d1">
+          <h4>Synlighet byggs med tid</h4>
+          <p>Typisk organisk räckvidd för ett lokalt företag — månader efter lansering</p>
+          <div class="trend-chart">
+            <svg viewBox="0 0 280 80" preserveAspectRatio="none" id="trend-svg">
+              <defs>
+                <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="var(--apricot)" stop-opacity="0.25"/>
+                  <stop offset="100%" stop-color="var(--apricot)" stop-opacity="0"/>
+                </linearGradient>
+              </defs>
+              <path id="trend-area" d="M0,75 L0,75 L280,75 Z" fill="url(#tg)"/>
+              <path id="trend-line" d="M0,75" fill="none" stroke="var(--apricot)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
+            <span>Månad 1</span><span>3</span><span>6</span><span>9</span><span>12</span>
+          </div>
+          <p class="graph-source">Källa: Moz Local SEO Growth Benchmarks</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="shell">
+      <p class="section-label">Arbeten</p>
+      <h2 class="section-title">Resultat som<br><em>talar för sig.</em></h2>
+      <p class="section-sub">Verkliga projekt och konceptsidor som visar bredden av vad Drinkmyte kan leverera — från varm och tillgänglig till premium och avancerad.</p>
+
+      <div class="portfolio-grid" style="margin-top:28px">
+
+        <!-- Real client: IThai -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-card-header">
+            <div class="portfolio-tag tag-client">✓ Riktigt projekt</div>
+            <h3>I Thai</h3>
+            <p class="meta">Thairestaurang i Göteborg — meny, galleri, kontakt, öppettider och beställningslänk.</p>
+            <ul class="portfolio-features">
+              <li>Tydligare menystruktur så att gäster snabbt hittar rätt rätter</li>
+              <li>Starkare första intryck med varm känsla och klarare flöde</li>
+              <li>Enklare att beställa, hitta kontakt och förstå restaurangen direkt</li>
+            </ul>
+          </div>
+          <div class="portfolio-actions">
+            <a class="btn btn-primary" href="https://ithai.nu" target="_blank" rel="noopener">Se live →</a>
+            <a class="btn btn-secondary" href="#contact">Be om liknande</a>
+          </div>
+          <div class="portfolio-screenshots" style="display:grid;grid-template-rows:auto auto;gap:2px">
+            <div class="portfolio-shot" style="aspect-ratio:16/6">
+              <img src="images/ithai-hero.jpg" alt="I Thai hero"/>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+              <div class="portfolio-shot" style="aspect-ratio:4/3">
+                <img src="images/ithai-menu.jpg" alt="I Thai meny"/>
+              </div>
+              <div class="portfolio-shot" style="aspect-ratio:4/3">
+                <img src="images/ithai-interior.jpg" alt="I Thai galleri"/>
+              </div>
+            </div>
+          </div>
+          </div>
+
+        <!-- Concept: Nordveil -->
+        <div class="concept-card reveal reveal-d1">
+          <div class="portfolio-tag tag-concept" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">Konceptsida</div>
+          <h3>Nordveil</h3>
+          <p>Luxury alpine expedition gear — ett konceptprojekt som visar vad Drinkmyte kan göra i en helt annan estetisk riktning: mörk, premium, interaktiv.</p>
+          <ul class="concept-features">
+            <li>Anpassad cursor och scroll-effekter</li>
+            <li>Animerad snöpartikel-canvas</li>
+            <li>Avancerad typografi-hierarki (3 fonter)</li>
+            <li>Fullskärms video hero med overlay</li>
+          </ul>
+          <div class="concept-spacer"></div>
+          <div style="display:grid;gap:6px;border-radius:12px;overflow:hidden;margin-top:4px">
+            <img src="images/nordveil-hero.jpg" alt="Nordveil hero" data-full="images/nordveil-hero.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:8px"/>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+              <img src="images/nordveil-image-1.jpg" alt="Nordveil image 1" data-full="images/nordveil-image-1.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px"/>
+              <img src="images/nordveil-image-2.jpg" alt="Nordveil image 2" data-full="images/nordveil-image-2.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px"/>
+              <img src="images/nordveil-image-3.jpg" alt="Nordveil image 3" data-full="images/nordveil-image-3.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px"/>
+            </div>
+          </div>
+          <a class="btn btn-secondary" href="#contact" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);margin-top:8px;align-self:flex-start">Fråga om liknande →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section" id="services">
+    <div class="shell">
+      <p class="section-label">Tjänster</p>
+      <h2 class="section-title">Det viktigaste.<br>Utan onödigt fluff.</h2>
+      <p class="section-sub">Upplägget är gjort för företag som vill ha en hemsida som faktiskt hjälper verksamheten — inte ett digitalt broschyrfodral.</p>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="m12 20 7-7"/><path d="m14 4 6 6-10 10H4v-6L14 4Z"/></svg></div>
+          <h3>Design som känns din</h3>
+          <p>Typografi, färger och layout anpassas efter hur ditt företag ska upplevas av dina kunder.</p>
+        </article>
+        <article class="service-card reveal reveal-d1">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-8"/><path d="M22 20H2"/></svg></div>
+          <h3>SEO-grund från start</h3>
+          <p>Rubriker, metadata, alt-texter och lokal relevans — strukturerat rätt från dag ett.</p>
+        </article>
+        <article class="service-card reveal reveal-d2">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg></div>
+          <h3>Texter som är tydliga</h3>
+          <p>Budskapet ska vara lätt att fatta för din kund, inte bara snyggt formulerat internt.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg></div>
+          <h3>Lansering och publicering</h3>
+          <p>Domän, hosting och sista detaljer — sidan går live utan att du behöver tänka på det.</p>
+        </article>
+        <article class="service-card reveal reveal-d1">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8"/><path d="M1 10 12 15 23 10"/><path d="M3 6h18"/></svg></div>
+          <h3>Kontaktvägar som funkar</h3>
+          <p>Formulär, knappar och CTA-delar ska vara omöjliga att missa — och enkla att använda.</p>
+        </article>
+        <article class="service-card reveal reveal-d2">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V7l-8-4Z"/></svg></div>
+          <h3>Drift och support</h3>
+          <p>Löpande uppdateringar, tillägg och support ingår i abonnemanget — du slipper oroa dig.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section" id="process">
+    <div class="shell">
+      <p class="section-label">Process</p>
+      <h2 class="section-title">Från idé till live —<br>på <em>3–5 arbetsdagar.</em></h2>
+      <p class="section-sub">En effektiv process där vi samlar in rätt information från start, så att vi minimerar onödiga fram-och-tillbaka-mejl.</p>
+
+      <div class="process-grid" style="margin-top:28px">
+        <article class="step reveal">
+          <div class="step-num">1</div>
+          <h3>Detaljerat intag</h3>
+          <p>Du fyller i ett strukturerat formulär som täcker allt — design, funktioner, innehåll och målgrupp. Ju mer du berättar, desto snabbare går det.</p>
+        </article>
+        <article class="step step-highlight reveal reveal-d1">
+          <div class="step-num">2</div>
+          <h3>Vi bygger</h3>
+          <p>Baserat på ditt formulär påbörjar vi direkt. Första versionen visas inom 1–2 arbetsdagar.</p>
+          <div class="step-badge">3–5 arbetsdagar</div>
+        </article>
+        <article class="step reveal reveal-d2">
+          <div class="step-num">3</div>
+          <h3>Feedback & justering</h3>
+          <p>Du ser sidan, ger feedback i en runda. Vi justerar och förfinar utifrån dina kommentarer.</p>
+        </article>
+        <article class="step reveal reveal-d3">
+          <div class="step-num">4</div>
+          <h3>Lansering</h3>
+          <p>Godkänd sida publiceras och abonnemanget tar hand om drift, uppdateringar och support framöver.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="shell">
+      <p class="section-label">Priser</p>
+      <h2 class="section-title">Vad kostar det?<br><em>Det beror på projektet.</em></h2>
+      <p class="section-sub">Priserna nedan är riktpriser — det faktiska priset sätts utifrån projektets storlek, innehåll och funktioner. Alla projekt inkluderar ett löpande abonnemang.</p>
+      <div class="pricing-note">
+        <strong>Två delar att känna till:</strong> Du betalar ett <strong>engångspris för bygget</strong> (varierar efter scope) och sedan en <strong>månadsavgift</strong> — obligatorisk och täcker hosting, domän, drift och support så länge sidan är live. Siffrorna är uppskattningar. Exakt offert via kontaktformuläret.
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- BAS -->
+        <article class="price-card reveal">
+          <div class="price-badge">Bas</div>
+          <h3>Enkel närvaro</h3>
+          <p style="font-size:12px;font-weight:700;color:var(--apricot);letter-spacing:0.04em;margin:0 0 10px;text-transform:uppercase;">Perfekt för: hantverkare · restaurang med meny · kontaktsida</p>
+          <div class="price-from">Uppskattad byggkostnad</div>
+          <span class="price-amount">~899 kr</span>
+          <p class="price-tagline">En riktig sida online — snabbt och utan krångel. Visar vad du gör, var du finns och hur kunder når dig.</p>
+          <ul class="price-list">
+            <li><strong>+</strong>1-sidig landningssida</li>
+            <li><strong>+</strong>Kontaktuppgifter &amp; öppettider</li>
+            <li><strong>+</strong>Kontaktformulär</li>
+            <li><strong>+</strong>Enkel restaurangmeny <em style="font-size:11px;opacity:0.7">(avancerad stil = tillägg)</em></li>
+            <li><strong>+</strong>CTA-knapp</li>
+            <li><strong>+</strong>Mobilanpassning</li>
+            <li><strong>+</strong>Grundläggande SEO-struktur</li>
+          </ul>
+          <ul class="price-exclude">
+            <li>Galleri eller bildsektion</li>
+            <li>Undersidor</li>
+            <li>Google Maps-embed</li>
+          </ul>
+          <div class="price-subscription">
+            <span class="sub-label">Abonnemang (obligatoriskt)</span>
+            <span class="sub-amount">~299 kr/mån</span>
+            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
+          </div>
+          <a class="btn btn-secondary" href="#contact">Fråga om Bas</a>
+        </article>
+
+        <!-- PRO -->
+        <article class="price-card reveal reveal-d1">
+          <div class="price-badge" style="background:rgba(20,33,61,0.1);color:var(--ink);">Vanligast</div>
+          <h3>Pro</h3>
+          <div class="price-from">Uppskattad byggkostnad</div>
+          <span class="price-amount">~1 799 kr</span>
+          <p class="price-tagline">För etablerade verksamheter — en genomarbetad, komplett sida som faktiskt levererar.</p>
+          <ul class="price-list">
+            <li><strong>+</strong>Upp till 5 sidor eller sektioner</li>
+            <li><strong>+</strong>Kontaktformulär</li>
+            <li><strong>+</strong>Restaurangmeny eller tjänstesidor</li>
+            <li><strong>+</strong>Google Maps-embed</li>
+            <li><strong>+</strong>Google Analytics-koppling</li>
+            <li><strong>+</strong>Bildgalleri</li>
+            <li><strong>+</strong>Anpassad favicon &amp; metadata</li>
+          </ul>
+          <div class="price-subscription">
+            <span class="sub-label">Abonnemang (obligatoriskt)</span>
+            <span class="sub-amount">~499 kr/mån</span>
+            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
+          </div>
+          <a class="btn btn-apricot" href="#contact">Välj Pro</a>
+        </article>
+
+        <!-- KOMPLETT -->
+        <article class="price-card featured reveal reveal-d2">
+          <div class="price-badge">Rekommenderas</div>
+          <h3>Komplett</h3>
+          <div class="price-from">Uppskattad byggkostnad</div>
+          <span class="price-amount">~3 199 kr</span>
+          <p class="price-tagline">Sidan folk pratar om — premium känsla, fler sidor och ett intryck som stannar kvar.</p>
+          <ul class="price-list">
+            <li><strong>+</strong>Allt i Pro</li>
+            <li><strong>+</strong>Upp till 10 sidor</li>
+            <li><strong>+</strong>Hero-video i bakgrunden</li>
+            <li><strong>+</strong>Animationer &amp; parallax-scrollning</li>
+            <li><strong>+</strong>Bokningsembed (Calendly, Bokadirekt)</li>
+            <li><strong>+</strong>Instagram-embed</li>
+            <li><strong>+</strong>Jobba hos oss / Om oss-sidor</li>
+            <li><strong>+</strong>Cookie-banner (GDPR)</li>
+            <li><strong>+</strong>Anpassad 404-sida</li>
+            <li><strong>+</strong>Prioriterad support</li>
+          </ul>
+          <div class="price-subscription">
+            <span class="sub-label">Abonnemang (obligatoriskt)</span>
+            <span class="sub-amount">~849 kr/mån</span>
+            <span class="sub-desc">Hosting · domän · DNS-hantering · prioriterad e-postsupport · små innehållsuppdateringar</span>
+          </div>
+          <a class="btn btn-apricot" href="#contact">Välj Komplett</a>
+        </article>
+
+      </div>
+
+      <!-- ADD-ONS -->
+      <div class="addons-wrap reveal">
+        <div class="addons-header">
+          <h4>Tillval</h4>
+          <span>Lägg till valfria extras till vilket paket som helst</span>
+        </div>
+        <div class="addons-grid">
+          <div class="addon-item">
+            <strong>Extra undersida</strong>
+            <span>Utöver paketets gräns</span>
+            <span class="addon-price">+299 kr/st</span>
+          </div>
+          <div class="addon-item">
+            <strong>Kontaktformulär</strong>
+            <span>Bas-tillägg</span>
+            <span class="addon-price">+299 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Avancerad menystyling</strong>
+            <span>Uppgradering för Bas</span>
+            <span class="addon-price">+149 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Flerspråkig sida</strong>
+            <span>Svenska + engelska</span>
+            <span class="addon-price">+799 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Instagram-embed</strong>
+            <span>Bas / Pro-tillägg</span>
+            <span class="addon-price">+399 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Bokningsembed</strong>
+            <span>Calendly, Bokadirekt m.fl.</span>
+            <span class="addon-price">+349 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Google My Business</strong>
+            <span>Setup &amp; optimering</span>
+            <span class="addon-price">+249 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Anpassad offert</strong>
+            <span>Något annat? Hör av dig</span>
+            <span class="addon-price">→ Kontakt</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CONTACT / INTAKE -->
+  <section class="contact-section" id="contact">
+    <div class="shell">
+      <div class="contact-wrap">
+        <p class="section-label">Kontakt</p>
+        <h2 class="section-title">Berätta vad du<br>vill bygga.</h2>
+        <p class="section-sub">Ju mer du berättar här, desto snabbare kan vi leverera — utan onödiga möten eller mejlkedjor.</p>
+
+        <div class="contact-grid">
+          <form class="form-card" id="contact-form">
+            <p class="form-intro">Det här formuläret är vår gemensamma briefing. Fyll i det ordentligt så slipper vi fråga samma sak tre gånger — det sparar tid för oss båda.</p>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="name">Namn eller företag *</label>
+                <input id="name" name="name" type="text" placeholder="Te Penson Studio" required />
+              </div>
+              <div class="field">
+                <label for="email">E-post *</label>
+                <input id="email" name="email" type="email" placeholder="du@exempel.se" required />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="biz-type">Typ av verksamhet *</label>
+              <select id="biz-type" name="bizType" required>
+                <option value="">Välj verksamhetstyp</option>
+                <option>Restaurang eller café</option>
+                <option>Butik eller e-handel</option>
+                <option>Tjänsteföretag</option>
+                <option>Hantverkare eller hälsa/skönhet</option>
+                <option>Personligt varumärke / frilans</option>
+                <option>Bokningsberoende verksamhet</option>
+                <option>Annat</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Vilka funktioner behövs? (välj alla som stämmer)</label>
+              <div class="check-group">
+                <label class="check-item"><input type="checkbox" name="features" value="Kontaktformulär" /> Kontaktformulär</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Galleri" /> Galleri / bilder</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Meny" /> Meny (restaurang)</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Bokning" /> Bokningssystem</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Webshop" /> Webbshop</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Flerspråkig" /> Flerspråkig sida</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Blogg" /> Blogg / nyheter</label>
+                <label class="check-item"><input type="checkbox" name="features" value="Vet inte" /> Vet inte än</label>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="feel">Hur ska sidan kännas?</label>
+                <select id="feel" name="feel">
+                  <option value="">Välj känsla</option>
+                  <option>Varm och tillgänglig</option>
+                  <option>Professionell och strikt</option>
+                  <option>Premium och lyxig</option>
+                  <option>Lekfull och energisk</option>
+                  <option>Minimalistisk och ren</option>
+                  <option>Vet inte — föreslå gärna</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="budget">Prisindikation</label>
+                <select id="budget" name="budget">
+                  <option value="">Inte säker än</option>
+                  <option>Bas — ca ~899 kr byggkostnad + ~299 kr/mån</option>
+                  <option>Pro — ca ~1 799 kr byggkostnad + ~499 kr/mån</option>
+                  <option>Komplett — ca ~3 199 kr byggkostnad + ~849 kr/mån</option>
+                  <option>Anpassad offert</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="content">Vilket innehåll finns redan?</label>
+              <select id="content" name="content">
+                <option value="">Välj alternativ</option>
+                <option>Inget ännu — ni hjälper mig</option>
+                <option>Jag har texter, inga bilder</option>
+                <option>Jag har bilder, inga texter</option>
+                <option>Jag har både texter och bilder</option>
+                <option>Jag har logga och färger klara</option>
+              </select>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="audience">Riktar sig sidan lokalt i Göteborg eller bredare?</label>
+                <select id="audience" name="audience">
+                  <option value="">Välj</option>
+                  <option>Lokalt — Göteborg / Västra Sverige</option>
+                  <option>Sverige generellt</option>
+                  <option>Internationellt</option>
+                  <option>Blandat</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="domain">Domännamn (om du har ett)</label>
+                <input id="domain" name="domain" type="text" placeholder="mittforetag.se" />
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="message">Beskriv projektet med egna ord *</label>
+              <textarea id="message" name="message" placeholder="Vad gör företaget, varför behöver ni en ny sida nu, finns det en befintlig sida att ersätta, och vad är viktigast för er?" required></textarea>
+            </div>
+
+            <button class="btn btn-apricot" type="submit" style="width:100%;min-height:48px;font-size:15px">Öppna mejlutkast →</button>
+          </form>
+
+          <div class="contact-sidebar">
+            <div class="info-card">
+              <h4>E-post</h4>
+              <p>drinkmyte@gmail.com</p>
+            </div>
+            <div class="info-card">
+              <h4>Svarstid</h4>
+              <p>Oftast inom 24 h med nästa steg.</p>
+            </div>
+            <div class="tip-card">
+              Vet du inte vilket paket som passar? Beskriv bara verksamheten — rätt upplägg klarnar snabbt.
+            </div>
+            <div class="domain-card">
+              <strong>Kolla domännamn</strong>
+              <p>Skriv ett namn, så öppnas sökning hos Namecheap i ny flik.</p>
+              <form class="domain-form" id="domain-form">
+                <input id="domain-query" type="text" placeholder="mittforetag.se" />
+                <button type="submit">Kolla</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <a class="brand" href="#top">Drink<span>myte</span></a>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:6px">
+      <p style="margin:0">© 2026 Drinkmyte av Te Frederik Penson · Hemsidor för Göteborg och hela Sverige</p>
+      <div style="display:flex;gap:16px">
+        <button onclick="openModal('privacy')" style="background:none;border:none;padding:0;font-family:inherit;font-size:13px;color:var(--muted);cursor:pointer;text-decoration:underline;">Integritetspolicy</button>
+        <button onclick="openModal('tos')" style="background:none;border:none;padding:0;font-family:inherit;font-size:13px;color:var(--muted);cursor:pointer;text-decoration:underline;">Användarvillkor</button>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ── LEGAL MODALS ── -->
+<div id="legal-overlay" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(10,16,28,0.7);backdrop-filter:blur(6px);align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)closeModal()">
+  <div style="background:var(--paper);border-radius:24px;max-width:680px;width:100%;max-height:85vh;overflow-y:auto;box-shadow:0 32px 80px rgba(20,33,61,0.22);position:relative;">
+    <div style="position:sticky;top:0;background:var(--paper);border-bottom:1px solid rgba(20,33,61,0.08);padding:20px 28px;display:flex;align-items:center;justify-content:space-between;border-radius:24px 24px 0 0;">
+      <span id="modal-title" style="font-family:var(--font-display);font-size:1.3rem;font-weight:600;color:var(--ink);letter-spacing:-0.03em;"></span>
+      <button onclick="closeModal()" style="background:rgba(20,33,61,0.07);border:none;width:36px;height:36px;border-radius:50%;cursor:pointer;font-size:18px;color:var(--ink);display:flex;align-items:center;justify-content:center;">&#x2715;</button>
+    </div>
+    <div id="modal-body" style="padding:28px;font-size:14px;line-height:1.75;color:var(--text);"></div>
+  </div>
+</div>
+
+<script>
+const PRIVACY_CONTENT = `
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 · Ansvarig: Te Frederik Penson (Drinkmyte) · drinkmyte@gmail.com</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Vem ansvarar för dina uppgifter?</h3>
+<p>Te Frederik Penson, verksam under varumärket Drinkmyte, är personuppgiftsansvarig. Kontakt: drinkmyte@gmail.com.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Vilka uppgifter samlar vi in?</h3>
+<p><strong>Via kontaktformuläret:</strong> namn, e-post, verksamhetstyp, önskade funktioner, budget och projektbeskrivning. Lämnas frivilligt och används enbart för att besvara din förfrågan.</p>
+<p><strong>Via Google Analytics 4:</strong> anonymiserad besöksdata — sidvisningar, tid på sidan, ungefärlig geografisk plats, enhetstyp och trafikkälla. Ingen data kopplas till din identitet.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Varför behandlar vi uppgifterna?</h3>
+<p>Formulärdata behandlas med stöd av <strong>berättigat intresse</strong> för att besvara offertförfrågningar. Analysdata (Google Analytics) behandlas enbart med stöd av ditt <strong>samtycke</strong> — du väljer detta via cookie-bannern och kan när som helst återkalla ditt samtycke genom att rensa webbläsarens cookies.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Hur länge sparas uppgifterna?</h3>
+<p>E-postkorrespondens sparas i upp till 24 månader. Google Analytics-data lagras i 14 månader. Du kan begära radering när som helst.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Tredjeparter</h3>
+<p><strong>EmailJS</strong> — används för att skicka formulärdata som e-post. Datan transiteras via deras servrar men sparas inte. <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" style="color:var(--apricot)">EmailJS integritetspolicy →</a></p>
+<p><strong>Google Analytics 4</strong> — Google LLC, USA. Data kan överföras utanför EU/EES med stöd av standardavtalsklausuler. <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--apricot)">Googles integritetspolicy →</a></p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">6. Dina rättigheter (GDPR)</h3>
+<p>Du har rätt att begära tillgång till, rättelse eller radering av dina personuppgifter, samt rätt att invända mot behandlingen. Kontakta oss på drinkmyte@gmail.com — svar inom 30 dagar. Klagomål kan lämnas till <a href="https://www.imy.se" target="_blank" style="color:var(--apricot)">Integritetsskyddsmyndigheten (IMY)</a>.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Cookies</h3>
+<p>Google Analytics använder cookies för att särskilja besökare. Vi sätter inga analyticscookies förrän du har gett ditt samtycke via cookie-bannern. Du kan återkalla samtycket när som helst genom att rensa cookies i din webbläsare. Inga marknadsföringscookies eller tredjepartsspårning används i övrigt.</p>
+`;
+
+const TOS_CONTENT = `
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 &middot; Te Frederik Penson (Drinkmyte) &middot; drinkmyte@gmail.com</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Parter</h3>
+<p>Dessa villkor gäller mellan Te Frederik Penson, verksam under varumärket Drinkmyte ("vi", "oss"), och den kund ("du") som beställer en tjänst via drinkmyte.se eller via e-postkontakt.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Tjänster och priser</h3>
+<p>Vi erbjuder tre paket — Bas, Pro och Komplett — till de priser som anges på webbplatsen. Alla priser är riktpriser i SEK. Exakt pris fastställs i offert per projekt. Priser kan ändras med 30 dagars varsel för befintliga abonnemang.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Betalning</h3>
+<p><strong>Byggkostnad:</strong> faktureras vid projektstart. Arbetet påbörjas efter bekräftad betalning.<br><strong>Månadsabonnemang:</strong> faktureras månadsvis i förskott och täcker hosting, domän, DNS och support. Abonnemanget är obligatoriskt så länge sidan är live hos oss.<br><strong>Betalningshantering:</strong> Betalningar hanteras via <strong>Stripe</strong> (Stripe Payments Europe, Ltd.). Genom att genomföra en betalning godkänner du Stripes användarvillkor och integritetspolicy (<a href="https://stripe.com/se/privacy" target="_blank" style="color:var(--apricot)">stripe.com/se/privacy →</a>). Drinkmyte lagrar aldrig kortuppgifter — dessa hanteras uteslutande av Stripe på ett PCI DSS-certifierat sätt. Vid månatlig debitering ger du Stripe rätt att belasta ditt betalningsmedel tills abonnemanget sägs upp enligt punkt 8.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Leverans och revisioner</h3>
+<p>Första version levereras inom 1–5 arbetsdagar beroende på paket och briefingens kvalitet. Varje projekt inkluderar <strong>en (1) revisionsrunda</strong> utan extra kostnad. Löpande <strong>små innehållsuppdateringar</strong> (t.ex. uppdatera text, byta bild, ändra öppettider) ingår i månadsabonnemanget utan extra kostnad. Mer omfattande ändringar — såsom nya sektioner, ny funktionalitet eller omdesign — debiteras separat och offerteras i förväg.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Kundens ansvar</h3>
+<p>Du ansvarar för att tillhandahålla korrekt innehåll (texter, bilder, logotyp) i rimlig tid. Försenat material kan påverka leveranstiden. Du ansvarar för att material inte gör intrång i tredje parts upphovsrätt.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">6. Äganderätt</h3>
+<p>Koden och designen förblir Drinkmytes egendom tills full betalning mottagits. Efter slutbetalning övergår nyttjanderätten till kunden. Vi förbehåller oss rätten att visa projektet i vår portfolio om inte annat avtalats skriftligen.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Support och svarstid</h3>
+<p>Support sker via e-post (drinkmyte@gmail.com). Vi strävar efter att svara inom <strong>3 arbetsdagar</strong> för alla paket. Support täcker frågor om din befintliga sida och mindre innehållsuppdateringar. Större ändringar debiteras separat.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">8. Uppsägning</h3>
+<p>Du kan säga upp abonnemanget med <strong>30 dagars skriftlig varsel</strong> via e-post. Sidan tas offline vid periodens slut. Byggkostnaden återbetalas inte. Vi förbehåller oss rätten att avsluta abonnemanget om betalning uteblir efter påminnelse.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">9. Ansvarsbegränsning</h3>
+<p>Drinkmyte ansvarar inte för indirekta förluster, utebliven vinst eller skador till följd av driftstopp, tekniska fel hos tredjepartsleverantörer eller force majeure. Vårt totala ansvar är begränsat till det belopp kunden betalat under de senaste 3 månaderna.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">10. Tillämplig lag</h3>
+<p>Dessa villkor regleras av svensk lag. Tvister avgörs i första hand genom förhandling, i andra hand av allmän domstol med Göteborgs tingsrätt som första instans.</p>
+`;
+
+function openModal(type) {
+  const overlay = document.getElementById('legal-overlay');
+  document.getElementById('modal-title').textContent = type === 'privacy' ? 'Integritetspolicy' : 'Användarvillkor';
+  document.getElementById('modal-body').innerHTML = type === 'privacy' ? PRIVACY_CONTENT : TOS_CONTENT;
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  gtag('event', 'legal_modal_open', { type: type });
+}
+function closeModal() {
+  document.getElementById('legal-overlay').style.display = 'none';
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+</script>
+
+<script>
+// ═══════════════════════════════════════════════════
+// EMAILJS — KONTAKTFORMULÄR
+// Ersätt dessa tre värden med dina riktiga ID:n (se <head> för instruktioner)
+// ═══════════════════════════════════════════════════
+const EMAILJS_SERVICE_ID  = 'service_q7vufim';   // EmailJS → Email Services → ditt tjänst-ID
+const EMAILJS_TEMPLATE_ID = 'template_6i09csd';  // EmailJS → Email Templates → ditt mall-ID
+const EMAILJS_PUBLIC_KEY  = 'DpeZ9IZHsvSxIroyM';   // EmailJS → Account → API Keys → Public Key
+
+document.getElementById('contact-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const f = new FormData(this);
+  const features = [...this.querySelectorAll('input[name="features"]:checked')].map(el => el.value).join(', ') || 'Inga valda';
+  const submitBtn = this.querySelector('button[type="submit"]');
+
+  // Disable button while sending
+  submitBtn.disabled = true;
+  submitBtn.textContent = 'Skickar…';
+
+  const templateParams = {
+    from_name:  f.get('name')    || '',
+    from_email: f.get('email')   || '',
+    biz_type:   f.get('bizType') || '—',
+    features:   features,
+    feel:       f.get('feel')    || '—',
+    budget:     f.get('budget')  || '—',
+    content:    f.get('content') || '—',
+    audience:   f.get('audience')|| '—',
+    domain:     f.get('domain')  || 'Ej angivet',
+    message:    f.get('message') || ''
+  };
+
+  emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams, EMAILJS_PUBLIC_KEY)
+    .then(() => {
+      // ── GA4: Lyckad formulärinlämning (konvertering)
+      gtag('event', 'form_submit_success', {
+        event_category: 'contact',
+        event_label: templateParams.budget || 'ingen budget vald',
+        biz_type: templateParams.biz_type
+      });
+      // Mark conversion
+      gtag('event', 'conversion', { send_to: 'G-KP8Y3EQEKJ' });
+
+      submitBtn.textContent = '✓ Skickat! Vi hör av oss inom 24 h.';
+      submitBtn.style.background = '#1a7a4a';
+      this.reset();
+      setTimeout(() => {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Öppna mejlutkast →';
+        submitBtn.style.background = '';
+      }, 6000);
+    })
+    .catch((err) => {
+      console.error('EmailJS error:', err);
+      // ── GA4: Misslyckad formulärinlämning
+      gtag('event', 'form_submit_error', { event_category: 'contact', error: JSON.stringify(err) });
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Något gick fel — försök igen';
+      submitBtn.style.background = '#c0392b';
+      setTimeout(() => {
+        submitBtn.textContent = 'Öppna mejlutkast →';
+        submitBtn.style.background = '';
+      }, 5000);
+    });
+});
+
+// ═══════════════════════════════════════════════════
+// GA4 — CTA-KLICK-SPÅRNING
+// Spårar vilka knappar besökare klickar på.
+// Du ser detta i GA4 under: Rapporter → Engagemang → Händelser
+// ═══════════════════════════════════════════════════
+function trackCta(label, section) {
+  gtag('event', 'cta_click', {
+    event_category: 'cta',
+    event_label: label,
+    section: section
+  });
+}
+
+// Hero-knappar
+document.querySelectorAll('.hero-actions .btn').forEach(btn => {
+  btn.addEventListener('click', () => trackCta(btn.textContent.trim(), 'hero'));
+});
+
+// Nav CTA
+document.querySelectorAll('.nav-cta').forEach(btn => {
+  btn.addEventListener('click', () => trackCta('nav_cta', 'header'));
+});
+
+// Priskort-knappar
+document.querySelectorAll('.price-card .btn').forEach(btn => {
+  const card = btn.closest('.price-card');
+  const tier = card ? (card.querySelector('.price-badge')?.textContent.trim() || 'okänt') : 'okänt';
+  btn.addEventListener('click', () => trackCta('pricing_' + tier, 'pricing'));
+});
+
+// Portfolio-knappar
+document.querySelectorAll('.portfolio-actions .btn').forEach(btn => {
+  btn.addEventListener('click', () => trackCta(btn.textContent.trim(), 'portfolio'));
+});
+
+// ═══════════════════════════════════════════════════
+// GA4 — SCROLL-DJUP
+// Spårar hur långt besökare scrollar (25 / 50 / 75 / 100%).
+// Syns i GA4 under: Rapporter → Engagemang → Händelser → scroll_depth
+// ═══════════════════════════════════════════════════
+const scrollMilestones = new Set();
+window.addEventListener('scroll', () => {
+  const scrolled = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+  [25, 50, 75, 100].forEach(pct => {
+    if (scrolled >= pct && !scrollMilestones.has(pct)) {
+      scrollMilestones.add(pct);
+      gtag('event', 'scroll_depth', { event_category: 'engagement', depth_percent: pct });
+    }
+  });
+}, { passive: true });
+
+// ═══════════════════════════════════════════════════
+// GA4 — SEKTIONSVISNINGAR
+// Spårar när besökare scrollar till viktiga sektioner.
+// Syns i GA4 under: Rapporter → Engagemang → Händelser → section_view
+// ═══════════════════════════════════════════════════
+const sectionObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      gtag('event', 'section_view', {
+        event_category: 'engagement',
+        section_id: e.target.id || e.target.className.split(' ')[0]
+      });
+      sectionObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.35 });
+['#pricing', '#contact', '#portfolio', '#services'].forEach(sel => {
+  const el = document.querySelector(sel);
+  if (el) sectionObs.observe(el);
+});
+
+// ── DOMAIN FORM ──
+document.getElementById('domain-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const q = document.getElementById('domain-query').value.trim();
+  if (!q) return;
+  const clean = q.replace(/^https?:\/\//, '').replace(/^www\./, '').replace(/\/.*$/, '');
+  window.open('https://www.namecheap.com/domains/registration/results/?domain=' + encodeURIComponent(clean), '_blank', 'noopener');
+});
+
+// ── SCROLL REVEAL ──
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.07 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+// ── ANIMATE BARS ──
+function animateBars(container) {
+  container.querySelectorAll('.bar-fill').forEach(bar => {
+    const w = bar.dataset.width;
+    bar.style.width = w + '%';
+  });
+}
+
+// ── DONUT ──
+function animateDonut() {
+  const mobile = document.getElementById('donut-mobile');
+  const tablet = document.getElementById('donut-tablet');
+  if (mobile) {
+    mobile.style.transition = 'stroke-dasharray 1.2s cubic-bezier(0.23,1,0.32,1)';
+    mobile.setAttribute('stroke-dasharray', '58 42');
+  }
+  if (tablet) {
+    tablet.style.transition = 'stroke-dasharray 1.2s cubic-bezier(0.23,1,0.32,1) 0.3s';
+    tablet.setAttribute('stroke-dasharray', '2 98');
+  }
+}
+
+// ── TREND CHART ──
+function drawTrend() {
+  const points = [
+    [0, 72], [28, 68], [56, 60], [84, 48], [112, 38], [140, 28], [168, 20], [196, 14], [224, 10], [252, 7], [280, 4]
+  ];
+  const line = document.getElementById('trend-line');
+  const area = document.getElementById('trend-area');
+  if (!line) return;
+  const d = points.map((p, i) => (i === 0 ? `M${p[0]},${p[1]}` : `L${p[0]},${p[1]}`)).join(' ');
+  const areaD = `M${points[0][0]},75 ` + points.map(p => `L${p[0]},${p[1]}`).join(' ') + ` L280,75 Z`;
+  line.setAttribute('d', d);
+  area.setAttribute('d', areaD);
+}
+drawTrend();
+
+// Fire chart animations when the why section is visible
+const whyObs = new IntersectionObserver(entries => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      animateBars(e.target);
+      animateDonut();
+      whyObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.15 });
+const whySec = document.querySelector('.why-section');
+if (whySec) whyObs.observe(whySec);
+</script>
+<!-- LIGHTBOX -->
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true">
+  <span class="lightbox-close" id="lightbox-close" aria-label="Stäng">✕</span>
+  <img class="lightbox-img" id="lightbox-img" src="" alt=""/>
+</div>
+
+<script>
+// ── LIGHTBOX ──
+const overlay = document.getElementById('lightbox');
+const lbImg   = document.getElementById('lightbox-img');
+const lbClose = document.getElementById('lightbox-close');
+
+function openLightbox(src, alt) {
+  lbImg.src = src;
+  lbImg.alt = alt || '';
+  overlay.classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  overlay.classList.remove('open');
+  document.body.style.overflow = '';
+  setTimeout(() => { lbImg.src = ''; }, 300);
+}
+
+// Attach to all zoomable images
+document.querySelectorAll('.portfolio-shot img, .concept-card img, img[data-full]').forEach(img => {
+  img.addEventListener('click', () => openLightbox(img.dataset.full || img.src, img.alt));
+});
+
+overlay.addEventListener('click', (e) => { if (e.target === overlay) closeLightbox(); });
+lbClose.addEventListener('click', closeLightbox);
+document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeLightbox(); });
+</script>
+
+<!-- ── COOKIE BANNER ── -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:24px;left:50%;transform:translateX(-50%);z-index:300;width:min(660px,calc(100vw - 32px));background:var(--ink);color:#fff;border-radius:18px;padding:20px 24px;box-shadow:0 16px 48px rgba(0,0,0,0.3);align-items:center;gap:14px;flex-wrap:wrap;">
+  <p style="margin:0;font-size:13px;color:rgba(255,255,255,0.8);flex:1;min-width:200px">Vi använder Google Analytics för att förstå hur besökare använder sidan. Inga uppgifter säljs eller delas i marknadsföringssyfte. <button onclick="openModal('privacy')" style="background:none;border:none;padding:0;color:var(--gold);font:inherit;font-size:13px;cursor:pointer;text-decoration:underline;">Läs mer</button></p>
+  <div style="display:flex;gap:10px;flex-shrink:0">
+    <button id="cookie-decline" style="padding:9px 20px;border-radius:999px;border:1.5px solid rgba(255,255,255,0.25);background:transparent;color:rgba(255,255,255,0.7);font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;">Neka</button>
+    <button id="cookie-accept" style="padding:9px 20px;border-radius:999px;border:0;background:var(--apricot);color:#fff;font-family:inherit;font-size:13px;font-weight:700;cursor:pointer;white-space:nowrap;">Godkänn</button>
+  </div>
+</div>
+
+<script>
+(function () {
+  var consent = localStorage.getItem('dm_cookie_consent');
+  var banner  = document.getElementById('cookie-banner');
+
+  function enableAnalytics() {
+    gtag('consent', 'update', { analytics_storage: 'granted' });
+    gtag('event', 'page_view');
+  }
+
+  if (consent === 'accepted') {
+    enableAnalytics();
+  } else if (consent !== 'declined') {
+    setTimeout(function () { banner.style.display = 'flex'; }, 1200);
+  }
+
+  document.getElementById('cookie-accept').addEventListener('click', function () {
+    localStorage.setItem('dm_cookie_consent', 'accepted');
+    banner.style.display = 'none';
+    enableAnalytics();
+  });
+
+  document.getElementById('cookie-decline').addEventListener('click', function () {
+    localStorage.setItem('dm_cookie_consent', 'declined');
+    banner.style.display = 'none';
+  });
+})();
+</script>
+
+</body>
+</html>
