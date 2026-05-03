@@ -979,6 +979,18 @@ main section { padding: 60px 0; }
 }
 .field select option { background: var(--ink); }
 .field select { appearance: none; cursor: pointer; }
+.field.has-error input, .field.has-error select, .field.has-error textarea {
+  border-color: #e05252;
+  background: rgba(224,82,82,0.08);
+}
+.field-error-msg {
+  display: none;
+  font-size: 11px;
+  color: #f08080;
+  margin-top: 5px;
+  font-weight: 600;
+}
+.field.has-error .field-error-msg { display: block; }
 
 /* Checkbox group */
 .check-group {
@@ -1146,19 +1158,19 @@ main section { padding: 60px 0; }
   left: 50%;
   transform: translateX(-50%);
   z-index: 300;
-  width: min(660px, calc(100vw - 32px));
+  width: min(780px, calc(100vw - 32px));
   background: var(--ink);
   color: #fff;
   border-radius: 18px;
-  padding: 20px 24px;
+  padding: 26px 32px;
   box-shadow: 0 16px 48px rgba(0,0,0,0.3);
   align-items: center;
-  gap: 14px;
+  gap: 18px;
   flex-wrap: wrap;
 }
 .cookie-banner p {
   margin: 0;
-  font-size: 13px;
+  font-size: 15px;
   color: rgba(255,255,255,0.82);
   flex: 1;
   min-width: 200px;
@@ -1811,6 +1823,15 @@ main section { padding: 60px 0; }
               <div class="field">
                 <label for="email">E-post *</label>
                 <input id="email" name="email" type="email" placeholder="du@exempel.se" required />
+                <span class="field-error-msg" id="email-error">Ange en giltig e-postadress, t.ex. namn@domän.se</span>
+              </div>
+            </div>
+
+            <div class="field-row">
+              <div class="field">
+                <label for="phone">Telefon (valfritt)</label>
+                <input id="phone" name="phone" type="tel" placeholder="070 123 45 67" autocomplete="tel" />
+                <span class="field-error-msg" id="phone-error">Ange ett giltigt telefonnummer, t.ex. 070 123 45 67</span>
               </div>
             </div>
 
@@ -1902,6 +1923,7 @@ main section { padding: 60px 0; }
             </div>
 
             <button class="btn btn-apricot" type="submit" style="width:100%;min-height:48px;font-size:15px">Skicka meddelande →</button>
+            <p style="margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.5">Genom att skicka formuläret godkänner du våra <button type="button" onclick="openLegalModal('terms')" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Användarvillkor</button> och bekräftar att du har läst vår <button type="button" onclick="openLegalModal('privacy')" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Integritetspolicy</button>.</p>
           </form>
 
           <div class="contact-sidebar">
@@ -2047,28 +2069,43 @@ const PRIVACY_CONTENT = `
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Vem ansvarar för dina uppgifter?</h3>
 <p>Te Frederik Penson, verksam under varumärket Drinkmyte, är personuppgiftsansvarig. Kontakt: drinkmyte@gmail.com.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Vilka uppgifter samlar vi in?</h3>
-<p><strong>Via kontaktformuläret:</strong> namn, e-post, verksamhetstyp, önskade funktioner, budget och projektbeskrivning. De används bara för att besvara din förfrågan.</p>
-<p><strong>Via Google Analytics 4:</strong> anonymiserad besöksdata som sidvisningar, tid på sidan, ungefärlig geografisk plats, enhetstyp och trafikkälla. Ingen data kopplas till din identitet.</p>
+<p><strong>Via kontaktformuläret:</strong> namn, e-post, verksamhetstyp, önskade funktioner, budget och projektbeskrivning. Lämnas frivilligt och används enbart för att besvara din förfrågan.</p>
+<p><strong>Via Google Analytics 4:</strong> anonymiserad besöksdata — sidvisningar, tid på sidan, ungefärlig geografisk plats, enhetstyp och trafikkälla. Ingen data kopplas till din identitet.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Varför behandlar vi uppgifterna?</h3>
-<p>Formulärdata behandlas med stöd av berättigat intresse för att besvara offertförfrågningar. Analysdata behandlas bara efter ditt samtycke.</p>
-<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Tredjeparter</h3>
-<p><strong>EmailJS</strong> används för att skicka formulärdata som e-post. <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--apricot)">EmailJS integritetspolicy</a></p>
-<p><strong>Google Analytics 4</strong> används endast efter godkännande. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--apricot)">Googles integritetspolicy</a></p>
-<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Dina rättigheter</h3>
-<p>Du kan begära tillgång till, rättelse eller radering av dina uppgifter genom att mejla drinkmyte@gmail.com.</p>
+<p>Formulärdata behandlas med stöd av <strong>berättigat intresse</strong> för att besvara offertförfrågningar. Analysdata (Google Analytics) behandlas enbart med stöd av ditt <strong>samtycke</strong> — du väljer detta via cookie-bannern och kan när som helst återkalla ditt samtycke genom att rensa webbläsarens cookies.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Hur länge sparas uppgifterna?</h3>
+<p>E-postkorrespondens sparas i upp till 24 månader. Google Analytics-data lagras i 14 månader. Du kan begära radering när som helst.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Tredjeparter</h3>
+<p><strong>EmailJS</strong> — används för att skicka formulärdata som e-post. Datan transiteras via deras servrar men sparas inte. <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--apricot)">EmailJS integritetspolicy →</a></p>
+<p><strong>Google Analytics 4</strong> — Google LLC, USA. Data kan överföras utanför EU/EES med stöd av standardavtalsklausuler. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--apricot)">Googles integritetspolicy →</a></p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">6. Dina rättigheter (GDPR)</h3>
+<p>Du har rätt att begära tillgång till, rättelse eller radering av dina personuppgifter, samt rätt att invända mot behandlingen. Kontakta oss på drinkmyte@gmail.com — svar inom 30 dagar. Klagomål kan lämnas till <a href="https://www.imy.se" target="_blank" rel="noopener" style="color:var(--apricot)">Integritetsskyddsmyndigheten (IMY)</a>.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Cookies</h3>
+<p>Google Analytics använder cookies för att särskilja besökare. Vi sätter inga analyticscookies förrän du har gett ditt samtycke via cookie-bannern. Du kan återkalla samtycket när som helst genom att rensa cookies i din webbläsare. Inga marknadsföringscookies eller tredjepartsspårning används i övrigt.</p>
 `;
 const TERMS_CONTENT = `
-<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 · Te Frederik Penson (Drinkmyte) · drinkmyte@gmail.com</p>
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 &middot; Te Frederik Penson (Drinkmyte) &middot; drinkmyte@gmail.com</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Parter</h3>
-<p>Dessa villkor gäller mellan Drinkmyte och den kund som beställer en tjänst via webbplatsen eller via e-postkontakt.</p>
+<p>Dessa villkor gäller mellan Te Frederik Penson, verksam under varumärket Drinkmyte ("vi", "oss"), och den kund ("du") som beställer en tjänst via drinkmyte.com eller via e-postkontakt.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Tjänster och priser</h3>
-<p>Paketen Bas, Pro och Komplett är riktpriser i SEK. Exakt pris fastställs per projekt i offert.</p>
+<p>Vi erbjuder tre paket — Bas, Pro och Komplett — till de priser som anges på webbplatsen. Alla priser är riktpriser i SEK. Exakt pris fastställs i offert per projekt. Priser kan ändras med 30 dagars varsel för befintliga abonnemang.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Betalning</h3>
-<p>Byggkostnad faktureras vid projektstart. Månadsabonnemang faktureras i förskott och täcker hosting, domän, DNS och support.</p>
-<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Leverans och support</h3>
-<p>Första version levereras normalt inom 1–5 arbetsdagar beroende på paket och briefing. En revisionsrunda ingår.</p>
-<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Uppsägning</h3>
-<p>Du kan säga upp abonnemanget med 30 dagars skriftligt varsel via e-post. Byggkostnaden återbetalas inte.</p>
+<p><strong>Byggkostnad:</strong> faktureras vid projektstart. Arbetet påbörjas efter bekräftad betalning.<br><strong>Månadsabonnemang:</strong> faktureras månadsvis i förskott och täcker hosting, domän, DNS och support. Abonnemanget är obligatoriskt så länge sidan är live hos oss.<br><strong>Betalningshantering:</strong> Betalningar hanteras via <strong>Stripe</strong> (Stripe Payments Europe, Ltd.). Genom att genomföra en betalning godkänner du Stripes användarvillkor och integritetspolicy (<a href="https://stripe.com/se/privacy" target="_blank" rel="noopener" style="color:var(--apricot)">stripe.com/se/privacy →</a>). Drinkmyte lagrar aldrig kortuppgifter — dessa hanteras uteslutande av Stripe på ett PCI DSS-certifierat sätt. Vid månatlig debitering ger du Stripe rätt att belasta ditt betalningsmedel tills abonnemanget sägs upp enligt punkt 8.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Leverans och revisioner</h3>
+<p>Första version levereras inom 1–5 arbetsdagar beroende på paket och briefingens kvalitet. Varje projekt inkluderar <strong>en (1) revisionsrunda</strong> utan extra kostnad. Löpande <strong>små innehållsuppdateringar</strong> (t.ex. uppdatera text, byta bild, ändra öppettider) ingår i månadsabonnemanget utan extra kostnad. Mer omfattande ändringar — såsom nya sektioner, ny funktionalitet eller omdesign — debiteras separat och offerteras i förväg.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Kundens ansvar</h3>
+<p>Du ansvarar för att tillhandahålla korrekt innehåll (texter, bilder, logotyp) i rimlig tid. Försenat material kan påverka leveranstiden. Du ansvarar för att material inte gör intrång i tredje parts upphovsrätt.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">6. Äganderätt</h3>
+<p>Koden och designen förblir Drinkmytes egendom tills full betalning mottagits. Efter slutbetalning övergår nyttjanderätten till kunden. Vi förbehåller oss rätten att visa projektet i vår portfolio om inte annat avtalats skriftligen.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Support och svarstid</h3>
+<p>Support sker via e-post (drinkmyte@gmail.com). Vi strävar efter att svara inom <strong>3 arbetsdagar</strong> för alla paket. Support täcker frågor om din befintliga sida och mindre innehållsuppdateringar. Större ändringar debiteras separat.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">8. Uppsägning</h3>
+<p>Du kan säga upp abonnemanget med <strong>30 dagars skriftlig varsel</strong> via e-post. Sidan tas offline vid periodens slut. Byggkostnaden återbetalas inte. Vi förbehåller oss rätten att avsluta abonnemanget om betalning uteblir <strong>14 dagar</strong> efter skriftlig påminnelse.</p>
+<p>Vid uppsägning levererar Drinkmyte samtliga kundens filer — HTML-kod och bilder — via e-post eller nedladdningslänk inom <strong>7 arbetsdagar</strong> från avtalets slut. Kunden äger rätt att ta över och driftsätta sidan hos valfri annan leverantör. Drinkmyte behåller rätten att använda projektet i sin portfolio om inte annat avtalats skriftligen.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">9. Ansvarsbegränsning</h3>
+<p>Drinkmyte ansvarar inte för indirekta förluster, utebliven vinst eller skador till följd av driftstopp, tekniska fel hos tredjepartsleverantörer eller force majeure. Vårt totala ansvar är begränsat till det belopp kunden betalat under de senaste 3 månaderna.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">10. Tillämplig lag</h3>
+<p>Dessa villkor regleras av svensk lag. Tvister avgörs i första hand genom förhandling, i andra hand av allmän domstol med Göteborgs tingsrätt som första instans.</p>
 `;
 
 const openLegalModal = (type) => {
@@ -2145,6 +2182,36 @@ if (contactForm) {
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (!submitButton) return;
 
+    // — Validation —
+    const emailInput = contactForm.querySelector('#email');
+    const phoneInput = contactForm.querySelector('#phone');
+    const emailField = emailInput?.closest('.field');
+    const phoneField = phoneInput?.closest('.field');
+    const emailVal = (emailInput?.value || '').trim();
+    const phoneVal = (phoneInput?.value || '').trim();
+
+    // Proper email: something@something.tld (tld ≥ 2 chars, no spaces)
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(emailVal);
+    // Phone: optional — allow empty, but if filled must be a plausible number
+    // Accepts Swedish formats: 07x, +46, 08, (0x) etc. Strips spaces/dashes/parens
+    const phoneDigits = phoneVal.replace(/[\s\-().+]/g, '');
+    const phoneOk = phoneVal === '' || (/^\d{7,15}$/.test(phoneDigits));
+
+    let hasError = false;
+    if (!emailOk) {
+      emailField?.classList.add('has-error');
+      hasError = true;
+    } else {
+      emailField?.classList.remove('has-error');
+    }
+    if (!phoneOk) {
+      phoneField?.classList.add('has-error');
+      hasError = true;
+    } else {
+      phoneField?.classList.remove('has-error');
+    }
+    if (hasError) return;
+
     const originalLabel = submitButton.dataset.originalLabel || submitButton.textContent;
     submitButton.dataset.originalLabel = originalLabel;
 
@@ -2156,6 +2223,7 @@ if (contactForm) {
     const templateParams = {
       from_name: formData.get("name") || "",
       from_email: formData.get("email") || "",
+      phone: formData.get("phone") || "—",
       biz_type: formData.get("bizType") || "—",
       features: selectedFeatures,
       feel: formData.get("feel") || "—",
@@ -2174,6 +2242,7 @@ if (contactForm) {
         submitButton.textContent = "Skickat! Vi hör av oss inom 24 h.";
         submitButton.style.background = "#1a7a4a";
         contactForm.reset();
+        contactForm.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
         window.setTimeout(() => {
           submitButton.disabled = false;
           submitButton.textContent = originalLabel;
