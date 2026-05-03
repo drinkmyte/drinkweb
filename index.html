@@ -69,8 +69,94 @@
      6. Klistra in det på BÅDA ställena nedan (ersätt G-KP8Y3EQEKJ)
 ════════════════════════════════════════════════════ -->
 <!-- GA4 — analytics blockeras tills besökaren ger samtycke -->
-<script>
-  window.dataLayer = window.dataLayer || [];
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Vad kostar en hemsida hos Drinkmyte?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Det beror på vad du behöver. En enkel landningssida börjar runt 899 kr i byggkostnad plus 299 kr i månaden. En mer genomarbetad sida med flera sidor, galleri och bokningssystem landar runt 3 199 kr plus 849 kr/mån."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Hur lång tid tar det att bygga en hemsida?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "3 till 5 arbetsdagar från att vi fått allt vi behöver. Det förutsätter att du fyllt i intaget ordentligt med bilder, texter och övrig info."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Varför måste jag betala månadsavgift?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Avgiften täcker hosting, domän, DNS-hantering och support. Det ingår också små innehållsuppdateringar så du slipper kontakta en byrå för att ändra ett telefonnummer."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Jobbar ni bara i Göteborg?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Vi är baserade i Göteborg men tar distansprojekt från hela Sverige. Allting sköts digitalt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Vad händer om jag vill avsluta?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Du säger upp med 30 dagars varsel via mejl. Du får alla filer levererade inom 7 arbetsdagar så du kan ta över och hosta sidan var du vill."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "Webbdesign och webbutveckling",
+  "provider": {
+    "@type": "ProfessionalService",
+    "name": "Drinkmyte",
+    "url": "https://drinkmyte.com"
+  },
+  "areaServed": { "@type": "Country", "name": "Sverige" },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Webbpaket",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Bas",
+        "description": "1-sidig landningssida med kontaktformulär, mobilanpassning och grundläggande SEO.",
+        "price": "899",
+        "priceCurrency": "SEK"
+      },
+      {
+        "@type": "Offer",
+        "name": "Pro",
+        "description": "Upp till 5 sidor, bildgalleri, Google Maps, Analytics och anpassad metadata.",
+        "price": "1799",
+        "priceCurrency": "SEK"
+      },
+      {
+        "@type": "Offer",
+        "name": "Komplett",
+        "description": "Upp till 10 sidor, animationer, bokningsembed, Instagram-embed och prioriterad support.",
+        "price": "3199",
+        "priceCurrency": "SEK"
+      }
+    ]
+  }
+}
+</script>
   function gtag(){dataLayer.push(arguments);}
   gtag('consent', 'default', { analytics_storage: 'denied' });
 </script>
@@ -1012,6 +1098,7 @@ main section { padding: 60px 0; }
       <li><a href="#portfolio">Portfolio</a></li>
       <li><a href="#services">Tjänster</a></li>
       <li><a href="#pricing">Priser</a></li>
+      <li><a href="#faq">FAQ</a></li>
       <li><a href="#contact">Kontakt</a></li>
     </ul>
     <a class="btn btn-primary nav-cta" href="#contact">Starta projekt</a>
@@ -1027,7 +1114,7 @@ main section { padding: 60px 0; }
         <div>
           <div class="eyebrow hero-eyebrow">Webbyrå i Göteborg — distansprojekt välkomna</div>
           <h1>Seriös<br>känsla.<br><em>Riktig</em> sida.</h1>
-          <p class="hero-sub">Drinkmyte är en webbyrå i Göteborg som bygger hemsidor som faktiskt hjälper verksamheter att synas, växa och litas på — oavsett bransch.</p>
+          <p class="hero-sub">Drinkmyte är en webbyrå i Göteborg. Vi bygger hemsidor för företag som vill tas på allvar på nätet, oavsett bransch.</p>
           <div class="hero-actions">
             <a class="btn btn-apricot" href="#contact">Berätta om ditt företag</a>
             <a class="btn btn-secondary" href="#portfolio">Se vårt arbete</a>
@@ -1051,27 +1138,27 @@ main section { padding: 60px 0; }
         <aside class="hero-card">
           <div class="mini-label">Om Drinkmyte</div>
           <h2>Drinkmyte är en webbyrå driven av Te Penson.</h2>
-          <p>En webbyrå behöver inte vara ett stort kontor med tio anställda. Målet är hemsidor som känns premium utan att bli opersonliga — tydliga, snygga och enkla att lita på.</p>
+          <p>Ingen stor byrå med tio anställda och långa ledtider. Bara bra hemsidor, snabbt levererade, till ett pris som faktiskt funkar för småföretag.</p>
           <ul class="hero-list">
             <li>
               <div class="hero-marker"></div>
               <div>
                 <strong>Rätt första känsla</strong>
-                <span>Besökaren förstår snabbt att företaget är seriöst och aktivt.</span>
+                <span>Folk bestämmer sig om 3 sekunder. Besökaren ska direkt förstå att det här företaget är seriöst.</span>
               </div>
             </li>
             <li>
               <div class="hero-marker"></div>
               <div>
-                <strong>Gjort för verkliga kunder</strong>
-                <span>Kontakt, öppettider och erbjudanden är alltid enkla att hitta.</span>
+                <strong>Gjort för riktiga kunder</strong>
+                <span>Öppettider, kontakt och erbjudanden ska vara lätta att hitta, inte begravda i en undermeny.</span>
               </div>
             </li>
             <li>
               <div class="hero-marker"></div>
               <div>
                 <strong>Lokal fördel</strong>
-                <span>Vår webbyrå är perfekt för Göteborg-baserade verksamheter som vill synas starkare.</span>
+                <span>Vår webbyrå känner Göteborg. Vi vet vad lokala kunder letar efter och hur man syns för dem.</span>
               </div>
             </li>
           </ul>
@@ -1272,32 +1359,32 @@ main section { padding: 60px 0; }
         <article class="service-card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="m12 20 7-7"/><path d="m14 4 6 6-10 10H4v-6L14 4Z"/></svg></div>
           <h3>Design som känns din</h3>
-          <p>Typografi, färger och layout anpassas efter hur ditt företag ska upplevas av dina kunder.</p>
+          <p>Typsnitt, färger och layout väljs utifrån ditt företag, inte från en mall vi återanvänder varje vecka.</p>
         </article>
         <article class="service-card reveal reveal-d1">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-8"/><path d="M22 20H2"/></svg></div>
           <h3>SEO-grund från start</h3>
-          <p>Rubriker, metadata, alt-texter och lokal relevans — strukturerat rätt från dag ett.</p>
+          <p>Rubriker, metadata och lokal relevans struktureras rätt från dag ett, så du inte behöver betala för att fixa det efteråt.</p>
         </article>
         <article class="service-card reveal reveal-d2">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg></div>
-          <h3>Texter som är tydliga</h3>
-          <p>Budskapet ska vara lätt att fatta för din kund, inte bara snyggt formulerat internt.</p>
+          <h3>Text som faktiskt kommunicerar</h3>
+          <p>Det ska vara lätt att fatta vad du erbjuder. Inte imponerande, inte fluffigt, bara tydligt.</p>
         </article>
         <article class="service-card reveal">
           <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg></div>
-          <h3>Lansering och publicering</h3>
-          <p>Domän, hosting och sista detaljer — sidan går live utan att du behöver tänka på det.</p>
+          <h3>Lansering utan huvudvärk</h3>
+          <p>Domän, hosting och sista detaljer hanteras av oss. Du godkänner sidan, vi publicerar den.</p>
         </article>
         <article class="service-card reveal reveal-d1">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8"/><path d="M1 10 12 15 23 10"/><path d="M3 6h18"/></svg></div>
           <h3>Kontaktvägar som funkar</h3>
-          <p>Formulär, knappar och CTA-delar ska vara omöjliga att missa — och enkla att använda.</p>
+          <p>Formulär och knappar placeras där kunderna faktiskt letar efter dem, inte bara längst ner på sidan.</p>
         </article>
         <article class="service-card reveal reveal-d2">
           <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V7l-8-4Z"/></svg></div>
           <h3>Drift och support</h3>
-          <p>Löpande uppdateringar, tillägg och support ingår i abonnemanget — du slipper oroa dig.</p>
+          <p>Abonnemanget täcker hosting, uppdateringar och support. Inget du behöver hålla koll på själv.</p>
         </article>
       </div>
     </div>
@@ -1307,30 +1394,30 @@ main section { padding: 60px 0; }
   <section class="process-section" id="process">
     <div class="shell">
       <p class="section-label">Process</p>
-      <h2 class="section-title">Från idé till live —<br>på <em>3–5 arbetsdagar.</em></h2>
-      <p class="section-sub">En effektiv process där vi samlar in rätt information från start, så att vi minimerar onödiga fram-och-tillbaka-mejl.</p>
+      <h2 class="section-title">Från idé till live<br>på <em>3–5 arbetsdagar.</em></h2>
+      <p class="section-sub">Vi ber dig fylla i ett ordentligt formulär i starten, så slipper vi skicka mejl fram och tillbaka om saker vi borde ha frågat från början.</p>
 
       <div class="process-grid" style="margin-top:28px">
         <article class="step reveal">
           <div class="step-num">1</div>
           <h3>Detaljerat intag</h3>
-          <p>Du fyller i ett strukturerat formulär som täcker allt — design, funktioner, innehåll och målgrupp. Ju mer du berättar, desto snabbare går det.</p>
+          <p>Du fyller i ett formulär som täcker design, innehåll, funktioner och målgrupp. Ju mer du berättar, desto bättre blir resultatet.</p>
         </article>
         <article class="step step-highlight reveal reveal-d1">
           <div class="step-num">2</div>
-          <h3>Vi bygger — som en riktig webbyrå</h3>
-          <p>Baserat på ditt formulär påbörjar vi direkt. Första versionen visas inom 1–2 arbetsdagar.</p>
+          <h3>Vi bygger</h3>
+          <p>Vi sätter igång direkt utifrån ditt formulär. Första versionen brukar vara klar inom 1–2 arbetsdagar.</p>
           <div class="step-badge">3–5 arbetsdagar</div>
         </article>
         <article class="step reveal reveal-d2">
           <div class="step-num">3</div>
-          <h3>Feedback & justering</h3>
-          <p>Du ser sidan, ger feedback i en runda. Vi justerar och förfinar utifrån dina kommentarer.</p>
+          <h3>Feedback och justering</h3>
+          <p>Du tittar igenom sidan och ger feedback. En runda justeringar ingår, sen är vi i mål.</p>
         </article>
         <article class="step reveal reveal-d3">
           <div class="step-num">4</div>
           <h3>Lansering</h3>
-          <p>Godkänd sida publiceras och abonnemanget tar hand om drift, uppdateringar och support framöver.</p>
+          <p>Sidan publiceras och abonnemanget tar hand om allt vidare, hosting, uppdateringar och support.</p>
         </article>
       </div>
     </div>
@@ -1484,17 +1571,77 @@ main section { padding: 60px 0; }
     </div>
   </section>
 
+  <!-- FAQ -->
+  <section class="faq-section" id="faq" style="padding:80px 0;background:var(--paper)">
+    <div class="shell">
+      <p class="section-label">Vanliga frågor</p>
+      <h2 class="section-title">Saker folk brukar<br>undra över.</h2>
+
+      <div style="display:grid;gap:2px;margin-top:36px;max-width:720px">
+
+        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
+          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            Vad kostar en hemsida hos Drinkmyte?
+            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
+          </summary>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Det beror på vad du behöver. En enkel landningssida börjar runt 899 kr i byggkostnad plus 299 kr i månaden. En mer genomarbetad sida med flera sidor, galleri och bokningssystem landar runt 3 199 kr plus 849 kr/mån. Exakt pris sätts utifrån ditt projekt, men vi håller inga långa offertprocesser.</p>
+        </details>
+
+        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
+          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            Hur lång tid tar det att bygga en hemsida?
+            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
+          </summary>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">3 till 5 arbetsdagar från att vi fått allt vi behöver. Det förutsätter att du fyllt i intaget ordentligt med bilder, texter och övrig info. Saknar vi material drar det ut på tiden, men det är den enda flaskhalsen.</p>
+        </details>
+
+        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
+          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            Varför måste jag betala månadsavgift?
+            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
+          </summary>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Avgiften täcker hosting, domän, DNS-hantering och support. En hemsida kostar pengar att hålla igång varje månad, och vi vill inte att du ska behöva hålla koll på det själv. Det ingår också små innehållsuppdateringar så du slipper skicka mejl till en byrå och vänta en vecka för att byta ett telefonnummer.</p>
+        </details>
+
+        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
+          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            Jobbar ni bara i Göteborg?
+            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
+          </summary>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Vi är baserade i Göteborg men tar distansprojekt från hela Sverige. Allting sköts digitalt så det spelar ingen roll om du sitter i Malmö, Stockholm eller Umeå.</p>
+        </details>
+
+        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
+          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            Vad händer om jag vill avsluta?
+            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
+          </summary>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Du säger upp med 30 dagars varsel via mejl. Sidan tas offline vid periodens slut. Du får alla filer, HTML och bilder, levererade inom 7 arbetsdagar så du kan ta över och hosta sidan var du vill. Byggkostnaden återbetalas inte.</p>
+        </details>
+
+        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
+          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+            Kan jag uppdatera sidan själv?
+            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
+          </summary>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Inte direkt via ett CMS, men du kan be oss om mindre ändringar när som helst och det ingår i abonnemanget. Behöver du ett system för att redigera själv är det något vi pratar om i briefingen så kan vi bygga in det.</p>
+        </details>
+
+      </div>
+    </div>
+  </section>
+
   <!-- CONTACT / INTAKE -->
   <section class="contact-section" id="contact">
     <div class="shell">
       <div class="contact-wrap">
         <p class="section-label">Kontakt</p>
         <h2 class="section-title">Berätta vad du<br>vill bygga.</h2>
-        <p class="section-sub">Ju mer du berättar här, desto snabbare kan vi leverera — utan onödiga möten eller mejlkedjor.</p>
+        <p class="section-sub">Ju mer du skriver här, desto snabbare går det. Vi ställer inga uppföljningsfrågor om du redan svarat på dem.</p>
 
         <div class="contact-grid">
           <form class="form-card" id="contact-form">
-            <p class="form-intro">Det här formuläret är vår gemensamma briefing. Fyll i det ordentligt så slipper vi fråga samma sak tre gånger — det sparar tid för oss båda.</p>
+            <p class="form-intro">Det här är vår gemensamma briefing. Fyll i det ordentligt så slipper vi mejla om samma sak tre gånger.</p>
 
             <div class="field-row">
               <div class="field">
