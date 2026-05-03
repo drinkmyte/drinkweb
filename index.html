@@ -2132,6 +2132,15 @@ if (legalOverlay) {
   });
 }
 
+// Hash-based modal trigger: drinkmyte.com/#privacy or /#terms
+const openModalFromHash = () => {
+  const hash = window.location.hash;
+  if (hash === "#privacy") openLegalModal("privacy");
+  else if (hash === "#terms") openLegalModal("terms");
+};
+openModalFromHash();
+window.addEventListener("hashchange", openModalFromHash);
+
 const closeLightbox = () => {
   if (!lightbox || !lightboxImage) return;
   lightbox.classList.remove("open");
