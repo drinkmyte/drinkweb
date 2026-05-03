@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<script>document.documentElement.classList.add("js");</script>
 <title>Drinkmyte — Webbyrå i Göteborg | Hemsidor för företag</title>
 
 <!-- ═══════════════════════════════════════════════════
@@ -162,10 +163,20 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('consent', 'default', { analytics_storage: 'denied' });
 </script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-KP8Y3EQEKJ"></script>
 <script>
-  gtag('js', new Date());
-  gtag('config', 'G-KP8Y3EQEKJ', { page_title: 'Drinkmyte \u2014 Hemsida', send_page_view: true });
+  window.dmAnalyticsLoaded = false;
+  window.dmLoadAnalytics = function() {
+    if (window.dmAnalyticsLoaded) return;
+    window.dmAnalyticsLoaded = true;
+
+    const analyticsScript = document.createElement("script");
+    analyticsScript.async = true;
+    analyticsScript.src = "https://www.googletagmanager.com/gtag/js?id=G-KP8Y3EQEKJ";
+    document.head.appendChild(analyticsScript);
+
+    gtag("js", new Date());
+    gtag("config", "G-KP8Y3EQEKJ", { page_title: "Drinkmyte — Hemsida", send_page_view: true });
+  };
 </script>
 
 <!-- ═══════════════════════════════════════════════════
@@ -284,6 +295,9 @@ img, svg { display: block; }
   min-height: 60px;
 }
 .brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
   font-family: var(--font-display);
   font-size: 26px;
   font-weight: 600;
@@ -292,6 +306,12 @@ img, svg { display: block; }
   white-space: nowrap;
 }
 .brand span { color: var(--apricot); }
+.brand-mark {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  flex-shrink: 0;
+}
 
 .nav-links {
   display: flex; align-items: center; gap: 4px;
@@ -510,7 +530,7 @@ main section { padding: 60px 0; }
 .bar-fill {
   height: 100%; border-radius: 6px;
   background: linear-gradient(90deg, var(--apricot), var(--gold));
-  width: 0;
+  width: var(--bar-width, 100%);
   transition: width 1.2s cubic-bezier(0.23,1,0.32,1);
   display: flex; align-items: center; padding-left: 8px;
 }
@@ -1034,10 +1054,136 @@ main section { padding: 60px 0; }
   justify-content: space-between; gap: 16px; flex-wrap: wrap;
 }
 .site-footer p { font-size: 13px; color: var(--muted); margin: 0; }
+.footer-links {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+}
+.footer-links a:hover { color: var(--ink); }
+.footer-meta {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.footer-link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  cursor: pointer;
+}
+.footer-link-button:hover { color: var(--ink); }
+.legal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 220;
+  background: rgba(10,16,28,0.7);
+  backdrop-filter: blur(6px);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+.legal-dialog {
+  background: var(--paper);
+  border-radius: 24px;
+  max-width: 680px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  box-shadow: 0 32px 80px rgba(20,33,61,0.22);
+}
+.legal-header {
+  position: sticky;
+  top: 0;
+  background: var(--paper);
+  border-bottom: 1px solid rgba(20,33,61,0.08);
+  padding: 20px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 24px 24px 0 0;
+}
+.legal-title {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+.legal-close {
+  background: rgba(20,33,61,0.07);
+  border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 18px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.legal-body {
+  padding: 28px;
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text);
+}
+.cookie-banner {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 300;
+  width: min(660px, calc(100vw - 32px));
+  background: var(--ink);
+  color: #fff;
+  border-radius: 18px;
+  padding: 20px 24px;
+  box-shadow: 0 16px 48px rgba(0,0,0,0.3);
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.cookie-banner p {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255,255,255,0.82);
+  flex: 1;
+  min-width: 200px;
+}
+.cookie-actions {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+}
+.cookie-link-button {
+  background: none;
+  border: none;
+  padding: 0;
+  color: var(--gold);
+  font: inherit;
+  cursor: pointer;
+  text-decoration: underline;
+}
 
 /* ── RESPONSIVE ── */
 @media (max-width: 900px) {
   .hero-grid, .contact-grid {
+    grid-template-columns: 1fr;
+  }
+  .graphs-grid {
     grid-template-columns: 1fr;
   }
   .portfolio-grid {
@@ -1074,6 +1220,11 @@ main section { padding: 60px 0; }
   .check-group { grid-template-columns: 1fr; }
   .contact-wrap { padding: 20px; border-radius: 20px; }
   .contact-wrap .section-title { font-size: 1.7rem; }
+  .site-footer .shell { align-items: flex-start; }
+  .footer-meta { gap: 10px; }
+  .cookie-banner { padding: 18px; }
+  .cookie-actions { width: 100%; }
+  .cookie-actions .btn { flex: 1; }
 
   .nav-links { display: none; }
 }
@@ -1117,13 +1268,29 @@ main section { padding: 60px 0; }
 
 /* ── ANIMATE IN ── */
 .reveal {
+  opacity: 1; transform: none;
+}
+.js .reveal {
   opacity: 0; transform: translateY(18px);
   transition: opacity 0.6s ease, transform 0.6s ease;
 }
-.reveal.visible { opacity: 1; transform: none; }
+.js .reveal.visible { opacity: 1; transform: none; }
 .reveal-d1 { transition-delay: 0.1s; }
 .reveal-d2 { transition-delay: 0.2s; }
 .reveal-d3 { transition-delay: 0.3s; }
+@media (prefers-reduced-motion: reduce) {
+  .js .reveal {
+    opacity: 1; transform: none; transition: none;
+  }
+}
+@media (max-width: 900px) {
+  .js .reveal {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.28s ease, transform 0.28s ease;
+  }
+  .reveal-d1, .reveal-d2, .reveal-d3 { transition-delay: 0s; }
+}
 </style>
 </head>
 <body>
@@ -1131,7 +1298,7 @@ main section { padding: 60px 0; }
 <!-- HEADER -->
 <header class="site-header">
   <div class="shell">
-    <a class="brand" href="#top" style="display:flex;align-items:center;gap:8px"><img src="logo-mark-512.png" alt="Drinkmyte logo" style="width:52px;height:52px;object-fit:contain;display:block;filter:brightness(0) invert(1)"/>Drink<span>myte</span></a>
+    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" />Drink<span>myte</span></a>
     <ul class="nav-links" aria-label="Navigation">
       <li><a href="#why">Varför</a></li>
       <li><a href="#portfolio">Portfolio</a></li>
@@ -1236,17 +1403,17 @@ main section { padding: 60px 0; }
           <div class="bar-chart" id="chart-local">
             <div class="bar-row">
               <span class="bar-label">Hittar online</span>
-              <div class="bar-track"><div class="bar-fill" data-width="97"></div></div>
+              <div class="bar-track"><div class="bar-fill" style="--bar-width:97%"></div></div>
               <span class="bar-val">97%</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Besöker sedan</span>
-              <div class="bar-track"><div class="bar-fill" data-width="76"></div></div>
+              <div class="bar-track"><div class="bar-fill" style="--bar-width:76%"></div></div>
               <span class="bar-val">76%</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Köper samma dag</span>
-              <div class="bar-track"><div class="bar-fill dark" data-width="28"></div></div>
+              <div class="bar-track"><div class="bar-fill dark" style="--bar-width:28%"></div></div>
               <span class="bar-val">28%</span>
             </div>
           </div>
@@ -1262,10 +1429,10 @@ main section { padding: 60px 0; }
               <svg viewBox="0 0 36 36">
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f0ebe0" stroke-width="3.2"/>
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--apricot)" stroke-width="3.2"
-                  stroke-dasharray="0 100" stroke-dashoffset="0" id="donut-mobile"
+                  stroke-dasharray="58 100" stroke-dashoffset="0" id="donut-mobile"
                   stroke-linecap="round"/>
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--gold)" stroke-width="3.2"
-                  stroke-dasharray="0 100" stroke-dashoffset="-59" id="donut-tablet"
+                  stroke-dasharray="40 100" stroke-dashoffset="-59" id="donut-tablet"
                   stroke-linecap="round"/>
               </svg>
               <div class="donut-center">
@@ -1291,17 +1458,17 @@ main section { padding: 60px 0; }
           <div class="bar-chart">
             <div class="bar-row">
               <span class="bar-label">0.05 sek</span>
-              <div class="bar-track"><div class="bar-fill" data-width="90"></div></div>
+              <div class="bar-track"><div class="bar-fill" style="--bar-width:90%"></div></div>
               <span class="bar-val">Förtroende</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Litar ej</span>
-              <div class="bar-track"><div class="bar-fill dark" data-width="75"></div></div>
+              <div class="bar-track"><div class="bar-fill dark" style="--bar-width:75%"></div></div>
               <span class="bar-val">75% p.g.a. design</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Stannar kvar</span>
-              <div class="bar-track"><div class="bar-fill" data-width="55"></div></div>
+              <div class="bar-track"><div class="bar-fill" style="--bar-width:55%"></div></div>
               <span class="bar-val">Bra design</span>
             </div>
           </div>
@@ -1320,8 +1487,8 @@ main section { padding: 60px 0; }
                   <stop offset="100%" stop-color="var(--apricot)" stop-opacity="0"/>
                 </linearGradient>
               </defs>
-              <path id="trend-area" d="M0,75 L0,75 L280,75 Z" fill="url(#tg)"/>
-              <path id="trend-line" d="M0,75" fill="none" stroke="var(--apricot)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <path id="trend-area" d="M0,75 C45,72 62,64 88,58 C126,49 145,44 174,34 C210,22 234,16 280,8 L280,75 Z" fill="url(#tg)"/>
+              <path id="trend-line" d="M0,75 C45,72 62,64 88,58 C126,49 145,44 174,34 C210,22 234,16 280,8" fill="none" stroke="var(--apricot)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             </svg>
           </div>
           <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
@@ -1763,8 +1930,6 @@ main section { padding: 60px 0; }
     </div>
   </section>
 
-</main>
-
   <!-- FAQ -->
   <section class="faq-section" id="faq" style="padding:80px 0;background:var(--paper)">
     <div class="shell">
@@ -1826,17 +1991,270 @@ main section { padding: 60px 0; }
   </section>
 
 </main>
+<footer class="site-footer">
+  <div class="shell">
+    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" />Drink<span>myte</span></a>
+    <p>Webbyrå i Göteborg för företag som vill synas bättre online.</p>
+    <div class="footer-meta" aria-label="Footer">
+      <div class="footer-links">
+        <a href="mailto:drinkmyte@gmail.com">drinkmyte@gmail.com</a>
+        <a href="#contact">Kontakt</a>
+        <a href="#faq">FAQ</a>
+      </div>
+      <button class="footer-link-button" id="privacy-link" type="button">Integritetspolicy</button>
+      <button class="footer-link-button" id="terms-link" type="button">Användarvillkor</button>
+    </div>
+  </div>
+</footer>
+<div class="legal-overlay" id="legal-overlay" role="dialog" aria-modal="true" aria-labelledby="legal-title">
+  <div class="legal-dialog">
+    <div class="legal-header">
+      <span class="legal-title" id="legal-title"></span>
+      <button class="legal-close" id="legal-close" type="button" aria-label="Stäng dialog">✕</button>
+    </div>
+    <div class="legal-body" id="legal-body"></div>
+  </div>
+</div>
+<div class="cookie-banner" id="cookie-banner">
+  <p>Vi använder Google Analytics för att förstå hur besökare använder sidan. Inga uppgifter säljs eller delas i marknadsföringssyfte. <button class="cookie-link-button" id="cookie-learn-more" type="button">Läs mer</button></p>
+  <div class="cookie-actions">
+    <button class="btn btn-secondary" id="cookie-decline" type="button">Neka</button>
+    <button class="btn btn-apricot" id="cookie-accept" type="button">Godkänn</button>
+  </div>
+</div>
+<div class="lightbox-overlay" id="lightbox" role="dialog" aria-modal="true" aria-label="Bildvisning">
+  <button class="lightbox-close" id="lightbox-close" aria-label="Stäng bild" type="button">✕</button>
+  <img class="lightbox-img" id="lightbox-img" src="" alt="" />
+</div>
 <script>
+const contactForm = document.getElementById("contact-form");
+const domainForm = document.getElementById("domain-form");
+const lightbox = document.getElementById("lightbox");
+const lightboxImage = document.getElementById("lightbox-img");
+const lightboxClose = document.getElementById("lightbox-close");
+const legalOverlay = document.getElementById("legal-overlay");
+const legalTitle = document.getElementById("legal-title");
+const legalBody = document.getElementById("legal-body");
+const legalClose = document.getElementById("legal-close");
+const privacyLink = document.getElementById("privacy-link");
+const termsLink = document.getElementById("terms-link");
+const cookieBanner = document.getElementById("cookie-banner");
+const cookieAccept = document.getElementById("cookie-accept");
+const cookieDecline = document.getElementById("cookie-decline");
+const cookieLearnMore = document.getElementById("cookie-learn-more");
+const PRIVACY_CONTENT = `
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 · Ansvarig: Te Frederik Penson (Drinkmyte) · drinkmyte@gmail.com</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Vem ansvarar för dina uppgifter?</h3>
+<p>Te Frederik Penson, verksam under varumärket Drinkmyte, är personuppgiftsansvarig. Kontakt: drinkmyte@gmail.com.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Vilka uppgifter samlar vi in?</h3>
+<p><strong>Via kontaktformuläret:</strong> namn, e-post, verksamhetstyp, önskade funktioner, budget och projektbeskrivning. De används bara för att besvara din förfrågan.</p>
+<p><strong>Via Google Analytics 4:</strong> anonymiserad besöksdata som sidvisningar, tid på sidan, ungefärlig geografisk plats, enhetstyp och trafikkälla. Ingen data kopplas till din identitet.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Varför behandlar vi uppgifterna?</h3>
+<p>Formulärdata behandlas med stöd av berättigat intresse för att besvara offertförfrågningar. Analysdata behandlas bara efter ditt samtycke.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Tredjeparter</h3>
+<p><strong>EmailJS</strong> används för att skicka formulärdata som e-post. <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--apricot)">EmailJS integritetspolicy</a></p>
+<p><strong>Google Analytics 4</strong> används endast efter godkännande. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--apricot)">Googles integritetspolicy</a></p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Dina rättigheter</h3>
+<p>Du kan begära tillgång till, rättelse eller radering av dina uppgifter genom att mejla drinkmyte@gmail.com.</p>
+`;
+const TERMS_CONTENT = `
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 · Te Frederik Penson (Drinkmyte) · drinkmyte@gmail.com</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Parter</h3>
+<p>Dessa villkor gäller mellan Drinkmyte och den kund som beställer en tjänst via webbplatsen eller via e-postkontakt.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Tjänster och priser</h3>
+<p>Paketen Bas, Pro och Komplett är riktpriser i SEK. Exakt pris fastställs per projekt i offert.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Betalning</h3>
+<p>Byggkostnad faktureras vid projektstart. Månadsabonnemang faktureras i förskott och täcker hosting, domän, DNS och support.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Leverans och support</h3>
+<p>Första version levereras normalt inom 1–5 arbetsdagar beroende på paket och briefing. En revisionsrunda ingår.</p>
+<h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Uppsägning</h3>
+<p>Du kan säga upp abonnemanget med 30 dagars skriftligt varsel via e-post. Byggkostnaden återbetalas inte.</p>
+`;
+
+const openLegalModal = (type) => {
+  if (!legalOverlay || !legalTitle || !legalBody) return;
+  legalTitle.textContent = type === "privacy" ? "Integritetspolicy" : "Användarvillkor";
+  legalBody.innerHTML = type === "privacy" ? PRIVACY_CONTENT : TERMS_CONTENT;
+  legalOverlay.style.display = "flex";
+  document.body.style.overflow = "hidden";
+};
+
+const closeLegalModal = () => {
+  if (!legalOverlay) return;
+  legalOverlay.style.display = "none";
+  document.body.style.overflow = "";
+};
+
+if (privacyLink) privacyLink.addEventListener("click", () => openLegalModal("privacy"));
+if (termsLink) termsLink.addEventListener("click", () => openLegalModal("terms"));
+if (cookieLearnMore) cookieLearnMore.addEventListener("click", () => openLegalModal("privacy"));
+if (legalClose) legalClose.addEventListener("click", closeLegalModal);
+if (legalOverlay) {
+  legalOverlay.addEventListener("click", event => {
+    if (event.target === legalOverlay) closeLegalModal();
+  });
+}
+
+const closeLightbox = () => {
+  if (!lightbox || !lightboxImage) return;
+  lightbox.classList.remove("open");
+  document.body.style.overflow = "";
+  window.setTimeout(() => {
+    lightboxImage.src = "";
+    lightboxImage.alt = "";
+  }, 200);
+};
+
+if (lightbox && lightboxImage && lightboxClose) {
+  document.querySelectorAll(".portfolio-shot img, .concept-card img, img[data-full]").forEach(image => {
+    image.addEventListener("click", () => {
+      lightboxImage.src = image.dataset.full || image.src;
+      lightboxImage.alt = image.alt || "";
+      lightbox.classList.add("open");
+      document.body.style.overflow = "hidden";
+    });
+  });
+
+  lightbox.addEventListener("click", event => {
+    if (event.target === lightbox) closeLightbox();
+  });
+
+  lightboxClose.addEventListener("click", closeLightbox);
+  document.addEventListener("keydown", event => {
+    if (event.key === "Escape") closeLightbox();
+  });
+}
+
+document.addEventListener("keydown", event => {
+  if (event.key === "Escape") closeLegalModal();
+});
+
+if (domainForm) {
+  domainForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const query = document.getElementById("domain-query")?.value.trim();
+    if (!query) return;
+    const cleanDomain = query.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
+    window.open(`https://www.namecheap.com/domains/registration/results/?domain=${encodeURIComponent(cleanDomain)}`, "_blank", "noopener");
+  });
+}
+
+if (contactForm) {
+  contactForm.addEventListener("submit", event => {
+    event.preventDefault();
+    const submitButton = contactForm.querySelector('button[type="submit"]');
+    if (!submitButton) return;
+
+    const originalLabel = submitButton.dataset.originalLabel || submitButton.textContent;
+    submitButton.dataset.originalLabel = originalLabel;
+
+    const formData = new FormData(contactForm);
+    const selectedFeatures = [...contactForm.querySelectorAll('input[name="features"]:checked')]
+      .map(input => input.value)
+      .join(", ") || "Inga valda";
+
+    const templateParams = {
+      from_name: formData.get("name") || "",
+      from_email: formData.get("email") || "",
+      biz_type: formData.get("bizType") || "—",
+      features: selectedFeatures,
+      feel: formData.get("feel") || "—",
+      budget: formData.get("budget") || "—",
+      content: formData.get("content") || "—",
+      audience: formData.get("audience") || "—",
+      domain: formData.get("domain") || "Ej angivet",
+      message: formData.get("message") || ""
+    };
+
+    submitButton.disabled = true;
+    submitButton.textContent = "Skickar…";
+
+    emailjs.send("service_q7vufim", "template_6i09csd", templateParams, "DpeZ9IZHsvSxIroyM")
+      .then(() => {
+        submitButton.textContent = "Skickat! Vi hör av oss inom 24 h.";
+        submitButton.style.background = "#1a7a4a";
+        contactForm.reset();
+        window.setTimeout(() => {
+          submitButton.disabled = false;
+          submitButton.textContent = originalLabel;
+          submitButton.style.background = "";
+        }, 5000);
+      })
+      .catch(error => {
+        console.error("EmailJS error:", error);
+        submitButton.disabled = false;
+        submitButton.textContent = "Något gick fel — öppna mejl istället";
+        submitButton.style.background = "#c0392b";
+        window.setTimeout(() => {
+          submitButton.textContent = originalLabel;
+          submitButton.style.background = "";
+        }, 4000);
+      });
+  });
+}
+
+const enableAnalyticsConsent = () => {
+  gtag("consent", "update", { analytics_storage: "granted" });
+  window.dmLoadAnalytics?.();
+};
+
+const savedCookieConsent = window.localStorage.getItem("dm_cookie_consent");
+if (savedCookieConsent === "accepted") {
+  enableAnalyticsConsent();
+} else if (savedCookieConsent !== "declined" && cookieBanner) {
+  window.setTimeout(() => {
+    cookieBanner.style.display = "flex";
+  }, 900);
+}
+
+if (cookieAccept && cookieBanner) {
+  cookieAccept.addEventListener("click", () => {
+    window.localStorage.setItem("dm_cookie_consent", "accepted");
+    cookieBanner.style.display = "none";
+    enableAnalyticsConsent();
+  });
+}
+
+if (cookieDecline && cookieBanner) {
+  cookieDecline.addEventListener("click", () => {
+    window.localStorage.setItem("dm_cookie_consent", "declined");
+    cookieBanner.style.display = "none";
+  });
+}
+
+const revealElements = document.querySelectorAll(".reveal");
+const showRevealElement = element => element.classList.add("visible");
+
+if (revealElements.length) {
+  if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        showRevealElement(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.08 });
+
+    revealElements.forEach(element => revealObserver.observe(element));
+  } else {
+    revealElements.forEach(showRevealElement);
+  }
+}
+
 const hamburger = document.getElementById("hamburger");
 const mobileNav = document.getElementById("mobile-nav");
-hamburger.addEventListener("click", () => {
-  hamburger.classList.toggle("open");
-  mobileNav.classList.toggle("open");
-});
-document.querySelectorAll(".mobile-nav-link, .mobile-nav a.btn").forEach(link => {
-  link.addEventListener("click", () => {
-    hamburger.classList.remove("open");
-    mobileNav.classList.remove("open");
+
+if (hamburger && mobileNav) {
+  hamburger.addEventListener("click", () => {
+    hamburger.classList.toggle("open");
+    mobileNav.classList.toggle("open");
   });
-});
+
+  document.querySelectorAll(".mobile-nav-link, .mobile-nav a.btn").forEach(link => {
+    link.addEventListener("click", () => {
+      hamburger.classList.remove("open");
+      mobileNav.classList.remove("open");
+    });
+  });
+}
 </script>
