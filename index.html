@@ -1167,6 +1167,11 @@ main section { padding: 60px 0; }
   }
 }
 
+@media (max-width: 750px) {
+  .pricing-grid { grid-template-columns: 1fr; }
+  .price-card.featured { transform: none; }
+}
+
 @media (max-width: 600px) {
   .shell { width: calc(100vw - 24px); }
   .site-header .shell { min-height: 54px; }
@@ -1640,7 +1645,7 @@ details summary::-webkit-details-marker { display: none; }
           <h3>Enkel närvaro</h3>
           <p style="font-size:12px;font-weight:700;color:var(--apricot);letter-spacing:0.04em;margin:0 0 10px;text-transform:uppercase;">Perfekt för: hantverkare · restaurang med meny · kontaktsida</p>
           <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">~1 099 kr</span>
+          <span class="price-amount">Från 1 099 kr</span>
           <p class="price-tagline">En riktig sida online, snabbt och utan krångel. Visar vad du gör, var du finns och hur kunder når dig.</p>
           <ul class="price-list">
             <li><strong>+</strong>1-sidig landningssida</li>
@@ -1658,7 +1663,7 @@ details summary::-webkit-details-marker { display: none; }
           </ul>
           <div class="price-subscription">
             <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">~299 kr/mån</span>
+            <span class="sub-amount">Från 299 kr/mån</span>
             <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
           </div>
           <a class="btn btn-secondary" href="#contact">Fråga om Bas</a>
@@ -1669,7 +1674,7 @@ details summary::-webkit-details-marker { display: none; }
           <div class="price-badge" style="background:rgba(20,33,61,0.1);color:var(--ink);">Vanligast</div>
           <h3>Pro</h3>
           <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">~2 099 kr</span>
+          <span class="price-amount">Från 2 099 kr</span>
           <p class="price-tagline">För etablerade verksamheter. En genomarbetad, komplett sida som faktiskt levererar.</p>
           <ul class="price-list">
             <li><strong>+</strong>Upp till 5 sidor eller sektioner</li>
@@ -1682,7 +1687,7 @@ details summary::-webkit-details-marker { display: none; }
           </ul>
           <div class="price-subscription">
             <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">~499 kr/mån</span>
+            <span class="sub-amount">Från 499 kr/mån</span>
             <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
           </div>
           <a class="btn btn-apricot" href="#contact">Välj Pro</a>
@@ -1693,7 +1698,7 @@ details summary::-webkit-details-marker { display: none; }
           <div class="price-badge">Rekommenderas</div>
           <h3>Komplett</h3>
           <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">~3 499 kr</span>
+          <span class="price-amount">Från 3 499 kr</span>
           <p class="price-tagline">Sidan folk pratar om. Premium känsla, fler sidor och ett intryck som stannar kvar.</p>
           <ul class="price-list">
             <li><strong>+</strong>Allt i Pro</li>
@@ -1709,7 +1714,7 @@ details summary::-webkit-details-marker { display: none; }
           </ul>
           <div class="price-subscription">
             <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">~849 kr/mån</span>
+            <span class="sub-amount">Från 849 kr/mån</span>
             <span class="sub-desc">Hosting · domän · DNS-hantering · prioriterad e-postsupport · små innehållsuppdateringar</span>
           </div>
           <a class="btn btn-apricot" href="#contact">Välj Komplett</a>
@@ -1847,9 +1852,9 @@ details summary::-webkit-details-marker { display: none; }
                 <label for="budget">Prisindikation</label>
                 <select id="budget" name="budget">
                   <option value="">Inte säker än</option>
-                  <option>Bas — ca ~1 099 kr byggkostnad + ~299 kr/mån</option>
-                  <option>Pro — ca ~2 099 kr byggkostnad + ~499 kr/mån</option>
-                  <option>Komplett — ca ~3 499 kr byggkostnad + ~849 kr/mån</option>
+                  <option>Bas — från 1 099 kr byggkostnad + 299 kr/mån</option>
+                  <option>Pro — från 2 099 kr byggkostnad + 499 kr/mån</option>
+                  <option>Komplett — från 3 499 kr byggkostnad + 849 kr/mån</option>
                   <option>Anpassad offert</option>
                 </select>
               </div>

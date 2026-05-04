@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>404 — Sidan hittades inte | Drinkmyte</title>
+<meta name="robots" content="noindex" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#f6f0e6" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  --ink: #14213d;
+  --ink-soft: #2b4462;
+  --sand: #f6f0e6;
+  --paper: #fffdfa;
+  --apricot: #e86b30;
+  --apricot-soft: #ffe5d7;
+  --gold: #f1bd60;
+  --text: #2e3138;
+  --muted: #68707a;
+  --radius: 20px;
+  --radius-sm: 12px;
+  --shadow: 0 8px 32px rgba(20,33,61,0.08);
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", system-ui, sans-serif;
+}
+
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: var(--font-body);
+  color: var(--text);
+  background: var(--sand);
+  overflow-x: hidden;
+}
+
+a { color: inherit; text-decoration: none; }
+img { display: block; }
+
+.shell {
+  width: min(1120px, calc(100vw - 32px));
+  margin: 0 auto;
+}
+
+.site-header {
+  position: sticky; top: 0; z-index: 50;
+  backdrop-filter: blur(14px);
+  background: rgba(246,240,230,0.88);
+  border-bottom: 1px solid rgba(20,33,61,0.07);
+}
+.site-header .shell {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+}
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-family: var(--font-display);
+  font-size: 26px;
+  font-weight: 600;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+}
+.brand span { color: var(--apricot); }
+.brand-mark { width: 42px; height: 42px; object-fit: contain; flex-shrink: 0; }
+
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  min-height: 42px; padding: 0 20px;
+  border-radius: 999px; border: 0;
+  font-family: var(--font-body); font-weight: 700; font-size: 14px;
+  cursor: pointer; text-decoration: none;
+  transition: transform 0.18s, background 0.18s;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--ink); color: #fff; box-shadow: 0 6px 20px rgba(20,33,61,0.18); }
+.btn-secondary { background: transparent; color: var(--ink); border: 1.5px solid rgba(20,33,61,0.16); }
+.btn-apricot { background: var(--apricot); color: #fff; box-shadow: 0 6px 20px rgba(232,107,48,0.22); }
+.btn:hover { transform: translateY(-2px); }
+
+.page-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px;
+  min-height: calc(100vh - 60px);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.7);
+  border: 1px solid rgba(232,107,48,0.2);
+  color: var(--apricot);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+}
+.badge::before {
+  content: "";
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--gold);
+  flex-shrink: 0;
+}
+
+.error-code {
+  font-family: var(--font-display);
+  font-size: clamp(6rem, 20vw, 12rem);
+  line-height: 0.9;
+  letter-spacing: -0.06em;
+  color: var(--ink);
+  margin: 0 0 24px;
+}
+.error-code em { font-style: normal; color: var(--apricot); }
+
+h1 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 4vw, 2.4rem);
+  line-height: 1.1;
+  letter-spacing: -0.04em;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 440px;
+  margin: 0 auto 32px;
+  line-height: 1.6;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.divider {
+  width: 60px; height: 1px;
+  background: rgba(20,33,61,0.12);
+  margin: 40px auto;
+}
+
+.help-links {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.help-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  transition: color 0.18s;
+}
+.help-link:hover { color: var(--apricot); }
+
+@media (max-width: 600px) {
+  .brand { font-size: 22px; }
+  .page-wrap { padding: 60px 20px; }
+}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="/"><img class="brand-mark" src="/logo-mark-512.png" alt="Drinkmyte logo" width="42" height="42" />Drink<span>myte</span></a>
+    <a class="btn btn-primary" href="/#contact">Starta projekt</a>
+  </div>
+</header>
+
+<div class="page-wrap">
+  <div class="badge">Sidan hittades inte</div>
+  <p class="error-code">4<em>0</em>4</p>
+  <h1>Den här sidan finns inte.</h1>
+  <p class="sub">Länken kan ha ändrats eller tagits bort. Men du hittar allt du behöver på startsidan.</p>
+  <div class="actions">
+    <a class="btn btn-apricot" href="/">Tillbaka till startsidan</a>
+    <a class="btn btn-secondary" href="/#contact">Kontakta oss</a>
+  </div>
+  <div class="divider"></div>
+  <nav class="help-links" aria-label="Snabblänkar">
+    <a class="help-link" href="/#why">Varför Drinkmyte</a>
+    <a class="help-link" href="/#portfolio">Portfolio</a>
+    <a class="help-link" href="/#pricing">Priser</a>
+    <a class="help-link" href="/#faq">FAQ</a>
+  </nav>
+</div>
+
+</body>
+</html>
