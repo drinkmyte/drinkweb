@@ -6,10 +6,6 @@
 <script>document.documentElement.classList.add("js");</script>
 <title>Drinkmyte — Webbyrå i Göteborg | Hemsidor för företag</title>
 
-<!-- ═══════════════════════════════════════════════════
-     SEO — GRUNDLÄGGANDE METADATA
-     Byt ut URL:erna nedan mot din riktiga domän när den är live.
-════════════════════════════════════════════════════ -->
 <meta name="description" content="Drinkmyte är en webbyrå i Göteborg som bygger professionella hemsidor för småföretag. Snabb leverans, fast pris, löpande support. Bas från 899 kr engång + 299 kr/mån." />
 <meta name="keywords" content="hemsida Göteborg, webbyrå Göteborg, hemsida småföretag, webbdesign Göteborg, hemsida hantverkare, restaurang hemsida" />
 <meta name="author" content="Drinkmyte — Te Penson" />
@@ -19,6 +15,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
 <link rel="manifest" href="/site.webmanifest" />
+<meta name="theme-color" content="#f6f0e6" />
 
 <!-- Open Graph (Facebook, LinkedIn, iMessage-förhandsvisning) -->
 <meta property="og:type" content="website" />
@@ -45,7 +42,7 @@
   "name": "Drinkmyte",
   "description": "Webbyrå som bygger hemsidor för småföretag i Göteborg och hela Sverige.",
   "url": "https://drinkmyte.com",
-  "email": "drinkmyte@gmail.com",
+  "email": "kontakt@drinkmyte.com",
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Göteborg",
@@ -53,22 +50,10 @@
     "addressCountry": "SE"
   },
   "areaServed": ["Göteborg", "Sverige"],
-  "priceRange": "899–3199 kr",
-  "sameAs": []
+  "priceRange": "899–3199 kr"
 }
 </script>
 
-<!-- ═══════════════════════════════════════════════════
-     GOOGLE ANALYTICS 4
-     ──────────────────────────────────────────────────
-     HUR DU HITTAR DITT MÄTNINGS-ID (G-XXXXXXXX):
-     1. Gå till https://analytics.google.com
-     2. Klicka "Skapa konto" (eller välj befintligt)
-     3. Skapa en "Egendom" (Property) → välj Webb
-     4. Under "Datainsamling" → "Dataströmmar" → klicka på din ström
-     5. Kopiera "Mätnings-ID" som börjar med G-
-     6. Klistra in det på BÅDA ställena nedan (ersätt G-KP8Y3EQEKJ)
-════════════════════════════════════════════════════ -->
 <!-- GA4 — analytics blockeras tills besökaren ger samtycke -->
 <script type="application/ld+json">
 {
@@ -179,37 +164,6 @@
   };
 </script>
 
-<!-- ═══════════════════════════════════════════════════
-     EMAILJS SDK
-     ──────────────────────────────────────────────────
-     HUR DU KONFIGURERAR EMAILJS (steg-för-steg):
-     1. Gå till https://www.emailjs.com och logga in
-     2. TJÄNST-ID: Klicka "Email Services" → "Add New Service"
-        → Välj Gmail → Anslut ditt konto → Kopiera "Service ID"
-        → Ersätt service_q7vufim nedan
-     3. PUBLIC KEY: Klicka på ditt kontonamn (uppe till höger)
-        → "Account" → under "API Keys" hittar du "Public Key"
-        → Ersätt DpeZ9IZHsvSxIroyM nedan (på TWÅ ställen)
-     4. MALL/TEMPLATE: Klicka "Email Templates" → "Create New Template"
-        → Sätt Subject till: "Hemsideförfrågan från {{from_name}}"
-        → Klistra in mallen nedan i "Content"-fältet:
-        ┌─────────────────────────────────────────────
-        │ Namn/Företag: {{from_name}}
-        │ E-post: {{from_email}}
-        │ Verksamhetstyp: {{biz_type}}
-        │ Funktioner: {{features}}
-        │ Känsla/stil: {{feel}}
-        │ Prisindikation: {{budget}}
-        │ Befintligt innehåll: {{content}}
-        │ Målgrupp: {{audience}}
-        │ Domännamn: {{domain}}
-        │
-        │ Projektbeskrivning:
-        │ {{message}}
-        └─────────────────────────────────────────────
-        → Klicka "Save" → Kopiera "Template ID"
-        → Ersätt template_6i09csd nedan
-════════════════════════════════════════════════════ -->
 <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script>emailjs.init('DpeZ9IZHsvSxIroyM');</script>
 
@@ -530,7 +484,7 @@ main section { padding: 60px 0; }
 .bar-fill {
   height: 100%; border-radius: 6px;
   background: linear-gradient(90deg, var(--apricot), var(--gold));
-  width: var(--bar-width, 100%);
+  width: var(--bar-width, 0%);
   transition: width 1.2s cubic-bezier(0.23,1,0.32,1);
   display: flex; align-items: center; padding-left: 8px;
 }
@@ -1295,6 +1249,9 @@ main section { padding: 60px 0; }
     opacity: 1; transform: none; transition: none;
   }
 }
+/* Hide browser's native details triangle in all browsers */
+details summary { list-style: none; }
+details summary::-webkit-details-marker { display: none; }
 @media (max-width: 900px) {
   .js .reveal {
     opacity: 0;
@@ -1310,17 +1267,20 @@ main section { padding: 60px 0; }
 <!-- HEADER -->
 <header class="site-header">
   <div class="shell">
-    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" />Drink<span>myte</span></a>
-    <ul class="nav-links" aria-label="Navigation">
-      <li><a href="#why">Varför</a></li>
-      <li><a href="#portfolio">Portfolio</a></li>
-      <li><a href="#services">Tjänster</a></li>
-      <li><a href="#pricing">Priser</a></li>
-      <li><a href="#contact">Kontakt</a></li>
-      <li><a href="#faq">FAQ</a></li>
-    </ul>
+    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" width="42" height="42" />Drink<span>myte</span></a>
+    <nav aria-label="Huvudnavigation">
+      <ul class="nav-links">
+        <li><a href="#why">Varför</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#services">Tjänster</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#pricing">Priser</a></li>
+        <li><a href="#contact">Kontakt</a></li>
+        <li><a href="#faq">FAQ</a></li>
+      </ul>
+    </nav>
     <a class="btn btn-primary nav-cta" href="#contact">Starta projekt</a>
-    <button class="hamburger" id="hamburger" aria-label="Öppna meny">
+    <button class="hamburger" id="hamburger" aria-label="Öppna meny" aria-expanded="false" aria-controls="mobile-nav">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -1329,6 +1289,7 @@ main section { padding: 60px 0; }
       <li><a href="#why" class="mobile-nav-link">Varför</a></li>
       <li><a href="#portfolio" class="mobile-nav-link">Portfolio</a></li>
       <li><a href="#services" class="mobile-nav-link">Tjänster</a></li>
+      <li><a href="#process" class="mobile-nav-link">Process</a></li>
       <li><a href="#pricing" class="mobile-nav-link">Priser</a></li>
       <li><a href="#contact" class="mobile-nav-link">Kontakt</a></li>
       <li><a href="#faq" class="mobile-nav-link">FAQ</a></li>
@@ -1361,8 +1322,8 @@ main section { padding: 60px 0; }
               <span>mobilanpassat från dag ett</span>
             </div>
             <div class="hero-stat">
-              <strong>Bas</strong>
-              <span>i Göteborg, kunder i hela Sverige</span>
+              <strong>GBG</strong>
+              <span>bas, kunder i hela Sverige</span>
             </div>
           </div>
         </div>
@@ -1415,17 +1376,17 @@ main section { padding: 60px 0; }
           <div class="bar-chart" id="chart-local">
             <div class="bar-row">
               <span class="bar-label">Hittar online</span>
-              <div class="bar-track"><div class="bar-fill" style="--bar-width:97%"></div></div>
+              <div class="bar-track"><div class="bar-fill" data-bar-width="97%"></div></div>
               <span class="bar-val">97%</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Besöker sedan</span>
-              <div class="bar-track"><div class="bar-fill" style="--bar-width:76%"></div></div>
+              <div class="bar-track"><div class="bar-fill" data-bar-width="76%"></div></div>
               <span class="bar-val">76%</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Köper samma dag</span>
-              <div class="bar-track"><div class="bar-fill dark" style="--bar-width:28%"></div></div>
+              <div class="bar-track"><div class="bar-fill dark" data-bar-width="28%"></div></div>
               <span class="bar-val">28%</span>
             </div>
           </div>
@@ -1440,11 +1401,17 @@ main section { padding: 60px 0; }
             <div class="donut">
               <svg viewBox="0 0 36 36">
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f0ebe0" stroke-width="3.2"/>
+                <!-- Mobile: 58% -->
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--apricot)" stroke-width="3.2"
-                  stroke-dasharray="58 100" stroke-dashoffset="0" id="donut-mobile"
+                  stroke-dasharray="58 42" stroke-dashoffset="0" id="donut-mobile"
                   stroke-linecap="round"/>
+                <!-- Desktop: 40%, starts after mobile (offset = -58) -->
                 <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--gold)" stroke-width="3.2"
-                  stroke-dasharray="40 100" stroke-dashoffset="-59" id="donut-tablet"
+                  stroke-dasharray="40 60" stroke-dashoffset="-59" id="donut-desktop"
+                  stroke-linecap="round"/>
+                <!-- Tablet: 2%, starts after mobile+desktop (offset = -98) -->
+                <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(20,33,61,0.25)" stroke-width="3.2"
+                  stroke-dasharray="2 98" stroke-dashoffset="-99" id="donut-tablet"
                   stroke-linecap="round"/>
               </svg>
               <div class="donut-center">
@@ -1455,7 +1422,7 @@ main section { padding: 60px 0; }
             <div class="donut-legend">
               <div class="legend-row"><div class="legend-dot" style="background:var(--apricot)"></div><span>Mobil — 58%</span></div>
               <div class="legend-row"><div class="legend-dot" style="background:var(--gold)"></div><span>Dator — 40%</span></div>
-              <div class="legend-row"><div class="legend-dot" style="background:rgba(20,33,61,0.15)"></div><span>Surfplatta — 2%</span></div>
+              <div class="legend-row"><div class="legend-dot" style="background:rgba(20,33,61,0.25)"></div><span>Surfplatta — 2%</span></div>
               <br>
               <div style="font-size:12px;color:var(--muted);line-height:1.5">En sida som inte funkar på mobil<br>tappar <strong style="color:var(--apricot)">mer än hälften</strong> av sina besökare.</div>
             </div>
@@ -1470,17 +1437,17 @@ main section { padding: 60px 0; }
           <div class="bar-chart">
             <div class="bar-row">
               <span class="bar-label">0.05 sek</span>
-              <div class="bar-track"><div class="bar-fill" style="--bar-width:90%"></div></div>
+              <div class="bar-track"><div class="bar-fill" data-bar-width="90%"></div></div>
               <span class="bar-val">Förtroende</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Litar ej</span>
-              <div class="bar-track"><div class="bar-fill dark" style="--bar-width:75%"></div></div>
+              <div class="bar-track"><div class="bar-fill dark" data-bar-width="75%"></div></div>
               <span class="bar-val">75% p.g.a. design</span>
             </div>
             <div class="bar-row">
               <span class="bar-label">Stannar kvar</span>
-              <div class="bar-track"><div class="bar-fill" style="--bar-width:55%"></div></div>
+              <div class="bar-track"><div class="bar-fill" data-bar-width="55%"></div></div>
               <span class="bar-val">Bra design</span>
             </div>
           </div>
@@ -1535,19 +1502,19 @@ main section { padding: 60px 0; }
             </ul>
           </div>
           <div class="portfolio-actions">
-            <a class="btn btn-primary" href="https://ithai.nu" target="_blank" rel="noopener">Se live →</a>
+            <a class="btn btn-primary" href="https://ithai.nu" target="_blank" rel="noopener noreferrer">Se live →</a>
             <a class="btn btn-secondary" href="#contact">Be om liknande</a>
           </div>
           <div class="portfolio-screenshots" style="display:grid;grid-template-rows:auto auto;gap:2px">
             <div class="portfolio-shot" style="aspect-ratio:16/6">
-              <img src="images/ithai-hero.jpg" alt="I Thai hero"/>
+              <img src="images/ithai-hero.jpg" alt="I Thai hero" loading="lazy"/>
             </div>
             <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
               <div class="portfolio-shot" style="aspect-ratio:4/3">
-                <img src="images/ithai-menu.jpg" alt="I Thai meny"/>
+                <img src="images/ithai-menu.jpg" alt="I Thai meny" loading="lazy"/>
               </div>
               <div class="portfolio-shot" style="aspect-ratio:4/3">
-                <img src="images/ithai-interior.jpg" alt="I Thai galleri"/>
+                <img src="images/ithai-interior.jpg" alt="I Thai galleri" loading="lazy"/>
               </div>
             </div>
           </div>
@@ -1566,11 +1533,11 @@ main section { padding: 60px 0; }
           </ul>
           <div class="concept-spacer"></div>
           <div style="display:grid;gap:6px;border-radius:12px;overflow:hidden;margin-top:4px">
-            <img src="images/nordveil-hero.jpg" alt="Nordveil hero" data-full="images/nordveil-hero.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:8px"/>
+            <img src="images/nordveil-hero.jpg" alt="Nordveil hero" data-full="images/nordveil-hero.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:8px" loading="lazy"/>
             <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
-              <img src="images/nordveil-image-1.jpg" alt="Nordveil image 1" data-full="images/nordveil-image-1.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px"/>
-              <img src="images/nordveil-image-2.jpg" alt="Nordveil image 2" data-full="images/nordveil-image-2.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px"/>
-              <img src="images/nordveil-image-3.jpg" alt="Nordveil image 3" data-full="images/nordveil-image-3.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px"/>
+              <img src="images/nordveil-image-1.jpg" alt="Nordveil image 1" data-full="images/nordveil-image-1.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
+              <img src="images/nordveil-image-2.jpg" alt="Nordveil image 2" data-full="images/nordveil-image-2.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
+              <img src="images/nordveil-image-3.jpg" alt="Nordveil image 3" data-full="images/nordveil-image-3.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
             </div>
           </div>
           <a class="btn btn-secondary" href="#contact" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);margin-top:8px;align-self:flex-start">Fråga om liknande →</a>
@@ -1813,6 +1780,8 @@ main section { padding: 60px 0; }
 
         <div class="contact-grid">
           <form class="form-card" id="contact-form">
+            <!-- Honeypot: hidden from real users, filled by bots -->
+            <input type="text" name="_honeypot" id="_honeypot" style="display:none;position:absolute;left:-9999px" tabindex="-1" autocomplete="off" aria-hidden="true" />
             <p class="form-intro">Det här är vår gemensamma briefing. Fyll i det ordentligt så slipper vi mejla om samma sak tre gånger.</p>
 
             <div class="field-row">
@@ -1827,12 +1796,10 @@ main section { padding: 60px 0; }
               </div>
             </div>
 
-            <div class="field-row">
-              <div class="field">
-                <label for="phone">Telefon (valfritt)</label>
-                <input id="phone" name="phone" type="tel" placeholder="070 123 45 67" autocomplete="tel" />
-                <span class="field-error-msg" id="phone-error">Ange ett giltigt telefonnummer, t.ex. 070 123 45 67</span>
-              </div>
+            <div class="field">
+              <label for="phone">Telefon (valfritt)</label>
+              <input id="phone" name="phone" type="tel" placeholder="070 123 45 67" autocomplete="tel" />
+              <span class="field-error-msg" id="phone-error">Ange ett giltigt telefonnummer, t.ex. 070 123 45 67</span>
             </div>
 
             <div class="field">
@@ -1923,13 +1890,13 @@ main section { padding: 60px 0; }
             </div>
 
             <button class="btn btn-apricot" type="submit" style="width:100%;min-height:48px;font-size:15px">Skicka meddelande →</button>
-            <p style="margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.5">Genom att skicka formuläret godkänner du våra <button type="button" onclick="openLegalModal('terms')" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Användarvillkor</button> och bekräftar att du har läst vår <button type="button" onclick="openLegalModal('privacy')" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Integritetspolicy</button>.</p>
+            <p style="margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.5">Genom att skicka formuläret godkänner du våra <button type="button" id="consent-terms-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Användarvillkor</button> och bekräftar att du har läst vår <button type="button" id="consent-privacy-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Integritetspolicy</button>.</p>
           </form>
 
           <div class="contact-sidebar">
             <div class="info-card">
               <h4>E-post</h4>
-              <p>drinkmyte@gmail.com</p>
+              <p>kontakt@drinkmyte.com</p>
             </div>
             <div class="info-card">
               <h4>Svarstid</h4>
@@ -2013,13 +1980,13 @@ main section { padding: 60px 0; }
   </section>
 
 </main>
-<footer class="site-footer">
+<footer class="site-footer" aria-label="Sidfot">
   <div class="shell">
-    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" />Drink<span>myte</span></a>
+    <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" width="42" height="42" />Drink<span>myte</span></a>
     <p>Webbyrå i Göteborg för företag som vill synas bättre online.</p>
-    <div class="footer-meta" aria-label="Footer">
+    <div class="footer-meta">
       <div class="footer-links">
-        <a href="mailto:drinkmyte@gmail.com">drinkmyte@gmail.com</a>
+        <a href="mailto:kontakt@drinkmyte.com">kontakt@drinkmyte.com</a>
         <a href="#contact">Kontakt</a>
         <a href="#faq">FAQ</a>
       </div>
@@ -2090,7 +2057,7 @@ const TERMS_CONTENT = `
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Tjänster och priser</h3>
 <p>Vi erbjuder tre paket — Bas, Pro och Komplett — till de priser som anges på webbplatsen. Alla priser är riktpriser i SEK. Exakt pris fastställs i offert per projekt. Priser kan ändras med 30 dagars varsel för befintliga abonnemang.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">3. Betalning</h3>
-<p><strong>Byggkostnad:</strong> faktureras vid projektstart. Arbetet påbörjas efter bekräftad betalning.<br><strong>Månadsabonnemang:</strong> faktureras månadsvis i förskott och täcker hosting, domän, DNS och support. Abonnemanget är obligatoriskt så länge sidan är live hos oss.<br><strong>Betalningshantering:</strong> Betalningar hanteras via <strong>Stripe</strong> (Stripe Payments Europe, Ltd.). Genom att genomföra en betalning godkänner du Stripes användarvillkor och integritetspolicy (<a href="https://stripe.com/se/privacy" target="_blank" rel="noopener" style="color:var(--apricot)">stripe.com/se/privacy →</a>). Drinkmyte lagrar aldrig kortuppgifter — dessa hanteras uteslutande av Stripe på ett PCI DSS-certifierat sätt. Vid månatlig debitering ger du Stripe rätt att belasta ditt betalningsmedel tills abonnemanget sägs upp enligt punkt 8.</p>
+<p><strong>Byggkostnad:</strong> faktureras vid projektstart. Arbetet påbörjas efter bekräftad betalning.<br><strong>Månadsabonnemang:</strong> faktureras månadsvis i förskott och täcker hosting, domän, DNS och support. Abonnemanget är obligatoriskt så länge sidan är live hos oss.<br><strong>Betalningshantering:</strong> Betalning sker via en säker betalningslänk (Stripe) som skickas per e-post vid projektstart. Du behöver inget Stripe-konto — länken tar dig direkt till ett betalformulär. Drinkmyte lagrar aldrig kortuppgifter. <a href="https://stripe.com/se/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--apricot)">Stripes integritetspolicy →</a></p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">4. Leverans och revisioner</h3>
 <p>Första version levereras inom 1–5 arbetsdagar beroende på paket och briefingens kvalitet. Varje projekt inkluderar <strong>en (1) revisionsrunda</strong> utan extra kostnad. Löpande <strong>små innehållsuppdateringar</strong> (t.ex. uppdatera text, byta bild, ändra öppettider) ingår i månadsabonnemanget utan extra kostnad. Mer omfattande ändringar — såsom nya sektioner, ny funktionalitet eller omdesign — debiteras separat och offerteras i förväg.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">5. Kundens ansvar</h3>
@@ -2122,8 +2089,8 @@ const closeLegalModal = () => {
   document.body.style.overflow = "";
 };
 
-if (privacyLink) privacyLink.addEventListener("click", () => openLegalModal("privacy"));
-if (termsLink) termsLink.addEventListener("click", () => openLegalModal("terms"));
+if (privacyLink) privacyLink.addEventListener("click", (e) => { e.preventDefault(); openLegalModal("privacy"); });
+if (termsLink) termsLink.addEventListener("click", (e) => { e.preventDefault(); openLegalModal("terms"); });
 if (cookieLearnMore) cookieLearnMore.addEventListener("click", () => openLegalModal("privacy"));
 if (legalClose) legalClose.addEventListener("click", closeLegalModal);
 if (legalOverlay) {
@@ -2131,6 +2098,12 @@ if (legalOverlay) {
     if (event.target === legalOverlay) closeLegalModal();
   });
 }
+
+// Consent buttons inside the contact form
+const consentTermsBtn = document.getElementById("consent-terms-btn");
+const consentPrivacyBtn = document.getElementById("consent-privacy-btn");
+if (consentTermsBtn) consentTermsBtn.addEventListener("click", () => openLegalModal("terms"));
+if (consentPrivacyBtn) consentPrivacyBtn.addEventListener("click", () => openLegalModal("privacy"));
 
 // Hash-based modal trigger: drinkmyte.com/#privacy or /#terms
 const openModalFromHash = () => {
@@ -2190,6 +2163,10 @@ if (contactForm) {
     event.preventDefault();
     const submitButton = contactForm.querySelector('button[type="submit"]');
     if (!submitButton) return;
+
+    // Honeypot check — bots fill hidden fields, humans don't
+    const honeypot = contactForm.querySelector('#_honeypot');
+    if (honeypot && honeypot.value) return;
 
     // — Validation —
     const emailInput = contactForm.querySelector('#email');
@@ -2301,7 +2278,13 @@ if (cookieDecline && cookieBanner) {
 }
 
 const revealElements = document.querySelectorAll(".reveal");
-const showRevealElement = element => element.classList.add("visible");
+const showRevealElement = element => {
+  element.classList.add("visible");
+  // Animate any bar charts inside this element
+  element.querySelectorAll(".bar-fill[data-bar-width]").forEach(bar => {
+    bar.style.setProperty("--bar-width", bar.dataset.barWidth);
+  });
+};
 
 if (revealElements.length) {
   if ("IntersectionObserver" in window && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -2315,7 +2298,9 @@ if (revealElements.length) {
 
     revealElements.forEach(element => revealObserver.observe(element));
   } else {
-    revealElements.forEach(showRevealElement);
+    revealElements.forEach(el => {
+      showRevealElement(el);
+    });
   }
 }
 
@@ -2324,14 +2309,18 @@ const mobileNav = document.getElementById("mobile-nav");
 
 if (hamburger && mobileNav) {
   hamburger.addEventListener("click", () => {
-    hamburger.classList.toggle("open");
+    const isOpen = hamburger.classList.toggle("open");
     mobileNav.classList.toggle("open");
+    hamburger.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    hamburger.setAttribute("aria-label", isOpen ? "Stäng meny" : "Öppna meny");
   });
 
   document.querySelectorAll(".mobile-nav-link, .mobile-nav a.btn").forEach(link => {
     link.addEventListener("click", () => {
       hamburger.classList.remove("open");
       mobileNav.classList.remove("open");
+      hamburger.setAttribute("aria-expanded", "false");
+      hamburger.setAttribute("aria-label", "Öppna meny");
     });
   });
 }
