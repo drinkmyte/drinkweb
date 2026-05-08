@@ -1619,54 +1619,57 @@ details summary::-webkit-details-marker { display: none; }
         </div>
 
         <!-- Concept: Smakis — Komplett tier -->
-        <div class="concept-card reveal reveal-d1" style="background:#f8f7f4;border:2px solid #E27442;box-shadow:5px 5px 0 rgba(232,118,66,0.25);color:var(--ink)">
+        <div class="concept-card reveal reveal-d1" style="background:var(--ink);border:2px solid var(--ink);box-shadow:5px 5px 0 rgba(20,33,61,0.35);color:#fff;overflow:hidden;position:relative">
+
+          <!-- Scratch marks SVG overlay -->
+          <svg aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0.06" preserveAspectRatio="xMidYMid slice">
+            <line x1="0" y1="30%" x2="100%" y2="28%" stroke="#fff" stroke-width="1.5"/>
+            <line x1="0" y1="31.5%" x2="100%" y2="29.2%" stroke="#fff" stroke-width="0.7"/>
+            <line x1="15%" y1="0" x2="12%" y2="100%" stroke="#fff" stroke-width="1"/>
+            <line x1="80%" y1="0" x2="83%" y2="100%" stroke="#fff" stroke-width="0.8"/>
+            <line x1="0" y1="70%" x2="100%" y2="72%" stroke="#fff" stroke-width="1.2"/>
+          </svg>
+
+          <!-- Spray-paint brand blob -->
+          <div aria-hidden="true" style="position:absolute;top:-20%;right:-10%;width:55%;height:55%;background:radial-gradient(ellipse,#E27442 0%,transparent 65%);opacity:0.12;filter:blur(30px);pointer-events:none;border-radius:50%"></div>
 
           <!-- Top row: tags -->
-          <div style="display:flex;align-items:center;gap:8px">
-            <div class="portfolio-tag tag-concept" style="background:rgba(232,118,66,0.12);color:#E27442;border:1.5px solid rgba(232,118,66,0.35)">Konceptsida</div>
-            <div class="portfolio-tag" style="background:#E27442;color:#fff;border:none;font-weight:700">Komplett-nivå</div>
+          <div style="display:flex;align-items:center;gap:8px;position:relative">
+            <div class="portfolio-tag tag-concept" style="background:rgba(232,118,66,0.15);color:#E27442;border:1.5px solid rgba(232,118,66,0.4)">Konceptsida</div>
+            <div class="portfolio-tag" style="background:#E27442;color:#fff;border:none;font-weight:700;letter-spacing:0.05em">Komplett-nivå</div>
           </div>
 
-          <!-- Logo -->
-          <div style="margin:4px 0 2px">
-            <img src="images/smakis-logo.png" alt="Smakis" style="height:40px;width:auto;object-fit:contain">
+          <!-- Logo + stack tags -->
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;position:relative">
+            <img src="images/smakis-logo.png" alt="Smakis" style="height:38px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
+            <div style="display:flex;flex-wrap:wrap;gap:4px">
+              <span style="font-size:10px;font-family:var(--font-body);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);padding:2px 7px;border:1px solid rgba(255,255,255,0.12)">Next.js</span>
+              <span style="font-size:10px;font-family:var(--font-body);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);padding:2px 7px;border:1px solid rgba(255,255,255,0.12)">GSAP</span>
+              <span style="font-size:10px;font-family:var(--font-body);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);padding:2px 7px;border:1px solid rgba(255,255,255,0.12)">SplitText</span>
+              <span style="font-size:10px;font-family:var(--font-body);background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.6);padding:2px 7px;border:1px solid rgba(255,255,255,0.12)">Tailwind</span>
+            </div>
           </div>
 
-          <!-- Stack tags -->
-          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:2px">
-            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">Next.js</span>
-            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">GSAP</span>
-            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">SplitText</span>
-            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">ScrollTrigger</span>
-            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">Tailwind v4</span>
-          </div>
+          <p style="color:rgba(255,255,255,0.62);font-size:14px;line-height:1.65;position:relative">Ekologisk dryckesbrand sedan 1970 — ett byråkvalitativt konceptprojekt med cinematic scroll, horisontell produktkarusell och ett skräddarsytt designsystem från grunden.</p>
 
-          <p style="color:rgba(20,33,61,0.65);font-size:14px;line-height:1.6">Ekologisk dryckesbrand sedan 1970 — ett fullständigt konceptprojekt med cinematic scroll, horisontell produktkarusell och ett skräddarsytt designsystem från grunden.</p>
-
-          <ul class="concept-features" style="color:rgba(20,33,61,0.7)">
-            <li style="color:rgba(20,33,61,0.7)">Horisontell GSAP-karusell med 7 produkter + mobilsvep</li>
-            <li style="color:rgba(20,33,61,0.7)">SplitText-rubriker i slumpmässig ordning vid scroll</li>
-            <li style="color:rgba(20,33,61,0.7)">Graffiti-SVG, diagonal hatch-typografi, grain overlay</li>
-            <li style="color:rgba(20,33,61,0.7)">Fullständigt designsystem: färg, typsnitt, animationer</li>
+          <ul class="concept-features" style="position:relative">
+            <li>Horisontell GSAP-karusell med 7 produkter + mobilsvep</li>
+            <li>SplitText-rubriker i slumpmässig ordning vid scroll</li>
+            <li>Graffiti-SVG, hatch-typografi, grain overlay</li>
+            <li>Fullständigt designsystem: färg, typsnitt, animationer</li>
           </ul>
 
-          <!-- Product images -->
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:4px">
-            <div style="background:#ede8e1;border-radius:6px;padding:10px;display:flex;align-items:center;justify-content:center">
-              <img src="images/smakis-paron.png" alt="Smakis Päron" style="width:100%;max-height:110px;object-fit:contain" loading="lazy"/>
-            </div>
-            <div style="background:#ede8e1;border-radius:6px;padding:10px;display:flex;align-items:center;justify-content:center">
-              <img src="images/smakis-icetea.png" alt="Smakis Ice Tea" style="width:100%;max-height:110px;object-fit:contain" loading="lazy"/>
-            </div>
-            <div style="background:#ede8e1;border-radius:6px;padding:10px;display:flex;align-items:center;justify-content:center">
-              <img src="images/smakis-smoothie.png" alt="Smakis Smoothie" style="width:100%;max-height:110px;object-fit:contain" loading="lazy"/>
-            </div>
+          <!-- Hero screenshot -->
+          <div style="position:relative;border:1.5px solid rgba(255,255,255,0.1);overflow:hidden;margin-top:2px">
+            <img src="images/smakis-preview.jpg" alt="Smakis live preview" style="width:100%;display:block;object-fit:cover;aspect-ratio:16/8" loading="lazy"/>
+            <!-- Graffiti tag over screenshot -->
+            <div style="position:absolute;bottom:8px;right:10px;font-family:var(--font-display);font-size:clamp(1.2rem,2.5vw,1.8rem);color:rgba(255,255,255,0.55);transform:rotate(-3deg);letter-spacing:0.05em;text-shadow:0 0 12px rgba(232,118,66,0.6)">SMAKA LIVET</div>
           </div>
 
           <!-- Actions -->
-          <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+          <div style="display:flex;gap:10px;margin-top:4px;flex-wrap:wrap;position:relative">
             <a class="btn btn-primary" href="https://smakis-gsap.vercel.app" target="_blank" rel="noopener noreferrer" style="background:#E27442;border-color:#E27442;color:#fff">Se live →</a>
-            <a class="btn btn-secondary" href="#contact" style="border-color:rgba(20,33,61,0.25);color:var(--ink)">Be om liknande</a>
+            <a class="btn btn-secondary" href="#contact" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.8)">Be om liknande</a>
           </div>
         </div>
 
