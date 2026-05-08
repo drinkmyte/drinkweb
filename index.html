@@ -1237,6 +1237,22 @@ main section { padding: 60px 0; }
   cursor: zoom-in;
 }
 
+/* ── HATCH STAMP ── */
+.hatch-stamp {
+  display: inline;
+  -webkit-text-stroke: 1.5px rgba(255,255,255,0.9);
+  color: transparent;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255,255,255,0.82) 0px, rgba(255,255,255,0.82) 1px,
+    transparent 1px, transparent 6px
+  );
+  background-size: 6px 6px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(4px 4px 0px rgba(255,255,255,0.22));
+}
+
 /* ── ANIMATE IN ── */
 .reveal {
   opacity: 1; transform: none;
@@ -1268,6 +1284,19 @@ details summary::-webkit-details-marker { display: none; }
 </style>
 </head>
 <body>
+
+<!-- IP BLOCK OVERLAY -->
+<div id="ip-block-overlay" style="display:none;position:fixed;inset:0;z-index:9999;background:#14213d;align-items:center;justify-content:center;flex-direction:column;gap:20px;padding:24px">
+  <div style="text-align:center;max-width:380px;width:100%">
+    <div style="font-family:'Fraunces',Georgia,serif;font-size:2rem;color:#fff;margin-bottom:8px;letter-spacing:-0.04em">Åtkomst begränsad</div>
+    <p style="color:rgba(255,255,255,0.55);font-size:15px;margin:0 0 28px;line-height:1.6">Den här sidan är inte tillgänglig från ditt nätverk. Ange lösenordet för att fortsätta.</p>
+    <input id="ip-block-pw" type="password" placeholder="Lösenord" autocomplete="off"
+      style="display:block;width:100%;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.15);background:rgba(255,255,255,0.08);color:#fff;font-size:15px;font-family:inherit;outline:none;box-sizing:border-box;margin-bottom:10px" />
+    <button id="ip-block-btn"
+      style="display:block;width:100%;padding:12px;border-radius:12px;border:0;background:#e86b30;color:#fff;font-size:15px;font-family:inherit;font-weight:700;cursor:pointer">Fortsätt</button>
+    <p id="ip-block-err" style="display:none;color:#f08080;font-size:13px;margin:10px 0 0">Fel lösenord.</p>
+  </div>
+</div>
 
 <!-- HEADER -->
 <header class="site-header">
@@ -1780,7 +1809,7 @@ details summary::-webkit-details-marker { display: none; }
     <div class="shell">
       <div class="contact-wrap">
         <p class="section-label">Kontakt</p>
-        <h2 class="section-title">Berätta vad du<br>vill bygga.</h2>
+        <h2 class="section-title">Berätta vad du<br><span class="hatch-stamp">vill bygga.</span></h2>
         <p class="section-sub">Ju mer du skriver här, desto snabbare går det. Vi ställer inga uppföljningsfrågor om du redan svarat på dem.</p>
 
         <div class="contact-grid">
@@ -1792,7 +1821,7 @@ details summary::-webkit-details-marker { display: none; }
             <div class="field-row">
               <div class="field">
                 <label for="name">Namn eller företag *</label>
-                <input id="name" name="name" type="text" placeholder="Te Penson Studio" required />
+                <input id="name" name="name" type="text" placeholder="Ditt namn eller företag" required />
               </div>
               <div class="field">
                 <label for="email">E-post *</label>
@@ -1969,7 +1998,7 @@ details summary::-webkit-details-marker { display: none; }
             Vad händer om jag vill avsluta?
             <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
           </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Du säger upp med 30 dagars varsel via mejl. Sidan tas offline vid periodens slut. Du får alla filer, HTML och bilder, levererade inom 7 arbetsdagar så du kan ta över och hosta sidan var du vill. Byggkostnaden återbetalas inte.</p>
+          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Du säger upp med 30 dagars varsel via mejl till kontakt@drinkmyte.com. Sidan tas offline vid periodens slut. Du får alla filer — HTML och bilder — levererade inom 7 arbetsdagar så du kan ta över och hosta sidan var du vill. Byggkostnaden återbetalas inte.</p>
         </details>
 
         <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
@@ -2037,9 +2066,9 @@ const cookieAccept = document.getElementById("cookie-accept");
 const cookieDecline = document.getElementById("cookie-decline");
 const cookieLearnMore = document.getElementById("cookie-learn-more");
 const PRIVACY_CONTENT = `
-<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 · Ansvarig: Te Frederik Penson (Drinkmyte) · drinkmyte@gmail.com</p>
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 · Ansvarig: Te Frederik Penson (Drinkmyte) · kontakt@drinkmyte.com</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Vem ansvarar för dina uppgifter?</h3>
-<p>Te Frederik Penson, verksam under varumärket Drinkmyte, är personuppgiftsansvarig. Kontakt: drinkmyte@gmail.com.</p>
+<p>Te Frederik Penson, verksam under varumärket Drinkmyte, är personuppgiftsansvarig. Kontakt: kontakt@drinkmyte.com.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Vilka uppgifter samlar vi in?</h3>
 <p><strong>Via kontaktformuläret:</strong> namn, e-post, verksamhetstyp, önskade funktioner, budget och projektbeskrivning. Lämnas frivilligt och används enbart för att besvara din förfrågan.</p>
 <p><strong>Via Google Analytics 4:</strong> anonymiserad besöksdata — sidvisningar, tid på sidan, ungefärlig geografisk plats, enhetstyp och trafikkälla. Ingen data kopplas till din identitet.</p>
@@ -2051,12 +2080,12 @@ const PRIVACY_CONTENT = `
 <p><strong>EmailJS</strong> — används för att skicka formulärdata som e-post. Datan transiteras via deras servrar men sparas inte. <a href="https://www.emailjs.com/legal/privacy-policy/" target="_blank" rel="noopener" style="color:var(--apricot)">EmailJS integritetspolicy →</a></p>
 <p><strong>Google Analytics 4</strong> — Google LLC, USA. Data kan överföras utanför EU/EES med stöd av standardavtalsklausuler. <a href="https://policies.google.com/privacy" target="_blank" rel="noopener" style="color:var(--apricot)">Googles integritetspolicy →</a></p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">6. Dina rättigheter (GDPR)</h3>
-<p>Du har rätt att begära tillgång till, rättelse eller radering av dina personuppgifter, samt rätt att invända mot behandlingen. Kontakta oss på drinkmyte@gmail.com — svar inom 30 dagar. Klagomål kan lämnas till <a href="https://www.imy.se" target="_blank" rel="noopener" style="color:var(--apricot)">Integritetsskyddsmyndigheten (IMY)</a>.</p>
+<p>Du har rätt att begära tillgång till, rättelse eller radering av dina personuppgifter, samt rätt att invända mot behandlingen. Kontakta oss på kontakt@drinkmyte.com — svar inom 30 dagar. Klagomål kan lämnas till <a href="https://www.imy.se" target="_blank" rel="noopener" style="color:var(--apricot)">Integritetsskyddsmyndigheten (IMY)</a>.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Cookies</h3>
 <p>Google Analytics använder cookies för att särskilja besökare. Vi sätter inga analyticscookies förrän du har gett ditt samtycke via cookie-bannern. Du kan återkalla samtycket när som helst genom att rensa cookies i din webbläsare. Inga marknadsföringscookies eller tredjepartsspårning används i övrigt.</p>
 `;
 const TERMS_CONTENT = `
-<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 &middot; Te Frederik Penson (Drinkmyte) &middot; drinkmyte@gmail.com</p>
+<p style="color:var(--muted);font-size:13px;margin-bottom:24px">Senast uppdaterad: maj 2026 &middot; Te Frederik Penson (Drinkmyte) &middot; kontakt@drinkmyte.com</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:0 0 8px">1. Parter</h3>
 <p>Dessa villkor gäller mellan Te Frederik Penson, verksam under varumärket Drinkmyte ("vi", "oss"), och den kund ("du") som beställer en tjänst via drinkmyte.com eller via e-postkontakt.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">2. Tjänster och priser</h3>
@@ -2070,7 +2099,7 @@ const TERMS_CONTENT = `
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">6. Äganderätt</h3>
 <p>Koden och designen förblir Drinkmytes egendom tills full betalning mottagits. Efter slutbetalning övergår nyttjanderätten till kunden. Vi förbehåller oss rätten att visa projektet i vår portfolio om inte annat avtalats skriftligen.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Support och svarstid</h3>
-<p>Support sker via e-post (drinkmyte@gmail.com). Vi strävar efter att svara inom <strong>3 arbetsdagar</strong> för alla paket. Support täcker frågor om din befintliga sida och mindre innehållsuppdateringar. Större ändringar debiteras separat.</p>
+<p>Support sker via e-post (kontakt@drinkmyte.com). Vi strävar efter att svara inom <strong>3 arbetsdagar</strong> för alla paket. Support täcker frågor om din befintliga sida och mindre innehållsuppdateringar. Större ändringar debiteras separat.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">8. Uppsägning</h3>
 <p>Du kan säga upp abonnemanget med <strong>30 dagars skriftlig varsel</strong> via e-post. Sidan tas offline vid periodens slut. Byggkostnaden återbetalas inte. Vi förbehåller oss rätten att avsluta abonnemanget om betalning uteblir <strong>14 dagar</strong> efter skriftlig påminnelse.</p>
 <p>Vid uppsägning levererar Drinkmyte samtliga kundens filer — HTML-kod och bilder — via e-post eller nedladdningslänk inom <strong>7 arbetsdagar</strong> från avtalets slut. Kunden äger rätt att ta över och driftsätta sidan hos valfri annan leverantör. Drinkmyte behåller rätten att använda projektet i sin portfolio om inte annat avtalats skriftligen.</p>
@@ -2329,4 +2358,67 @@ if (hamburger && mobileNav) {
     });
   });
 }
+</script>
+
+<script>
+// ── IP BLOCK: 62.88.128.0/17 ──────────────────────────────────────────────
+// Range: 62.88.128.0 (1045987328) – 62.88.255.255 (1046020095)
+// Password is stored as SHA-256 hash. To update:
+//   1. Run: echo -n "dittlösenord" | sha256sum   (or use any sha256 tool)
+//   2. Replace the HASH constant below with the result.
+// ─────────────────────────────────────────────────────────────────────────
+(async function () {
+  if (sessionStorage.getItem('dm_access') === '1') return;
+
+  function ipToLong(ip) {
+    return ip.split('.').reduce(function(acc, oct) {
+      return (acc * 256 + parseInt(oct, 10));
+    }, 0);
+  }
+
+  let blocked = false;
+  try {
+    const ctrl = new AbortController();
+    setTimeout(function() { ctrl.abort(); }, 5000);
+    const res = await fetch('https://api64.ipify.org?format=json', { signal: ctrl.signal });
+    const data = await res.json();
+    const long = ipToLong(data.ip);
+    blocked = long >= 1045987328 && long <= 1046020095;
+  } catch (e) {
+    // If IP lookup fails, don't block
+  }
+
+  if (!blocked) return;
+
+  // SHA-256 hash of the access password — CHANGE THIS
+  const HASH = 'ac6d3769e6a12c0b8abf8f5830a9f1f2fd38118417f9d613bc527f9e9a83da7d';
+
+  const overlay = document.getElementById('ip-block-overlay');
+  const pwInput = document.getElementById('ip-block-pw');
+  const btn     = document.getElementById('ip-block-btn');
+  const err     = document.getElementById('ip-block-err');
+
+  overlay.style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  pwInput.focus();
+
+  async function tryPassword() {
+    const val = pwInput.value;
+    if (!val) return;
+    const buf  = await crypto.subtle.digest('SHA-256', new TextEncoder().encode(val));
+    const hash = Array.from(new Uint8Array(buf)).map(function(b) { return b.toString(16).padStart(2, '0'); }).join('');
+    if (hash === HASH) {
+      sessionStorage.setItem('dm_access', '1');
+      overlay.style.display = 'none';
+      document.body.style.overflow = '';
+    } else {
+      err.style.display = 'block';
+      pwInput.value = '';
+      pwInput.focus();
+    }
+  }
+
+  btn.addEventListener('click', tryPassword);
+  pwInput.addEventListener('keydown', function(e) { if (e.key === 'Enter') tryPassword(); });
+}());
 </script>
