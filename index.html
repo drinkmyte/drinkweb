@@ -2422,6 +2422,17 @@ if (contactForm) {
     const honeypot = contactForm.querySelector('#_honeypot');
     if (honeypot && honeypot.value) return;
 
+    // Rate limit — one submission per 10 minutes per browser
+    const COOLDOWN_MS = 10 * 60 * 1000;
+    const lastSent = localStorage.getItem('dm_last_sent');
+    if (lastSent && Date.now() - parseInt(lastSent) < COOLDOWN_MS) {
+      const wait = Math.ceil((COOLDOWN_MS - (Date.now() - parseInt(lastSent))) / 60000);
+      submitButton.textContent = `Vänta ${wait} min innan nästa skick`;
+      submitButton.style.background = '#888';
+      window.setTimeout(() => { submitButton.textContent = submitButton.dataset.originalLabel || 'Skicka'; submitButton.style.background = ''; }, 3000);
+      return;
+    }
+
     // — Validation —
     const emailInput = contactForm.querySelector('#email');
     const phoneInput = contactForm.querySelector('#phone');
@@ -2477,6 +2488,7 @@ if (contactForm) {
 
     emailjs.send("service_q7vufim", "template_6i09csd", templateParams, "DpeZ9IZHsvSxIroyM")
       .then(() => {
+        localStorage.setItem('dm_last_sent', Date.now().toString());
         submitButton.textContent = "Skickat! Vi hör av oss inom 24 h.";
         submitButton.style.background = "#1a7a4a";
         contactForm.reset();
