@@ -376,7 +376,7 @@ main section { padding: 60px 0; }
 .section-title {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 5.5vw, 5rem);
-  line-height: 0.92; letter-spacing: 0.01em;
+  line-height: 0.95; letter-spacing: 0.04em;
   color: var(--ink); margin: 0 0 16px;
 }
 .section-title em { font-style: normal; color: var(--apricot); }
@@ -410,8 +410,9 @@ section { position: relative; overflow: hidden; }
 .hero h1 {
   font-family: var(--font-display);
   font-size: clamp(4.5rem, 9vw, 8.5rem);
-  line-height: 0.88; letter-spacing: 0.01em;
+  line-height: 0.93; letter-spacing: 0.04em;
   color: var(--ink); margin: 0 0 20px;
+  padding-top: 6px;
 }
 .hero h1 em { font-style: normal; color: var(--apricot); }
 .hero-sub { color: var(--muted); font-size: 15px; max-width: 480px; margin: 0 0 28px; }
@@ -458,8 +459,8 @@ section { position: relative; overflow: hidden; }
 }
 .hero-card h2 {
   font-family: var(--font-display);
-  font-size: 1.65rem; line-height: 1.1;
-  letter-spacing: -0.04em; margin: 0 0 10px;
+  font-size: 1.65rem; line-height: 1.0;
+  letter-spacing: 0.04em; margin: 0 0 10px;
 }
 .hero-card p { color: rgba(255,255,255,0.65); font-size: 14px; margin: 0; }
 .hero-list {
@@ -607,7 +608,7 @@ section { position: relative; overflow: hidden; }
 
 .portfolio-card h3 {
   font-family: var(--font-display);
-  font-size: 1.6rem; letter-spacing: -0.03em;
+  font-size: 1.6rem; letter-spacing: 0.03em;
   color: var(--ink); margin: 0 0 6px;
 }
 .portfolio-card .meta { font-size: 13px; color: var(--muted); margin: 0 0 14px; }
@@ -668,7 +669,7 @@ section { position: relative; overflow: hidden; }
 .concept-card > * { position: relative; }
 .concept-card h3 {
   font-family: var(--font-display);
-  font-size: 2rem; letter-spacing: -0.04em;
+  font-size: 2rem; letter-spacing: 0.04em;
   margin: 0;
 }
 .concept-card p { color: rgba(255,255,255,0.64); font-size: 14px; margin: 0; }
@@ -1296,6 +1297,20 @@ section { position: relative; overflow: hidden; }
   background-clip: text;
   filter: drop-shadow(4px 4px 0px rgba(255,255,255,0.22));
 }
+.hatch-stamp-light {
+  display: inline;
+  -webkit-text-stroke: 1.5px #e86b30;
+  color: transparent !important;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #e86b30 0px, #e86b30 1px,
+    transparent 1px, transparent 6px
+  );
+  background-size: 6px 6px;
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(3px 3px 0px rgba(232,107,48,0.3));
+}
 
 /* ── ANIMATE IN ── */
 .reveal {
@@ -1385,7 +1400,7 @@ details summary::-webkit-details-marker { display: none; }
       <div class="hero-grid">
         <div>
           <div class="eyebrow hero-eyebrow">Webbyrå i Göteborg, distansprojekt välkomna</div>
-          <h1>Seriös<br>känsla.<br><em>Riktig</em> sida.</h1>
+          <h1>Seriös<br>känsla.<br><em class="hatch-stamp-light">Riktig</em> sida.</h1>
           <p class="hero-sub">Drinkmyte är en webbyrå i Göteborg. Vi bygger hemsidor för företag som vill tas på allvar på nätet, oavsett bransch.</p>
           <div class="hero-actions">
             <a class="btn btn-apricot" href="#contact">Berätta om ditt företag</a>
@@ -1990,14 +2005,6 @@ details summary::-webkit-details-marker { display: none; }
             <div class="tip-card">
               Vet du inte vilket paket som passar? Beskriv bara verksamheten, så klarnar rätt upplägg snabbt.
             </div>
-            <div class="domain-card">
-              <strong>Kolla domännamn</strong>
-              <p>Skriv ett namn, så öppnas sökning hos Namecheap i ny flik.</p>
-              <form class="domain-form" id="domain-form">
-                <input id="domain-query" type="text" placeholder="mittforetag.se" />
-                <button type="submit">Kolla</button>
-              </form>
-            </div>
           </div>
         </div>
       </div>
@@ -2103,7 +2110,6 @@ details summary::-webkit-details-marker { display: none; }
 </div>
 <script>
 const contactForm = document.getElementById("contact-form");
-const domainForm = document.getElementById("domain-form");
 const lightbox = document.getElementById("lightbox");
 const lightboxImage = document.getElementById("lightbox-img");
 const lightboxClose = document.getElementById("lightbox-close");
@@ -2234,15 +2240,6 @@ document.addEventListener("keydown", event => {
   if (event.key === "Escape") closeLegalModal();
 });
 
-if (domainForm) {
-  domainForm.addEventListener("submit", event => {
-    event.preventDefault();
-    const query = document.getElementById("domain-query")?.value.trim();
-    if (!query) return;
-    const cleanDomain = query.replace(/^https?:\/\//, "").replace(/^www\./, "").replace(/\/.*$/, "");
-    window.open(`https://www.namecheap.com/domains/registration/results/?domain=${encodeURIComponent(cleanDomain)}`, "_blank", "noopener");
-  });
-}
 
 if (contactForm) {
   contactForm.addEventListener("submit", event => {
