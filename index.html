@@ -766,162 +766,249 @@ section { position: relative; overflow: hidden; }
 
 /* ── PRICING ── */
 .pricing-section { background: var(--paper); border-bottom: 2px solid var(--ink); }
-.pricing-note {
-  margin-top: 10px; padding: 12px 16px;
-  background: transparent;
-  border: 2px solid var(--gold);
-  border-radius: 0;
-  font-size: 13px; color: var(--ink-soft);
-}
-.pricing-grid {
-  display: grid; grid-template-columns: repeat(3,1fr);
-  gap: 0; margin-top: 28px;
-  border: 2px solid var(--ink);
-}
-.price-card {
-  padding: 24px;
-  background: transparent;
-  border: none;
-  border-right: 2px solid var(--ink);
-  border-radius: 0;
-  box-shadow: none;
-  display: flex; flex-direction: column;
-}
-.price-card:last-child { border-right: none; }
-.price-card.featured {
+
+/* Price range hero */
+.price-range-hero {
+  margin: 28px 0 56px;
   background: var(--ink);
-  color: #fff; transform: none;
+  color: #fff;
+  border: 3px solid var(--ink);
+  box-shadow: 8px 8px 0 var(--apricot);
+  padding: 30px 36px 26px;
+  position: relative;
+  overflow: hidden;
 }
-.price-badge {
-  display: inline-flex; align-items: center;
-  height: 22px; padding: 0 8px; border-radius: 0;
-  font-size: 10px; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  background: var(--apricot); color: #fff;
-  margin-bottom: 12px; align-self: flex-start;
-}
-.price-card.featured .price-badge {
-  background: rgba(255,255,255,0.15); color: var(--gold);
-}
-.price-card h3 { font-size: 16px; font-weight: 700; color: var(--ink); margin: 0 0 4px; }
-.price-card.featured h3 { color: #fff; }
-.price-amount {
+.price-range-hero::before {
+  content: "kr";
+  position: absolute;
+  top: 4px; right: 18px;
   font-family: var(--font-display);
-  font-size: clamp(2rem, 4vw, 3rem);
-  line-height: 1; letter-spacing: -0.05em;
-  color: var(--ink); margin: 10px 0 4px;
+  font-size: 110px;
+  line-height: 1;
+  color: rgba(255,255,255,0.045);
+  letter-spacing: 0.02em;
+  pointer-events: none;
 }
-.price-card.featured .price-amount { color: #fff; }
-.price-meta { font-size: 13px; color: var(--muted); margin-bottom: 12px; }
-.price-card.featured .price-meta { color: rgba(255,255,255,0.6); }
-.price-tagline { font-size: 13px; color: var(--muted); margin-bottom: 16px; }
-.price-card.featured .price-tagline { color: rgba(255,255,255,0.65); }
-.price-list {
-  list-style: none; padding: 0; margin: 0 0 20px;
-  display: grid; gap: 8px; flex: 1;
+.price-range-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 16px 0;
+  border-bottom: 1px dashed rgba(255,255,255,0.16);
+  position: relative;
 }
-.price-list li {
-  display: flex; gap: 8px; font-size: 13px;
-  align-items: flex-start; color: var(--text);
+.price-range-row:last-of-type { border-bottom: none; padding-bottom: 6px; }
+.price-range-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
 }
-.price-card.featured .price-list li { color: rgba(255,255,255,0.8); }
-.price-list strong { color: var(--apricot); flex-shrink: 0; font-size: 13px; }
-.price-card.featured .price-list strong { color: var(--gold); }
-
-.price-from {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.08em; text-transform: uppercase;
-  color: var(--muted); margin-bottom: 2px; margin-top: 10px;
-}
-.price-card.featured .price-from { color: rgba(255,255,255,0.45); }
-
-.price-subscription {
-  display: flex; flex-direction: column; gap: 3px;
-  padding: 12px 14px;
-  border-radius: 0;
-  background: transparent;
-  border: 2px solid rgba(232,107,48,0.4);
-  margin-bottom: 16px;
-}
-.price-card.featured .price-subscription {
-  background: transparent;
-  border-color: rgba(255,255,255,0.2);
-}
-.sub-label {
-  font-size: 11px; font-weight: 700;
-  letter-spacing: 0.07em; text-transform: uppercase;
-  color: var(--apricot);
-}
-.price-card.featured .sub-label { color: var(--gold); }
-.sub-amount {
+.price-range-amount {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
   font-family: var(--font-display);
-  font-size: 1.4rem; line-height: 1;
-  letter-spacing: -0.04em; color: var(--ink);
+  font-size: clamp(1.5rem, 4.2vw, 2.6rem);
+  letter-spacing: 0.01em;
+  line-height: 1;
 }
-.price-card.featured .sub-amount { color: #fff; }
-.sub-desc {
-  font-size: 12px; color: var(--muted); margin-top: 2px;
-}
-.price-card.featured .sub-desc { color: rgba(255,255,255,0.5); }
-
-/* Pricing hover */
-.price-card { transition: background 0.15s; }
-.price-card:not(.featured):hover { background: rgba(255,255,255,0.5); }
-.price-card.featured:hover { background: #1a2f4e; }
-
-/* Exclusions list */
-.price-exclude {
-  list-style: none; padding: 10px 0 0; margin: 0 0 12px;
-  display: grid; gap: 6px;
-  border-top: 1px solid rgba(20,33,61,0.07);
-}
-.price-exclude li {
-  display: flex; gap: 8px; font-size: 12px;
-  align-items: flex-start; color: var(--muted); opacity: 0.65;
-}
-.price-exclude li::before {
-  content: "×"; color: #c0392b;
-  font-weight: 700; flex-shrink: 0;
+.range-low { color: rgba(255,255,255,0.6); }
+.range-arrow { color: var(--apricot); font-size: 1em; opacity: 0.85; }
+.range-high { color: var(--apricot); }
+.price-range-note {
+  margin-top: 16px;
+  padding-top: 14px;
+  font-size: 12.5px;
+  color: rgba(255,255,255,0.55);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  letter-spacing: 0.02em;
 }
 
-/* Add-ons */
-.addons-wrap {
-  margin-top: 24px; padding: 22px 24px;
-  background: transparent;
+/* Pricing inner heading */
+.pricing-h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.4vw, 2.2rem);
+  margin: 56px 0 4px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.pricing-sub {
+  color: var(--muted);
+  font-size: 14px;
+  margin-bottom: 26px;
+  line-height: 1.6;
+}
+
+/* Factors grid */
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+.factor-card {
+  background: var(--paper);
   border: 2px solid var(--ink);
-  border-radius: 0;
-  box-shadow: none;
+  padding: 26px 28px 24px;
+  position: relative;
+  box-shadow: 4px 4px 0 rgba(20,33,61,0.1);
+  transition: transform 0.18s, box-shadow 0.18s;
 }
-.addons-header {
-  display: flex; align-items: baseline; gap: 10px; margin-bottom: 16px;
+.factor-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--apricot);
 }
-.addons-header h4 {
-  font-size: 14px; font-weight: 700; color: var(--ink); margin: 0;
-}
-.addons-header span {
-  font-size: 12px; color: var(--muted);
-}
-.addons-grid {
-  display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px;
-}
-.addon-item {
-  display: flex; flex-direction: column; gap: 4px;
-  padding: 10px 12px;
-  background: transparent;
-  border: 2px solid rgba(20,33,61,0.15);
-  border-radius: 0;
-  font-size: 12px; color: var(--muted);
-}
-.addon-item strong {
-  font-size: 13px; color: var(--ink); font-weight: 700;
-}
-.addon-price {
+.factor-num {
   font-family: var(--font-display);
-  font-size: 1rem; color: var(--apricot);
-  letter-spacing: -0.03em; margin-top: 2px;
+  font-size: 44px;
+  color: rgba(232,118,66,0.22);
+  position: absolute;
+  top: 12px; right: 18px;
+  line-height: 1;
+  letter-spacing: 0.04em;
+  pointer-events: none;
 }
-@media (max-width: 900px) { .addons-grid { grid-template-columns: repeat(2, 1fr); } }
-@media (max-width: 500px) { .addons-grid { grid-template-columns: 1fr; } }
+.factor-card h4 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  margin: 0 0 10px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  position: relative;
+}
+.factor-card p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  max-width: 32ch;
+}
+.factor-range {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 12px;
+  background: var(--sand);
+  color: var(--ink);
+  padding: 5px 11px;
+  border: 1.5px solid var(--ink);
+  letter-spacing: 0.04em;
+}
+
+/* Examples grid */
+.examples-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+.example-card {
+  background: #fff;
+  border: 2px solid var(--ink);
+  padding: 22px 22px 20px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  box-shadow: 4px 4px 0 rgba(20,33,61,0.12);
+  transition: transform 0.18s, box-shadow 0.18s;
+}
+.example-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--apricot);
+}
+.example-card.featured {
+  background: var(--ink);
+  color: #fff;
+  border-color: var(--ink);
+  box-shadow: 4px 4px 0 var(--apricot);
+}
+.example-card.featured h4 { color: #fff; }
+.example-card.featured .example-desc { color: rgba(255,255,255,0.7); }
+.example-card.featured .ex-monthly { color: rgba(255,255,255,0.55); }
+.example-card.featured .example-tag {
+  background: var(--apricot);
+  color: #fff;
+  border-color: var(--apricot);
+}
+.example-card.featured .example-price {
+  border-top-color: rgba(255,255,255,0.18);
+}
+.example-tag {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 10.5px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--sand);
+  color: var(--ink);
+  padding: 4px 9px;
+  border: 1.5px solid var(--ink);
+  margin-bottom: 14px;
+  align-self: flex-start;
+}
+.example-card h4 {
+  font-family: var(--font-display);
+  font-size: 20px;
+  margin: 0 0 8px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.example-desc {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+.example-price {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  border-top: 1px dashed rgba(20,33,61,0.18);
+  padding-top: 12px;
+}
+.ex-amount {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--apricot);
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+}
+.ex-monthly {
+  font-size: 12px;
+  color: var(--muted);
+  letter-spacing: 0.02em;
+}
+
+/* Pricing CTA */
+.pricing-cta {
+  margin-top: 56px;
+  background: var(--sand);
+  border: 2px solid var(--ink);
+  padding: 44px 32px 40px;
+  text-align: center;
+  position: relative;
+  box-shadow: 6px 6px 0 var(--ink);
+}
+.pricing-cta h3 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+  margin: 0 0 12px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+}
+.pricing-cta p {
+  color: var(--ink-soft);
+  font-size: 15px;
+  line-height: 1.6;
+  margin: 0 auto 24px;
+  max-width: 540px;
+}
 
 /* ── CONTACT / INTAKE ── */
 .contact-section { padding-bottom: 80px; }
@@ -1203,18 +1290,17 @@ section { position: relative; overflow: hidden; }
   .process-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .pricing-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .price-card.featured { transform: none; }
+  .factors-grid { grid-template-columns: repeat(2, 1fr); }
+  .examples-grid { grid-template-columns: repeat(3, 1fr); }
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
 @media (max-width: 750px) {
-  .pricing-grid { grid-template-columns: 1fr; }
-  .price-card.featured { transform: none; }
+  .factors-grid { grid-template-columns: 1fr; }
+  .examples-grid { grid-template-columns: 1fr; }
+  .price-range-row { flex-direction: column; align-items: flex-start; gap: 6px; }
 }
 
 @media (max-width: 600px) {
@@ -1230,8 +1316,9 @@ section { position: relative; overflow: hidden; }
   .graphs-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
-  .pricing-grid { grid-template-columns: 1fr; }
-  .price-card.featured { transform: none; }
+  .factors-grid { grid-template-columns: 1fr; }
+  .examples-grid { grid-template-columns: 1fr; }
+  .price-range-row { flex-direction: column; align-items: flex-start; gap: 6px; }
   .field-row { grid-template-columns: 1fr; }
   .check-group { grid-template-columns: 1fr; }
   .contact-wrap { padding: 20px; border-radius: 20px; }
@@ -1838,125 +1925,97 @@ details summary::-webkit-details-marker { display: none; }
     <div class="shell">
       <p class="section-label">Priser</p>
       <h2 class="section-title">Vad kostar det?<br><em>Det beror på projektet.</em></h2>
-      <p class="section-sub">Varje projekt är unikt. Priserna nedan är utgångspunkter — inte fasta paket. Det faktiska priset sätts efter projektets storlek, design och funktioner. Du beskriver din verksamhet, vi sätter rätt pris.</p>
-      <div class="pricing-note">
-        <strong>Så funkar det:</strong> Du betalar ett <strong>engångspris för bygget</strong> — varierar beroende på vad du vill ha — och sedan en <strong>månadsavgift</strong> som täcker hosting, domän, drift och support. Siffrorna är riktmärken. Exakt offert via kontaktformuläret, utan långa processer.
-      </div>
+      <p class="section-sub">Inga fasta paket. Du beskriver din verksamhet — vi sätter rätt pris efter vad du faktiskt behöver: antal sidor, design, funktioner och tidsplan.</p>
 
-      <div class="pricing-grid">
-
-        <!-- BAS -->
-        <article class="price-card reveal">
-          <div class="price-badge">Bas</div>
-          <h3>Enkel närvaro</h3>
-          <p style="font-size:12px;font-weight:700;color:var(--apricot);letter-spacing:0.04em;margin:0 0 10px;text-transform:uppercase;">Perfekt för: hantverkare · restaurang med meny · kontaktsida</p>
-          <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">Från 1 399 kr</span>
-          <p class="price-tagline">En riktig sida online, snabbt och utan krångel. Visar vad du gör, var du finns och hur kunder når dig.</p>
-          <ul class="price-list">
-            <li><strong>+</strong>1-sidig landningssida</li>
-            <li><strong>+</strong>Kontaktuppgifter &amp; öppettider</li>
-            <li><strong>+</strong>Kontaktformulär</li>
-            <li><strong>+</strong>Enkel restaurangmeny <em style="font-size:11px;opacity:0.7">(avancerad stil = tillägg)</em></li>
-            <li><strong>+</strong>CTA-knapp</li>
-            <li><strong>+</strong>Mobilanpassning</li>
-            <li><strong>+</strong>Grundläggande SEO-struktur</li>
-          </ul>
-          <ul class="price-exclude">
-            <li>Galleri eller bildsektion</li>
-            <li>Undersidor</li>
-            <li>Google Maps-embed</li>
-          </ul>
-          <div class="price-subscription">
-            <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">Från 299 kr/mån</span>
-            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
-          </div>
-          <a class="btn btn-secondary" href="#contact">Välj Bas</a>
-        </article>
-
-        <!-- KOMPLETT (middle, featured) -->
-        <article class="price-card featured reveal reveal-d1">
-          <div class="price-badge">Rekommenderas</div>
-          <h3>Komplett</h3>
-          <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">Från 3 799 kr</span>
-          <p class="price-tagline">Sidan folk pratar om. Premium känsla, fler sidor och ett intryck som stannar kvar.</p>
-          <ul class="price-list">
-            <li><strong>+</strong>Allt i Pro</li>
-            <li><strong>+</strong>Upp till 10 sidor</li>
-            <li><strong>+</strong>Hero-video i bakgrunden</li>
-            <li><strong>+</strong>Animationer &amp; parallax-scrollning</li>
-            <li><strong>+</strong>Bokningsembed (Calendly, Bokadirekt)</li>
-            <li><strong>+</strong>Instagram-embed</li>
-            <li><strong>+</strong>Jobba hos oss / Om oss-sidor</li>
-            <li><strong>+</strong>Cookie-banner (GDPR)</li>
-            <li><strong>+</strong>Anpassad 404-sida</li>
-            <li><strong>+</strong>Prioriterad support</li>
-            <li><strong>+</strong>Månatlig analysrapport</li>
-          </ul>
-          <div class="price-subscription">
-            <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">Från 849 kr/mån</span>
-            <span class="sub-desc">Hosting · domän · DNS-hantering · prioriterad e-postsupport · små innehållsuppdateringar</span>
-          </div>
-          <a class="btn btn-apricot" href="#contact">Välj Komplett</a>
-        </article>
-
-        <!-- PRO -->
-        <article class="price-card reveal reveal-d2">
-          <div class="price-badge" style="background:rgba(20,33,61,0.1);color:var(--ink);">Populärast</div>
-          <h3>Pro</h3>
-          <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">Från 2 399 kr</span>
-          <p class="price-tagline">För etablerade verksamheter. En genomarbetad sida som faktiskt levererar.</p>
-          <ul class="price-list">
-            <li><strong>+</strong>Upp till 5 sidor eller sektioner</li>
-            <li><strong>+</strong>Kontaktformulär</li>
-            <li><strong>+</strong>Restaurangmeny eller tjänstesidor</li>
-            <li><strong>+</strong>Google Maps-embed</li>
-            <li><strong>+</strong>Google Analytics-koppling</li>
-            <li><strong>+</strong>Bildgalleri</li>
-            <li><strong>+</strong>Anpassad favicon &amp; metadata</li>
-          </ul>
-          <div class="price-subscription">
-            <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">Från 499 kr/mån</span>
-            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
-          </div>
-          <a class="btn btn-apricot" href="#contact">Välj Pro</a>
-        </article>
-
-      </div>
-
-      <!-- ADD-ONS -->
-      <div class="addons-wrap reveal">
-        <div class="addons-header">
-          <h4>Tillval</h4>
-          <span>Lägg till valfria extras till vilket paket som helst</span>
-        </div>
-        <div class="addons-grid">
-          <div class="addon-item">
-            <strong>Extra undersida</strong>
-            <span>Utöver paketets gräns</span>
-            <span class="addon-price">+399 kr/st</span>
-          </div>
-          <div class="addon-item">
-            <strong>Bokningsembed</strong>
-            <span>Calendly, Bokadirekt m.fl.</span>
-            <span class="addon-price">+449 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Flerspråkig sida</strong>
-            <span>Svenska + engelska</span>
-            <span class="addon-price">+999 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Anpassad offert</strong>
-            <span>Något annat? Kontakta oss</span>
-            <span class="addon-price">→ Kontakt</span>
+      <!-- Price range hero banner -->
+      <div class="price-range-hero reveal">
+        <div class="price-range-row">
+          <div class="price-range-label">Engångskostnad — bygget</div>
+          <div class="price-range-amount">
+            <span class="range-low">1 399 kr</span>
+            <span class="range-arrow">→</span>
+            <span class="range-high">8 000 kr +</span>
           </div>
         </div>
+        <div class="price-range-row">
+          <div class="price-range-label">Månadsavgift — drift</div>
+          <div class="price-range-amount">
+            <span class="range-low">299 kr</span>
+            <span class="range-arrow">→</span>
+            <span class="range-high">849 kr / mån</span>
+          </div>
+        </div>
+        <p class="price-range-note">Hosting, domän, DNS-hantering, SSL och support ingår alltid i månadsavgiften.</p>
+      </div>
+
+      <!-- 4 factor cards -->
+      <h3 class="pricing-h3 reveal">Vad påverkar priset</h3>
+      <p class="pricing-sub reveal">Fyra variabler som tillsammans bestämmer var ditt projekt landar i intervallet.</p>
+      <div class="factors-grid">
+        <article class="factor-card reveal">
+          <div class="factor-num">01</div>
+          <h4>Antal sidor</h4>
+          <p>Från ensidig landningssida till strukturerade hemsidor med 10+ undersidor och full navigering.</p>
+          <div class="factor-range">+0 till +2 500 kr</div>
+        </article>
+        <article class="factor-card reveal reveal-d1">
+          <div class="factor-num">02</div>
+          <h4>Design & animationer</h4>
+          <p>Enkel, ren layout — eller premium med hero-video, parallax, GSAP-animationer och interaktiva element.</p>
+          <div class="factor-range">+0 till +3 500 kr</div>
+        </article>
+        <article class="factor-card reveal reveal-d2">
+          <div class="factor-num">03</div>
+          <h4>Funktioner</h4>
+          <p>Kontaktformulär, bokningsembed, Instagram, restaurangmeny, galleri, Google Maps, flerspråkighet.</p>
+          <div class="factor-range">+0 till +2 000 kr</div>
+        </article>
+        <article class="factor-card reveal reveal-d3">
+          <div class="factor-num">04</div>
+          <h4>Support & drift</h4>
+          <p>Bara hosting + e-postsupport — eller full support med prioriterad respons och månatlig analysrapport.</p>
+          <div class="factor-range">299–849 kr/mån</div>
+        </article>
+      </div>
+
+      <!-- Example projects (case-study style, NOT tiers) -->
+      <h3 class="pricing-h3 reveal">Exempel från riktiga projekt</h3>
+      <p class="pricing-sub reveal">Inga fasta paket — bara verklighetsförankring för vad olika scope brukar landa på.</p>
+      <div class="examples-grid">
+        <article class="example-card reveal">
+          <span class="example-tag">Hantverkare</span>
+          <h4>Enkel närvaro online</h4>
+          <p class="example-desc">Ensidig landningssida med kontaktuppgifter, tjänster och bilder. Snabbt levererad och mobilanpassad.</p>
+          <div class="example-price">
+            <span class="ex-amount">~1 500 kr</span>
+            <span class="ex-monthly">+ 299 kr/mån drift</span>
+          </div>
+        </article>
+        <article class="example-card featured reveal reveal-d1">
+          <span class="example-tag">Restaurang</span>
+          <h4>Meny, galleri & bokning</h4>
+          <p class="example-desc">4 sidor med restaurangmeny, bildgalleri, bokningsembed och animerad design. Genomarbetad känsla.</p>
+          <div class="example-price">
+            <span class="ex-amount">2 500–3 500 kr</span>
+            <span class="ex-monthly">+ 599 kr/mån drift</span>
+          </div>
+        </article>
+        <article class="example-card reveal reveal-d2">
+          <span class="example-tag">Företag</span>
+          <h4>Komplett företagssida</h4>
+          <p class="example-desc">8+ sidor, hero-video, GSAP-animationer, Instagram-feed, GDPR-banner och månadsrapporter.</p>
+          <div class="example-price">
+            <span class="ex-amount">5 000–8 000 kr</span>
+            <span class="ex-monthly">+ 849 kr/mån drift</span>
+          </div>
+        </article>
+      </div>
+
+      <!-- Bottom CTA -->
+      <div class="pricing-cta reveal">
+        <h3>Berätta om ditt projekt</h3>
+        <p>Du fyller i ett kort formulär. Inom 24 timmar får du en offert anpassad till just din verksamhet — inga säljsamtal, inga gömda kostnader.</p>
+        <a class="btn btn-primary" href="#contact">Få offert →</a>
       </div>
 
     </div>
