@@ -1,0 +1,54 @@
+block this ip adress from acessing drinkmyte based on this info:
+
+62.88.128.0/17 Network Details
+CIDR Notation
+The IP address range in CIDR format (address/prefix)
+62.88.128.0/17
+
+IP Range
+First and last IP addresses in this block
+62.88.128.0 - 62.88.255.255
+
+Prefix Length
+Number of bits used for the network portion
+/17
+Subnet Mask
+Determines which part of an IP identifies the network vs. host
+255.255.128.0
+
+Hex Subnet Mask
+Subnet mask in hexadecimal notation
+FF.FF.80.00
+
+Broadcast Address
+Address used to send data to all hosts in this subnet
+62.88.255.255
+
+Total IPs
+Total number of addresses in this CIDR block
+32,768
+
+Usable IPs
+Excludes network and broadcast addresses
+32,766
+
+Decimal (Long)
+Integer representation of the input IP address
+1,045,987,328
+
+Decimal Range
+First and last addresses as integers
+1,045,987,328 - 1,046,020,095
+
+Hex IP
+Input IP in hexadecimal notation
+3E.58.80.00
+
+Hex Range
+First and last addresses in hexadecimal
+3E.58.80.00 - 3E.58.FF.FF
+
+IP Version
+Internet Protocol version for this address block
+IPv4
+
