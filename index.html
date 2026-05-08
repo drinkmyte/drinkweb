@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="sv">
 <head>
 <meta charset="UTF-8" />
@@ -122,21 +122,21 @@
         "@type": "Offer",
         "name": "Bas",
         "description": "1-sidig landningssida med kontaktformulär, mobilanpassning och grundläggande SEO.",
-        "price": "1099",
+        "price": "1399",
         "priceCurrency": "SEK"
       },
       {
         "@type": "Offer",
         "name": "Pro",
         "description": "Upp till 5 sidor, bildgalleri, Google Maps, Analytics och anpassad metadata.",
-        "price": "2099",
+        "price": "2399",
         "priceCurrency": "SEK"
       },
       {
         "@type": "Offer",
         "name": "Komplett",
         "description": "Upp till 10 sidor, animationer, bokningsembed, Instagram-embed och prioriterad support.",
-        "price": "3499",
+        "price": "3799",
         "priceCurrency": "SEK"
       }
     ]
@@ -1312,6 +1312,126 @@ section { position: relative; overflow: hidden; }
   filter: drop-shadow(3px 3px 0px rgba(232,107,48,0.3));
 }
 
+/* ── BODY TEXT IMPROVEMENTS ── */
+body { font-size: 16px; }
+.hero-sub, .section-sub { font-size: 16px; line-height: 1.7; }
+.hero-card p { font-size: 15px; line-height: 1.65; }
+.hero-list strong { font-size: 15px; }
+.hero-list span { font-size: 14px; }
+.hero-stat span { font-size: 14px; }
+.step p { font-size: 14px; line-height: 1.7; }
+.price-list li { font-size: 14px; }
+.price-tagline { font-size: 14px; }
+.price-meta { font-size: 14px; }
+.tip-card { font-size: 14px; }
+.portfolio-card .meta { font-size: 14px; }
+.portfolio-features li { font-size: 14px; }
+.concept-card p { font-size: 15px; line-height: 1.65; }
+.concept-features li { font-size: 14px; }
+
+/* ── SERVICES CONTRAST FIX ── */
+.service-card p { color: rgba(255,255,255,0.78); font-size: 14px; }
+.services-section .section-sub { color: rgba(255,255,255,0.72); }
+.services-section .section-title { text-shadow: none; }
+
+/* ── FAQ ANIMATION ── */
+.faq-item { border-bottom: 1px solid rgba(20,33,61,0.12); }
+.faq-item:first-child { border-top: 1px solid rgba(20,33,61,0.12); }
+.faq-summary {
+  font-weight: 700; font-size: 17px; color: var(--ink);
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 22px 0; cursor: pointer; user-select: none;
+  list-style: none; gap: 16px;
+}
+.faq-summary::-webkit-details-marker { display: none; }
+.faq-icon {
+  width: 28px; height: 28px; flex-shrink: 0;
+  border: 2px solid var(--ink); border-radius: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 18px; font-weight: 300; line-height: 1;
+  transition: transform 0.3s ease, background 0.2s, color 0.2s;
+  color: var(--ink);
+}
+.faq-item.is-open .faq-icon { transform: rotate(45deg); background: var(--ink); color: #fff; }
+.faq-body {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.38s cubic-bezier(0.4, 0, 0.2, 1), padding 0.2s;
+  padding-bottom: 0;
+}
+.faq-item.is-open .faq-body { max-height: 500px; padding-bottom: 20px; }
+.faq-body p { margin: 0; color: var(--muted); font-size: 16px; line-height: 1.75; }
+
+/* ── PROCESS CONNECTOR ── */
+.process-connector {
+  display: flex; align-items: center;
+  margin-bottom: 28px; gap: 0;
+}
+.connector-dot {
+  width: 34px; height: 34px; flex-shrink: 0;
+  border: 2px solid var(--ink); border-radius: 0;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 0.95rem; color: var(--ink);
+  background: var(--sand); z-index: 1;
+  transition: background 0.5s, color 0.5s, border-color 0.5s;
+}
+.connector-line {
+  flex: 1; height: 2px; background: rgba(20,33,61,0.12);
+  position: relative; overflow: hidden;
+}
+.connector-line::after {
+  content: '';
+  position: absolute; top: 0; left: -100%; bottom: 0; width: 100%;
+  background: linear-gradient(90deg, var(--apricot), var(--gold));
+  transition: left 1s cubic-bezier(0.23,1,0.32,1);
+}
+.process-connector.animated .connector-line::after { left: 0; }
+.process-connector.animated .connector-dot { background: var(--ink); color: #fff; }
+.process-connector.animated .connector-dot.highlight { background: var(--apricot); border-color: var(--apricot); }
+
+/* ── FAQ SIDE DECORATION ── */
+.faq-inner { position: relative; }
+.faq-side-label {
+  position: absolute; top: 0; left: calc(-1 * (100vw - min(1120px, calc(100vw - 32px))) / 2 - 20px);
+  writing-mode: vertical-rl; text-orientation: mixed;
+  font-family: var(--font-display); font-size: 11px; letter-spacing: 0.25em;
+  color: rgba(20,33,61,0.14); text-transform: uppercase;
+  pointer-events: none; user-select: none;
+  transform: rotate(180deg);
+  white-space: nowrap; line-height: 1;
+}
+.faq-glow {
+  position: absolute; top: 20%; right: -80px;
+  width: 200px; height: 400px;
+  background: radial-gradient(ellipse at center, rgba(232,107,48,0.08) 0%, transparent 70%);
+  pointer-events: none; filter: blur(20px);
+}
+@media (max-width: 1200px) { .faq-side-label, .faq-glow { display: none; } }
+
+/* ── FEATURE SELECT CARDS ── */
+.feature-cards {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 6px; margin-top: 8px;
+}
+.feature-btn {
+  padding: 10px 12px;
+  background: rgba(255,255,255,0.05);
+  border: 1.5px solid rgba(255,255,255,0.12);
+  border-radius: 0;
+  color: rgba(255,255,255,0.6);
+  font-family: var(--font-body); font-size: 13px; font-weight: 500;
+  cursor: pointer; text-align: left; line-height: 1.3;
+  transition: all 0.15s;
+}
+.feature-btn:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.28); color: #fff; }
+.feature-btn.selected {
+  background: rgba(232,107,48,0.18);
+  border-color: var(--apricot); color: #fff;
+  box-shadow: inset 0 0 0 1px rgba(232,107,48,0.3);
+}
+.feature-btn.selected::before { content: '✓ '; color: var(--apricot); font-weight: 700; }
+@media (max-width: 680px) { .feature-cards { grid-template-columns: repeat(2, 1fr); } }
+
 /* ── ANIMATE IN ── */
 .reveal {
   opacity: 1; transform: none;
@@ -1401,7 +1521,7 @@ details summary::-webkit-details-marker { display: none; }
         <div>
           <div class="eyebrow hero-eyebrow">Webbyrå i Göteborg, distansprojekt välkomna</div>
           <h1>Seriös<br>känsla.<br><em class="hatch-stamp-light">Riktig</em> sida.</h1>
-          <p class="hero-sub">Drinkmyte är en webbyrå i Göteborg. Vi bygger hemsidor för företag som vill tas på allvar på nätet, oavsett bransch.</p>
+          <p class="hero-sub">Drinkmyte är en webbyrå i Göteborg. Vi bygger skräddarsydda hemsidor för företag som vill tas på allvar — ingen mall, inga genvägar, alltid gjort för just dig.</p>
           <div class="hero-actions">
             <a class="btn btn-apricot" href="#contact">Berätta om ditt företag</a>
             <a class="btn btn-secondary" href="#portfolio">Se vårt arbete</a>
@@ -1425,13 +1545,13 @@ details summary::-webkit-details-marker { display: none; }
         <aside class="hero-card">
           <div class="mini-label">Om Drinkmyte</div>
           <h2>Drinkmyte är en webbyrå driven av Te Penson.</h2>
-          <p>Ingen stor byrå med tio anställda och långa ledtider. Bara bra hemsidor, snabbt levererade, till ett pris som faktiskt funkar för småföretag.</p>
+          <p>Inte ett stort team med långa köer och väntetider. Bara genomarbetade hemsidor, snabbt levererade, till ett pris som faktiskt funkar för småföretag.</p>
           <ul class="hero-list">
             <li>
               <div class="hero-marker"></div>
               <div>
                 <strong>Rätt första känsla</strong>
-                <span>Folk bestämmer sig om 3 sekunder. Besökaren ska direkt förstå att det här företaget är seriöst.</span>
+                <span>Folk bestämmer sig inom 3 sekunder. Besökaren ska direkt förstå att det här företaget är seriöst.</span>
               </div>
             </li>
             <li>
@@ -1454,9 +1574,294 @@ details summary::-webkit-details-marker { display: none; }
     </div>
   </section>
 
+  <!-- PORTFOLIO -->
+  <section class="portfolio-section" id="portfolio">
+    <div class="section-bg-num">02</div>
+    <div class="shell">
+      <p class="section-label">Arbeten</p>
+      <h2 class="section-title">Resultat som<br><em>talar för sig.</em></h2>
+      <p class="section-sub">Verkliga projekt och konceptsidor som visar bredden av vad Drinkmyte kan leverera: från varm och tillgänglig till premium och avancerad.</p>
+
+      <div class="portfolio-grid" style="margin-top:28px">
+
+        <!-- Real client: IThai -->
+        <div class="portfolio-card reveal">
+          <div class="portfolio-card-header">
+            <div class="portfolio-tag tag-client">✓ Riktigt projekt</div>
+            <h3>I Thai</h3>
+            <p class="meta">Thairestaurang i Göteborg med meny, galleri, kontakt, öppettider och beställningslänk.</p>
+            <ul class="portfolio-features">
+              <li>Tydligare menystruktur så att gäster snabbt hittar rätt rätter</li>
+              <li>Starkare första intryck med varm känsla och klarare flöde</li>
+              <li>Enklare att beställa, hitta kontakt och förstå restaurangen direkt</li>
+            </ul>
+          </div>
+          <div class="portfolio-actions">
+            <a class="btn btn-primary" href="https://ithai.nu" target="_blank" rel="noopener noreferrer">Se live →</a>
+            <a class="btn btn-secondary" href="#contact">Be om liknande</a>
+          </div>
+          <div class="portfolio-screenshots" style="display:grid;grid-template-rows:auto auto;gap:2px">
+            <div class="portfolio-shot" style="aspect-ratio:16/6">
+              <img src="images/ithai-hero.jpg" alt="I Thai hero" loading="lazy"/>
+            </div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
+              <div class="portfolio-shot" style="aspect-ratio:4/3">
+                <img src="images/ithai-menu.jpg" alt="I Thai meny" loading="lazy"/>
+              </div>
+              <div class="portfolio-shot" style="aspect-ratio:4/3">
+                <img src="images/ithai-interior.jpg" alt="I Thai galleri" loading="lazy"/>
+              </div>
+            </div>
+          </div>
+          </div>
+
+        <!-- Concept: Nordveil -->
+        <div class="concept-card reveal reveal-d1">
+          <div class="portfolio-tag tag-concept" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">Konceptsida</div>
+          <h3>Nordveil</h3>
+          <p>Luxury alpine expedition gear, ett konceptprojekt som visar vad Drinkmyte kan göra i en helt annan estetisk riktning: mörk, premium, interaktiv.</p>
+          <ul class="concept-features">
+            <li>Anpassad cursor och scroll-effekter</li>
+            <li>Animerad snöpartikel-canvas</li>
+            <li>Avancerad typografi-hierarki (3 fonter)</li>
+            <li>Fullskärms video hero med overlay</li>
+          </ul>
+          <div class="concept-spacer"></div>
+          <div style="display:grid;gap:6px;border-radius:12px;overflow:hidden;margin-top:4px">
+            <img src="images/nordveil-hero.jpg" alt="Nordveil hero" data-full="images/nordveil-hero.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:8px" loading="lazy"/>
+            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
+              <img src="images/nordveil-image-1.jpg" alt="Nordveil image 1" data-full="images/nordveil-image-1.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
+              <img src="images/nordveil-image-2.jpg" alt="Nordveil image 2" data-full="images/nordveil-image-2.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
+              <img src="images/nordveil-image-3.jpg" alt="Nordveil image 3" data-full="images/nordveil-image-3.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
+            </div>
+          </div>
+          <a class="btn btn-secondary" href="#contact" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);margin-top:8px;align-self:flex-start">Fråga om liknande →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services-section section-dark" id="services">
+    <div class="section-bg-num">03</div>
+    <div class="shell">
+      <p class="section-label">Tjänster</p>
+      <h2 class="section-title">Det viktigaste.<br>Utan onödigt fluff.</h2>
+      <p class="section-sub">Upplägget är gjort för företag som vill ha en hemsida som faktiskt hjälper verksamheten, inte ett digitalt broschyrfodral.</p>
+
+      <div class="services-grid">
+        <article class="service-card reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="m12 20 7-7"/><path d="m14 4 6 6-10 10H4v-6L14 4Z"/></svg></div>
+          <h3>Design som känns din</h3>
+          <p>Typsnitt, färger och layout väljs utifrån ditt företag, inte från en mall vi återanvänder varje vecka.</p>
+        </article>
+        <article class="service-card reveal reveal-d1">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-8"/><path d="M22 20H2"/></svg></div>
+          <h3>SEO-grund från start</h3>
+          <p>Rubriker, metadata och lokal relevans struktureras rätt från dag ett, så du inte behöver betala för att fixa det efteråt.</p>
+        </article>
+        <article class="service-card reveal reveal-d2">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg></div>
+          <h3>Text som faktiskt kommunicerar</h3>
+          <p>Det ska vara lätt att fatta vad du erbjuder. Inte imponerande, inte fluffigt, bara tydligt.</p>
+        </article>
+        <article class="service-card reveal">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg></div>
+          <h3>Lansering utan huvudvärk</h3>
+          <p>Domän, hosting och sista detaljer hanteras av oss. Du godkänner sidan, vi publicerar den.</p>
+        </article>
+        <article class="service-card reveal reveal-d1">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8"/><path d="M1 10 12 15 23 10"/><path d="M3 6h18"/></svg></div>
+          <h3>Kontaktvägar som funkar</h3>
+          <p>Formulär och knappar placeras där kunderna faktiskt letar efter dem, inte bara längst ner på sidan.</p>
+        </article>
+        <article class="service-card reveal reveal-d2">
+          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V7l-8-4Z"/></svg></div>
+          <h3>Drift och support</h3>
+          <p>Abonnemanget täcker hosting, uppdateringar och support. Inget du behöver hålla koll på själv.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process-section" id="process">
+    <div class="section-bg-num">04</div>
+    <div class="shell">
+      <p class="section-label">Process</p>
+      <h2 class="section-title">Från idé till live<br>på <em>3–5 arbetsdagar.</em></h2>
+      <p class="section-sub">Vi ber dig fylla i ett ordentligt formulär i starten, så slipper vi skicka mejl fram och tillbaka om saker vi borde ha frågat från början.</p>
+
+      <div class="process-connector reveal" id="process-connector">
+        <div class="connector-dot">1</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot highlight">2</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot">3</div>
+        <div class="connector-line"></div>
+        <div class="connector-dot">4</div>
+      </div>
+
+      <div class="process-grid" style="margin-top:0">
+        <article class="step reveal">
+          <div class="step-num">1</div>
+          <h3>Detaljerat intag</h3>
+          <p>Du fyller i ett formulär som täcker design, innehåll, funktioner och målgrupp. Ju mer du berättar, desto bättre blir resultatet.</p>
+        </article>
+        <article class="step step-highlight reveal reveal-d1">
+          <div class="step-num">2</div>
+          <h3>Vi bygger</h3>
+          <p>Vi sätter igång direkt utifrån ditt formulär. Första versionen brukar vara klar inom 1–2 arbetsdagar.</p>
+          <div class="step-badge">3–5 arbetsdagar</div>
+        </article>
+        <article class="step reveal reveal-d2">
+          <div class="step-num">3</div>
+          <h3>Feedback och justering</h3>
+          <p>Du tittar igenom sidan och ger feedback. En runda justeringar ingår, sen är vi i mål.</p>
+        </article>
+        <article class="step reveal reveal-d3">
+          <div class="step-num">4</div>
+          <h3>Lansering</h3>
+          <p>Sidan publiceras och abonnemanget tar hand om allt vidare, hosting, uppdateringar och support.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="pricing-section" id="pricing">
+    <div class="section-bg-num">05</div>
+    <div class="shell">
+      <p class="section-label">Priser</p>
+      <h2 class="section-title">Vad kostar det?<br><em>Det beror på projektet.</em></h2>
+      <p class="section-sub">Varje projekt är unikt. Priserna nedan är utgångspunkter — inte fasta paket. Det faktiska priset sätts efter projektets storlek, design och funktioner. Du beskriver din verksamhet, vi sätter rätt pris.</p>
+      <div class="pricing-note">
+        <strong>Så funkar det:</strong> Du betalar ett <strong>engångspris för bygget</strong> — varierar beroende på vad du vill ha — och sedan en <strong>månadsavgift</strong> som täcker hosting, domän, drift och support. Siffrorna är riktmärken. Exakt offert via kontaktformuläret, utan långa processer.
+      </div>
+
+      <div class="pricing-grid">
+
+        <!-- BAS -->
+        <article class="price-card reveal">
+          <div class="price-badge">Bas</div>
+          <h3>Enkel närvaro</h3>
+          <p style="font-size:12px;font-weight:700;color:var(--apricot);letter-spacing:0.04em;margin:0 0 10px;text-transform:uppercase;">Perfekt för: hantverkare · restaurang med meny · kontaktsida</p>
+          <div class="price-from">Uppskattad byggkostnad</div>
+          <span class="price-amount">Från 1 399 kr</span>
+          <p class="price-tagline">En riktig sida online, snabbt och utan krångel. Visar vad du gör, var du finns och hur kunder når dig.</p>
+          <ul class="price-list">
+            <li><strong>+</strong>1-sidig landningssida</li>
+            <li><strong>+</strong>Kontaktuppgifter &amp; öppettider</li>
+            <li><strong>+</strong>Kontaktformulär</li>
+            <li><strong>+</strong>Enkel restaurangmeny <em style="font-size:11px;opacity:0.7">(avancerad stil = tillägg)</em></li>
+            <li><strong>+</strong>CTA-knapp</li>
+            <li><strong>+</strong>Mobilanpassning</li>
+            <li><strong>+</strong>Grundläggande SEO-struktur</li>
+          </ul>
+          <ul class="price-exclude">
+            <li>Galleri eller bildsektion</li>
+            <li>Undersidor</li>
+            <li>Google Maps-embed</li>
+          </ul>
+          <div class="price-subscription">
+            <span class="sub-label">Abonnemang (obligatoriskt)</span>
+            <span class="sub-amount">Från 299 kr/mån</span>
+            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
+          </div>
+          <a class="btn btn-secondary" href="#contact">Välj Bas</a>
+        </article>
+
+        <!-- KOMPLETT (middle, featured) -->
+        <article class="price-card featured reveal reveal-d1">
+          <div class="price-badge">Rekommenderas</div>
+          <h3>Komplett</h3>
+          <div class="price-from">Uppskattad byggkostnad</div>
+          <span class="price-amount">Från 3 799 kr</span>
+          <p class="price-tagline">Sidan folk pratar om. Premium känsla, fler sidor och ett intryck som stannar kvar.</p>
+          <ul class="price-list">
+            <li><strong>+</strong>Allt i Pro</li>
+            <li><strong>+</strong>Upp till 10 sidor</li>
+            <li><strong>+</strong>Hero-video i bakgrunden</li>
+            <li><strong>+</strong>Animationer &amp; parallax-scrollning</li>
+            <li><strong>+</strong>Bokningsembed (Calendly, Bokadirekt)</li>
+            <li><strong>+</strong>Instagram-embed</li>
+            <li><strong>+</strong>Jobba hos oss / Om oss-sidor</li>
+            <li><strong>+</strong>Cookie-banner (GDPR)</li>
+            <li><strong>+</strong>Anpassad 404-sida</li>
+            <li><strong>+</strong>Prioriterad support</li>
+            <li><strong>+</strong>Månatlig analysrapport</li>
+          </ul>
+          <div class="price-subscription">
+            <span class="sub-label">Abonnemang (obligatoriskt)</span>
+            <span class="sub-amount">Från 849 kr/mån</span>
+            <span class="sub-desc">Hosting · domän · DNS-hantering · prioriterad e-postsupport · små innehållsuppdateringar</span>
+          </div>
+          <a class="btn btn-apricot" href="#contact">Välj Komplett</a>
+        </article>
+
+        <!-- PRO -->
+        <article class="price-card reveal reveal-d2">
+          <div class="price-badge" style="background:rgba(20,33,61,0.1);color:var(--ink);">Populärast</div>
+          <h3>Pro</h3>
+          <div class="price-from">Uppskattad byggkostnad</div>
+          <span class="price-amount">Från 2 399 kr</span>
+          <p class="price-tagline">För etablerade verksamheter. En genomarbetad sida som faktiskt levererar.</p>
+          <ul class="price-list">
+            <li><strong>+</strong>Upp till 5 sidor eller sektioner</li>
+            <li><strong>+</strong>Kontaktformulär</li>
+            <li><strong>+</strong>Restaurangmeny eller tjänstesidor</li>
+            <li><strong>+</strong>Google Maps-embed</li>
+            <li><strong>+</strong>Google Analytics-koppling</li>
+            <li><strong>+</strong>Bildgalleri</li>
+            <li><strong>+</strong>Anpassad favicon &amp; metadata</li>
+          </ul>
+          <div class="price-subscription">
+            <span class="sub-label">Abonnemang (obligatoriskt)</span>
+            <span class="sub-amount">Från 499 kr/mån</span>
+            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
+          </div>
+          <a class="btn btn-apricot" href="#contact">Välj Pro</a>
+        </article>
+
+      </div>
+
+      <!-- ADD-ONS -->
+      <div class="addons-wrap reveal">
+        <div class="addons-header">
+          <h4>Tillval</h4>
+          <span>Lägg till valfria extras till vilket paket som helst</span>
+        </div>
+        <div class="addons-grid">
+          <div class="addon-item">
+            <strong>Extra undersida</strong>
+            <span>Utöver paketets gräns</span>
+            <span class="addon-price">+399 kr/st</span>
+          </div>
+          <div class="addon-item">
+            <strong>Bokningsembed</strong>
+            <span>Calendly, Bokadirekt m.fl.</span>
+            <span class="addon-price">+449 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Flerspråkig sida</strong>
+            <span>Svenska + engelska</span>
+            <span class="addon-price">+999 kr</span>
+          </div>
+          <div class="addon-item">
+            <strong>Anpassad offert</strong>
+            <span>Något annat? Kontakta oss</span>
+            <span class="addon-price">→ Kontakt</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
   <!-- WHY SECTION WITH GRAPHS -->
   <section class="why-section" id="why">
-    <div class="section-bg-num">02</div>
+    <div class="section-bg-num">06</div>
     <div class="shell">
       <p class="section-label">Varför det spelar roll</p>
       <h2 class="section-title">Siffrorna säger<br>mer än löften.</h2>
@@ -1575,300 +1980,6 @@ details summary::-webkit-details-marker { display: none; }
     </div>
   </section>
 
-  <!-- PORTFOLIO -->
-  <section class="portfolio-section" id="portfolio">
-    <div class="section-bg-num">03</div>
-    <div class="shell">
-      <p class="section-label">Arbeten</p>
-      <h2 class="section-title">Resultat som<br><em>talar för sig.</em></h2>
-      <p class="section-sub">Verkliga projekt och konceptsidor som visar bredden av vad Drinkmyte kan leverera: från varm och tillgänglig till premium och avancerad.</p>
-
-      <div class="portfolio-grid" style="margin-top:28px">
-
-        <!-- Real client: IThai -->
-        <div class="portfolio-card reveal">
-          <div class="portfolio-card-header">
-            <div class="portfolio-tag tag-client">✓ Riktigt projekt</div>
-            <h3>I Thai</h3>
-            <p class="meta">Thairestaurang i Göteborg med meny, galleri, kontakt, öppettider och beställningslänk.</p>
-            <ul class="portfolio-features">
-              <li>Tydligare menystruktur så att gäster snabbt hittar rätt rätter</li>
-              <li>Starkare första intryck med varm känsla och klarare flöde</li>
-              <li>Enklare att beställa, hitta kontakt och förstå restaurangen direkt</li>
-            </ul>
-          </div>
-          <div class="portfolio-actions">
-            <a class="btn btn-primary" href="https://ithai.nu" target="_blank" rel="noopener noreferrer">Se live →</a>
-            <a class="btn btn-secondary" href="#contact">Be om liknande</a>
-          </div>
-          <div class="portfolio-screenshots" style="display:grid;grid-template-rows:auto auto;gap:2px">
-            <div class="portfolio-shot" style="aspect-ratio:16/6">
-              <img src="images/ithai-hero.jpg" alt="I Thai hero" loading="lazy"/>
-            </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:2px">
-              <div class="portfolio-shot" style="aspect-ratio:4/3">
-                <img src="images/ithai-menu.jpg" alt="I Thai meny" loading="lazy"/>
-              </div>
-              <div class="portfolio-shot" style="aspect-ratio:4/3">
-                <img src="images/ithai-interior.jpg" alt="I Thai galleri" loading="lazy"/>
-              </div>
-            </div>
-          </div>
-          </div>
-
-        <!-- Concept: Nordveil -->
-        <div class="concept-card reveal reveal-d1">
-          <div class="portfolio-tag tag-concept" style="background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.6)">Konceptsida</div>
-          <h3>Nordveil</h3>
-          <p>Luxury alpine expedition gear, ett konceptprojekt som visar vad Drinkmyte kan göra i en helt annan estetisk riktning: mörk, premium, interaktiv.</p>
-          <ul class="concept-features">
-            <li>Anpassad cursor och scroll-effekter</li>
-            <li>Animerad snöpartikel-canvas</li>
-            <li>Avancerad typografi-hierarki (3 fonter)</li>
-            <li>Fullskärms video hero med overlay</li>
-          </ul>
-          <div class="concept-spacer"></div>
-          <div style="display:grid;gap:6px;border-radius:12px;overflow:hidden;margin-top:4px">
-            <img src="images/nordveil-hero.jpg" alt="Nordveil hero" data-full="images/nordveil-hero.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:8px" loading="lazy"/>
-            <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px">
-              <img src="images/nordveil-image-1.jpg" alt="Nordveil image 1" data-full="images/nordveil-image-1.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
-              <img src="images/nordveil-image-2.jpg" alt="Nordveil image 2" data-full="images/nordveil-image-2.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
-              <img src="images/nordveil-image-3.jpg" alt="Nordveil image 3" data-full="images/nordveil-image-3.jpg" style="width:100%;height:auto;display:block;cursor:zoom-in;border-radius:6px" loading="lazy"/>
-            </div>
-          </div>
-          <a class="btn btn-secondary" href="#contact" style="border-color:rgba(255,255,255,0.2);color:rgba(255,255,255,0.85);margin-top:8px;align-self:flex-start">Fråga om liknande →</a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- SERVICES -->
-  <section class="services-section section-dark" id="services">
-    <div class="section-bg-num">04</div>
-    <div class="shell">
-      <p class="section-label">Tjänster</p>
-      <h2 class="section-title">Det viktigaste.<br>Utan onödigt fluff.</h2>
-      <p class="section-sub">Upplägget är gjort för företag som vill ha en hemsida som faktiskt hjälper verksamheten, inte ett digitalt broschyrfodral.</p>
-
-      <div class="services-grid">
-        <article class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="m12 20 7-7"/><path d="m14 4 6 6-10 10H4v-6L14 4Z"/></svg></div>
-          <h3>Design som känns din</h3>
-          <p>Typsnitt, färger och layout väljs utifrån ditt företag, inte från en mall vi återanvänder varje vecka.</p>
-        </article>
-        <article class="service-card reveal reveal-d1">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-8"/><path d="M22 20H2"/></svg></div>
-          <h3>SEO-grund från start</h3>
-          <p>Rubriker, metadata och lokal relevans struktureras rätt från dag ett, så du inte behöver betala för att fixa det efteråt.</p>
-        </article>
-        <article class="service-card reveal reveal-d2">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4v8Z"/></svg></div>
-          <h3>Text som faktiskt kommunicerar</h3>
-          <p>Det ska vara lätt att fatta vad du erbjuder. Inte imponerande, inte fluffigt, bara tydligt.</p>
-        </article>
-        <article class="service-card reveal">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3a15 15 0 0 1 0 18"/><path d="M12 3a15 15 0 0 0 0 18"/></svg></div>
-          <h3>Lansering utan huvudvärk</h3>
-          <p>Domän, hosting och sista detaljer hanteras av oss. Du godkänner sidan, vi publicerar den.</p>
-        </article>
-        <article class="service-card reveal reveal-d1">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M21 8v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8"/><path d="M1 10 12 15 23 10"/><path d="M3 6h18"/></svg></div>
-          <h3>Kontaktvägar som funkar</h3>
-          <p>Formulär och knappar placeras där kunderna faktiskt letar efter dem, inte bara längst ner på sidan.</p>
-        </article>
-        <article class="service-card reveal reveal-d2">
-          <div class="icon-box"><svg viewBox="0 0 24 24"><path d="M12 3 4 7v6c0 5 3.5 8.5 8 10 4.5-1.5 8-5 8-10V7l-8-4Z"/></svg></div>
-          <h3>Drift och support</h3>
-          <p>Abonnemanget täcker hosting, uppdateringar och support. Inget du behöver hålla koll på själv.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PROCESS -->
-  <section class="process-section" id="process">
-    <div class="section-bg-num">05</div>
-    <div class="shell">
-      <p class="section-label">Process</p>
-      <h2 class="section-title">Från idé till live<br>på <em>3–5 arbetsdagar.</em></h2>
-      <p class="section-sub">Vi ber dig fylla i ett ordentligt formulär i starten, så slipper vi skicka mejl fram och tillbaka om saker vi borde ha frågat från början.</p>
-
-      <div class="process-grid" style="margin-top:28px">
-        <article class="step reveal">
-          <div class="step-num">1</div>
-          <h3>Detaljerat intag</h3>
-          <p>Du fyller i ett formulär som täcker design, innehåll, funktioner och målgrupp. Ju mer du berättar, desto bättre blir resultatet.</p>
-        </article>
-        <article class="step step-highlight reveal reveal-d1">
-          <div class="step-num">2</div>
-          <h3>Vi bygger</h3>
-          <p>Vi sätter igång direkt utifrån ditt formulär. Första versionen brukar vara klar inom 1–2 arbetsdagar.</p>
-          <div class="step-badge">3–5 arbetsdagar</div>
-        </article>
-        <article class="step reveal reveal-d2">
-          <div class="step-num">3</div>
-          <h3>Feedback och justering</h3>
-          <p>Du tittar igenom sidan och ger feedback. En runda justeringar ingår, sen är vi i mål.</p>
-        </article>
-        <article class="step reveal reveal-d3">
-          <div class="step-num">4</div>
-          <h3>Lansering</h3>
-          <p>Sidan publiceras och abonnemanget tar hand om allt vidare, hosting, uppdateringar och support.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICING -->
-  <section class="pricing-section" id="pricing">
-    <div class="section-bg-num">06</div>
-    <div class="shell">
-      <p class="section-label">Priser</p>
-      <h2 class="section-title">Vad kostar det?<br><em>Det beror på projektet.</em></h2>
-      <p class="section-sub">Priserna nedan är uppskattningar. Det faktiska priset sätts utifrån projektets storlek, innehåll och funktioner. Alla projekt inkluderar ett löpande abonnemang.</p>
-      <div class="pricing-note">
-        <strong>Två delar att känna till:</strong> Du betalar ett <strong>engångspris för bygget</strong> (varierar efter projektets storlek) och sedan en <strong>månadsavgift</strong>, obligatorisk och täcker hosting, domän, drift och support så länge sidan är live. Siffrorna är uppskattningar. Exakt offert via kontaktformuläret.
-      </div>
-
-      <div class="pricing-grid">
-
-        <!-- BAS -->
-        <article class="price-card reveal">
-          <div class="price-badge">Bas</div>
-          <h3>Enkel närvaro</h3>
-          <p style="font-size:12px;font-weight:700;color:var(--apricot);letter-spacing:0.04em;margin:0 0 10px;text-transform:uppercase;">Perfekt för: hantverkare · restaurang med meny · kontaktsida</p>
-          <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">Från 1 099 kr</span>
-          <p class="price-tagline">En riktig sida online, snabbt och utan krångel. Visar vad du gör, var du finns och hur kunder når dig.</p>
-          <ul class="price-list">
-            <li><strong>+</strong>1-sidig landningssida</li>
-            <li><strong>+</strong>Kontaktuppgifter &amp; öppettider</li>
-            <li><strong>+</strong>Kontaktformulär</li>
-            <li><strong>+</strong>Enkel restaurangmeny <em style="font-size:11px;opacity:0.7">(avancerad stil = tillägg)</em></li>
-            <li><strong>+</strong>CTA-knapp</li>
-            <li><strong>+</strong>Mobilanpassning</li>
-            <li><strong>+</strong>Grundläggande SEO-struktur</li>
-          </ul>
-          <ul class="price-exclude">
-            <li>Galleri eller bildsektion</li>
-            <li>Undersidor</li>
-            <li>Google Maps-embed</li>
-          </ul>
-          <div class="price-subscription">
-            <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">Från 299 kr/mån</span>
-            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
-          </div>
-          <a class="btn btn-secondary" href="#contact">Fråga om Bas</a>
-        </article>
-
-        <!-- PRO -->
-        <article class="price-card reveal reveal-d1">
-          <div class="price-badge" style="background:rgba(20,33,61,0.1);color:var(--ink);">Vanligast</div>
-          <h3>Pro</h3>
-          <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">Från 2 099 kr</span>
-          <p class="price-tagline">För etablerade verksamheter. En genomarbetad, komplett sida som faktiskt levererar.</p>
-          <ul class="price-list">
-            <li><strong>+</strong>Upp till 5 sidor eller sektioner</li>
-            <li><strong>+</strong>Kontaktformulär</li>
-            <li><strong>+</strong>Restaurangmeny eller tjänstesidor</li>
-            <li><strong>+</strong>Google Maps-embed</li>
-            <li><strong>+</strong>Google Analytics-koppling</li>
-            <li><strong>+</strong>Bildgalleri</li>
-            <li><strong>+</strong>Anpassad favicon &amp; metadata</li>
-          </ul>
-          <div class="price-subscription">
-            <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">Från 499 kr/mån</span>
-            <span class="sub-desc">Hosting · domän · DNS-hantering · e-postsupport · små innehållsuppdateringar</span>
-          </div>
-          <a class="btn btn-apricot" href="#contact">Välj Pro</a>
-        </article>
-
-        <!-- KOMPLETT -->
-        <article class="price-card featured reveal reveal-d2">
-          <div class="price-badge">Rekommenderas</div>
-          <h3>Komplett</h3>
-          <div class="price-from">Uppskattad byggkostnad</div>
-          <span class="price-amount">Från 3 499 kr</span>
-          <p class="price-tagline">Sidan folk pratar om. Premium känsla, fler sidor och ett intryck som stannar kvar.</p>
-          <ul class="price-list">
-            <li><strong>+</strong>Allt i Pro</li>
-            <li><strong>+</strong>Upp till 10 sidor</li>
-            <li><strong>+</strong>Hero-video i bakgrunden</li>
-            <li><strong>+</strong>Animationer &amp; parallax-scrollning</li>
-            <li><strong>+</strong>Bokningsembed (Calendly, Bokadirekt)</li>
-            <li><strong>+</strong>Instagram-embed</li>
-            <li><strong>+</strong>Jobba hos oss / Om oss-sidor</li>
-            <li><strong>+</strong>Cookie-banner (GDPR)</li>
-            <li><strong>+</strong>Anpassad 404-sida</li>
-            <li><strong>+</strong>Prioriterad support</li>
-          </ul>
-          <div class="price-subscription">
-            <span class="sub-label">Abonnemang (obligatoriskt)</span>
-            <span class="sub-amount">Från 849 kr/mån</span>
-            <span class="sub-desc">Hosting · domän · DNS-hantering · prioriterad e-postsupport · små innehållsuppdateringar</span>
-          </div>
-          <a class="btn btn-apricot" href="#contact">Välj Komplett</a>
-        </article>
-
-      </div>
-
-      <!-- ADD-ONS -->
-      <div class="addons-wrap reveal">
-        <div class="addons-header">
-          <h4>Tillval</h4>
-          <span>Lägg till valfria extras till vilket paket som helst</span>
-        </div>
-        <div class="addons-grid">
-          <div class="addon-item">
-            <strong>Extra undersida</strong>
-            <span>Utöver paketets gräns</span>
-            <span class="addon-price">+399 kr/st</span>
-          </div>
-          <div class="addon-item">
-            <strong>Kontaktformulär</strong>
-            <span>Bas-tillägg</span>
-            <span class="addon-price">+299 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Avancerad menystyling</strong>
-            <span>Uppgradering för Bas</span>
-            <span class="addon-price">+349 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Flerspråkig sida</strong>
-            <span>Svenska + engelska</span>
-            <span class="addon-price">+999 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Instagram-embed</strong>
-            <span>Bas / Pro-tillägg</span>
-            <span class="addon-price">+499 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Bokningsembed</strong>
-            <span>Calendly, Bokadirekt m.fl.</span>
-            <span class="addon-price">+449 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Google My Business</strong>
-            <span>Setup &amp; optimering</span>
-            <span class="addon-price">+349 kr</span>
-          </div>
-          <div class="addon-item">
-            <strong>Anpassad offert</strong>
-            <span>Något annat? Hör av dig</span>
-            <span class="addon-price">→ Kontakt</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
   <!-- CONTACT / INTAKE -->
   <section class="contact-section" id="contact">
     <div class="section-bg-num">07</div>
@@ -1917,17 +2028,18 @@ details summary::-webkit-details-marker { display: none; }
             </div>
 
             <div class="field">
-              <label>Vilka funktioner behövs? (välj alla som stämmer)</label>
-              <div class="check-group">
-                <label class="check-item"><input type="checkbox" name="features" value="Kontaktformulär" /> Kontaktformulär</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Galleri" /> Galleri / bilder</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Meny" /> Meny (restaurang)</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Bokning" /> Bokningssystem</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Webshop" /> Webbshop</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Flerspråkig" /> Flerspråkig sida</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Blogg" /> Blogg / nyheter</label>
-                <label class="check-item"><input type="checkbox" name="features" value="Vet inte" /> Vet inte än</label>
+              <label>Vilka funktioner behövs? <span style="font-size:11px;opacity:0.5;font-weight:400;text-transform:none;letter-spacing:0">(välj alla som stämmer)</span></label>
+              <div class="feature-cards" id="feature-cards">
+                <button type="button" class="feature-btn" data-value="Kontaktformulär">Kontaktformulär</button>
+                <button type="button" class="feature-btn" data-value="Galleri">Galleri / bilder</button>
+                <button type="button" class="feature-btn" data-value="Meny">Meny (restaurang)</button>
+                <button type="button" class="feature-btn" data-value="Bokning">Bokningssystem</button>
+                <button type="button" class="feature-btn" data-value="Webshop">Webbshop</button>
+                <button type="button" class="feature-btn" data-value="Flerspråkig">Flerspråkig sida</button>
+                <button type="button" class="feature-btn" data-value="Blogg">Blogg / nyheter</button>
+                <button type="button" class="feature-btn" data-value="Vet inte">Vet inte än</button>
               </div>
+              <input type="hidden" name="features" id="features-hidden" value="" />
             </div>
 
             <div class="field-row">
@@ -1947,9 +2059,9 @@ details summary::-webkit-details-marker { display: none; }
                 <label for="budget">Prisindikation</label>
                 <select id="budget" name="budget">
                   <option value="">Inte säker än</option>
-                  <option>Bas — från 1 099 kr byggkostnad + 299 kr/mån</option>
-                  <option>Pro — från 2 099 kr byggkostnad + 499 kr/mån</option>
-                  <option>Komplett — från 3 499 kr byggkostnad + 849 kr/mån</option>
+                  <option>Bas — från 1 399 kr byggkostnad + 299 kr/mån</option>
+                  <option>Pro — från 2 399 kr byggkostnad + 499 kr/mån</option>
+                  <option>Komplett — från 3 799 kr byggkostnad + 849 kr/mån</option>
                   <option>Anpassad offert</option>
                 </select>
               </div>
@@ -2018,55 +2130,69 @@ details summary::-webkit-details-marker { display: none; }
       <p class="section-label">Vanliga frågor</p>
       <h2 class="section-title">Saker folk brukar<br>undra över.</h2>
 
-      <div style="display:grid;gap:2px;margin-top:36px;max-width:720px">
+      <div class="faq-inner" style="margin-top:36px;max-width:720px">
+        <span class="faq-side-label">Vanliga frågor</span>
+        <div class="faq-glow"></div>
 
-        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
-          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+        <div class="faq-item">
+          <div class="faq-summary" role="button" tabindex="0" aria-expanded="false">
             Vad kostar en hemsida hos Drinkmyte?
-            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
-          </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Det beror på vad du behöver. En enkel landningssida börjar runt 1 099 kr i byggkostnad plus 299 kr i månaden. En mer genomarbetad sida med flera sidor, galleri och bokningssystem landar runt 3 499 kr plus 849 kr/mån. Exakt pris sätts utifrån ditt projekt, men vi håller inga långa offertprocesser.</p>
-        </details>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            <p>Det beror helt på vad du vill ha. Varje sida är skräddarsydd, inte en mall. En enkel närvaro med kontakt och info börjar runt 1 399 kr plus 299 kr/mån. En genomarbetad sida med flera sidor, galleri och bokningssystem landar runt 3 799 kr plus 849 kr/mån. Exakt pris sätts via kontaktformuläret — utan långa offertprocesser.</p>
+          </div>
+        </div>
 
-        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
-          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+        <div class="faq-item">
+          <div class="faq-summary" role="button" tabindex="0" aria-expanded="false">
             Hur lång tid tar det att bygga en hemsida?
-            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
-          </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">3 till 5 arbetsdagar från att vi fått allt vi behöver. Det förutsätter att du fyllt i intaget ordentligt med bilder, texter och övrig info. Saknar vi material drar det ut på tiden, men det är den enda flaskhalsen.</p>
-        </details>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            <p>3 till 5 arbetsdagar från att vi fått allt vi behöver. Det förutsätter att du fyllt i intaget ordentligt med bilder, texter och övrig info. Saknar vi material drar det ut på tiden, men det är den enda flaskhalsen.</p>
+          </div>
+        </div>
 
-        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
-          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+        <div class="faq-item">
+          <div class="faq-summary" role="button" tabindex="0" aria-expanded="false">
             Varför måste jag betala månadsavgift?
-            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
-          </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Avgiften täcker hosting, domän, DNS-hantering och support. En hemsida kostar pengar att hålla igång varje månad, och vi vill inte att du ska behöva hålla koll på det själv. Det ingår också små innehållsuppdateringar så du slipper skicka mejl till en byrå och vänta en vecka för att byta ett telefonnummer.</p>
-        </details>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            <p>Avgiften täcker hosting, domän, DNS-hantering och support. En hemsida kostar pengar att hålla igång varje månad, och vi vill inte att du ska behöva hålla koll på det. Små innehållsuppdateringar — byt telefonnummer, uppdatera öppettider, lägg till en ny bild — ingår utan extra kostnad.</p>
+          </div>
+        </div>
 
-        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
-          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+        <div class="faq-item">
+          <div class="faq-summary" role="button" tabindex="0" aria-expanded="false">
             Jobbar ni bara i Göteborg?
-            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
-          </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Vi är baserade i Göteborg men tar distansprojekt från hela Sverige. Allting sköts digitalt så det spelar ingen roll om du sitter i Malmö, Stockholm eller Umeå.</p>
-        </details>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            <p>Vi är baserade i Göteborg men tar distansprojekt från hela Sverige. Allting sköts digitalt — det spelar ingen roll om du sitter i Malmö, Stockholm eller Umeå.</p>
+          </div>
+        </div>
 
-        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
-          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+        <div class="faq-item">
+          <div class="faq-summary" role="button" tabindex="0" aria-expanded="false">
             Vad händer om jag vill avsluta?
-            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
-          </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Du säger upp med 30 dagars varsel via mejl till kontakt@drinkmyte.com. Sidan tas offline vid periodens slut. Du får alla filer — HTML och bilder — levererade inom 7 arbetsdagar så du kan ta över och hosta sidan var du vill. Byggkostnaden återbetalas inte.</p>
-        </details>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            <p>Du säger upp med 30 dagars varsel via mejl till kontakt@drinkmyte.com. Sidan tas offline vid periodens slut. Du får alla filer — HTML och bilder — levererade inom 7 arbetsdagar. Byggkostnaden återbetalas inte.</p>
+          </div>
+        </div>
 
-        <details style="border-bottom:1px solid rgba(20,33,61,0.1);padding:20px 0;cursor:pointer">
-          <summary style="font-weight:600;font-size:16px;color:var(--ink);list-style:none;display:flex;justify-content:space-between;align-items:center">
+        <div class="faq-item">
+          <div class="faq-summary" role="button" tabindex="0" aria-expanded="false">
             Kan jag uppdatera sidan själv?
-            <span style="font-size:20px;opacity:0.4;font-weight:300">+</span>
-          </summary>
-          <p style="margin:12px 0 0;color:var(--muted);font-size:15px;line-height:1.7">Inte direkt via ett eget redigeringssystem, men du kan be oss om mindre ändringar när som helst och det ingår i abonnemanget. Behöver du ett system för att redigera själv är det något vi tar upp i intaget så bygger vi in det.</p>
-        </details>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-body">
+            <p>Inte direkt via ett eget redigeringssystem, men du kan be oss om mindre ändringar när som helst och det ingår i abonnemanget. Behöver du ett system för att redigera själv tar vi upp det i intaget — så bygger vi in det.</p>
+          </div>
+        </div>
 
       </div>
     </div>
@@ -2285,9 +2411,7 @@ if (contactForm) {
     submitButton.dataset.originalLabel = originalLabel;
 
     const formData = new FormData(contactForm);
-    const selectedFeatures = [...contactForm.querySelectorAll('input[name="features"]:checked')]
-      .map(input => input.value)
-      .join(", ") || "Inga valda";
+    const selectedFeatures = document.getElementById('features-hidden')?.value || "Inga valda";
 
     const templateParams = {
       from_name: formData.get("name") || "",
@@ -2406,6 +2530,49 @@ if (hamburger && mobileNav) {
       hamburger.setAttribute("aria-label", "Öppna meny");
     });
   });
+}
+
+// ── FAQ ACCORDION ──
+document.querySelectorAll(".faq-item .faq-summary").forEach(summary => {
+  const activate = () => {
+    const item = summary.closest(".faq-item");
+    const isOpen = item.classList.contains("is-open");
+    document.querySelectorAll(".faq-item.is-open").forEach(el => {
+      el.classList.remove("is-open");
+      el.querySelector(".faq-summary")?.setAttribute("aria-expanded", "false");
+    });
+    if (!isOpen) {
+      item.classList.add("is-open");
+      summary.setAttribute("aria-expanded", "true");
+    }
+  };
+  summary.addEventListener("click", activate);
+  summary.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); activate(); } });
+});
+
+// ── FEATURE SELECT CARDS ──
+const featureCards = document.getElementById("feature-cards");
+const featuresHidden = document.getElementById("features-hidden");
+if (featureCards && featuresHidden) {
+  featureCards.querySelectorAll(".feature-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      btn.classList.toggle("selected");
+      const selected = [...featureCards.querySelectorAll(".feature-btn.selected")].map(b => b.dataset.value);
+      featuresHidden.value = selected.join(", ");
+    });
+  });
+}
+
+// ── PROCESS CONNECTOR ANIMATION ──
+const processConnector = document.getElementById("process-connector");
+if (processConnector && "IntersectionObserver" in window) {
+  const pcObserver = new IntersectionObserver(([entry]) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => processConnector.classList.add("animated"), 200);
+      pcObserver.disconnect();
+    }
+  }, { threshold: 0.6 });
+  pcObserver.observe(processConnector);
 }
 </script>
 
