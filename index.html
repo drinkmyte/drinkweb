@@ -681,7 +681,7 @@ section { position: relative; overflow: hidden; }
   font-size: 13px; color: rgba(255,255,255,0.72);
   display: flex; gap: 8px;
 }
-.concept-features li::before { content: "→"; color: var(--gold); flex-shrink: 0; }
+.concept-features li::before { content: "→"; color: var(--apricot); flex-shrink: 0; }
 .concept-spacer { flex: 1; }
 
 /* ── SERVICES ── */
@@ -1584,16 +1584,19 @@ details summary::-webkit-details-marker { display: none; }
 
       <div class="portfolio-grid" style="margin-top:28px">
 
-        <!-- Real client: IThai -->
+        <!-- Real client: IThai — Pro tier -->
         <div class="portfolio-card reveal">
           <div class="portfolio-card-header">
-            <div class="portfolio-tag tag-client">✓ Riktigt projekt</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+              <div class="portfolio-tag tag-client" style="margin:0">✓ Riktigt projekt</div>
+              <div class="portfolio-tag" style="margin:0;background:rgba(20,33,61,0.08);color:var(--ink);border:1.5px solid rgba(20,33,61,0.18)">Pro-nivå</div>
+            </div>
             <h3>I Thai</h3>
-            <p class="meta">Thairestaurang i Göteborg med meny, galleri, kontakt, öppettider och beställningslänk.</p>
+            <p class="meta">Thairestaurang i Göteborg — meny, galleri, kontakt, öppettider och beställningslänk.</p>
             <ul class="portfolio-features">
-              <li>Tydligare menystruktur så att gäster snabbt hittar rätt rätter</li>
-              <li>Starkare första intryck med varm känsla och klarare flöde</li>
-              <li>Enklare att beställa, hitta kontakt och förstå restaurangen direkt</li>
+              <li>Snabbare beställningsflöde och tydligare menystruktur</li>
+              <li>Mobilanpassad med varm estetik och starkare CTA</li>
+              <li>Lokal SEO-grund och Google My Business-länkning</li>
             </ul>
           </div>
           <div class="portfolio-actions">
@@ -1613,28 +1616,58 @@ details summary::-webkit-details-marker { display: none; }
               </div>
             </div>
           </div>
+        </div>
+
+        <!-- Concept: Smakis — Komplett tier -->
+        <div class="concept-card reveal reveal-d1" style="background:#f8f7f4;border:2px solid #E27442;box-shadow:5px 5px 0 rgba(232,118,66,0.25);color:var(--ink)">
+
+          <!-- Top row: tags -->
+          <div style="display:flex;align-items:center;gap:8px">
+            <div class="portfolio-tag tag-concept" style="background:rgba(232,118,66,0.12);color:#E27442;border:1.5px solid rgba(232,118,66,0.35)">Konceptsida</div>
+            <div class="portfolio-tag" style="background:#E27442;color:#fff;border:none;font-weight:700">Komplett-nivå</div>
           </div>
 
-        <!-- Concept: Smakis -->
-        <div class="concept-card reveal reveal-d1" style="background:linear-gradient(160deg,#1a2e1e 0%,#313D41 100%)">
-          <div class="portfolio-tag tag-concept" style="background:rgba(226,116,66,0.15);color:#E27442;border-color:rgba(226,116,66,0.3)">Konceptsida</div>
-          <div style="margin:10px 0 14px">
-            <img src="images/smakis-logo.png" alt="Smakis" style="height:36px;width:auto;object-fit:contain;filter:brightness(0) invert(1)">
+          <!-- Logo -->
+          <div style="margin:4px 0 2px">
+            <img src="images/smakis-logo.png" alt="Smakis" style="height:40px;width:auto;object-fit:contain">
           </div>
-          <p style="color:rgba(255,255,255,0.75)">Ekologisk dryckesbrand sedan 1970 — ett konceptprojekt som visar Drinkmytes förmåga att bygga premium, animerat och levande: GSAP, ScrollTrigger och ett fullt responsivt designsystem.</p>
-          <ul class="concept-features" style="color:rgba(255,255,255,0.65)">
-            <li>GSAP ScrollTrigger + horisontell produktkarusell</li>
-            <li>Diagonal hatch-typografi och graffiti-SVG-bakgrunder</li>
-            <li>Tidslinje med scroll-animerade milstolpar</li>
-            <li>Fullständigt designsystem — färger, typsnitt, ikoner</li>
+
+          <!-- Stack tags -->
+          <div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:2px">
+            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">Next.js</span>
+            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">GSAP</span>
+            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">SplitText</span>
+            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">ScrollTrigger</span>
+            <span style="font-size:11px;font-family:var(--font-body);background:rgba(20,33,61,0.07);color:var(--ink);padding:3px 8px;border-radius:2px">Tailwind v4</span>
+          </div>
+
+          <p style="color:rgba(20,33,61,0.65);font-size:14px;line-height:1.6">Ekologisk dryckesbrand sedan 1970 — ett fullständigt konceptprojekt med cinematic scroll, horisontell produktkarusell och ett skräddarsytt designsystem från grunden.</p>
+
+          <ul class="concept-features" style="color:rgba(20,33,61,0.7)">
+            <li style="color:rgba(20,33,61,0.7)">Horisontell GSAP-karusell med 7 produkter + mobilsvep</li>
+            <li style="color:rgba(20,33,61,0.7)">SplitText-rubriker i slumpmässig ordning vid scroll</li>
+            <li style="color:rgba(20,33,61,0.7)">Graffiti-SVG, diagonal hatch-typografi, grain overlay</li>
+            <li style="color:rgba(20,33,61,0.7)">Fullständigt designsystem: färg, typsnitt, animationer</li>
           </ul>
-          <div class="concept-spacer"></div>
-          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px">
-            <img src="images/smakis-paron.png" alt="Smakis Päron" style="width:100%;aspect-ratio:3/4;object-fit:contain;background:#1a2e1e;border-radius:8px;padding:12px" loading="lazy"/>
-            <img src="images/smakis-icetea.png" alt="Smakis Ice Tea" style="width:100%;aspect-ratio:3/4;object-fit:contain;background:#1a2e1e;border-radius:8px;padding:12px" loading="lazy"/>
-            <img src="images/smakis-smoothie.png" alt="Smakis Smoothie" style="width:100%;aspect-ratio:3/4;object-fit:contain;background:#1a2e1e;border-radius:8px;padding:12px" loading="lazy"/>
+
+          <!-- Product images -->
+          <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin-top:4px">
+            <div style="background:#ede8e1;border-radius:6px;padding:10px;display:flex;align-items:center;justify-content:center">
+              <img src="images/smakis-paron.png" alt="Smakis Päron" style="width:100%;max-height:110px;object-fit:contain" loading="lazy"/>
+            </div>
+            <div style="background:#ede8e1;border-radius:6px;padding:10px;display:flex;align-items:center;justify-content:center">
+              <img src="images/smakis-icetea.png" alt="Smakis Ice Tea" style="width:100%;max-height:110px;object-fit:contain" loading="lazy"/>
+            </div>
+            <div style="background:#ede8e1;border-radius:6px;padding:10px;display:flex;align-items:center;justify-content:center">
+              <img src="images/smakis-smoothie.png" alt="Smakis Smoothie" style="width:100%;max-height:110px;object-fit:contain" loading="lazy"/>
+            </div>
           </div>
-          <a class="btn btn-secondary" href="#contact" style="border-color:rgba(226,116,66,0.4);color:#E27442;margin-top:8px;align-self:flex-start">Fråga om liknande →</a>
+
+          <!-- Actions -->
+          <div style="display:flex;gap:10px;margin-top:8px;flex-wrap:wrap">
+            <a class="btn btn-primary" href="https://smakis-gsap.vercel.app" target="_blank" rel="noopener noreferrer" style="background:#E27442;border-color:#E27442;color:#fff">Se live →</a>
+            <a class="btn btn-secondary" href="#contact" style="border-color:rgba(20,33,61,0.25);color:var(--ink)">Be om liknande</a>
+          </div>
         </div>
 
       </div>
