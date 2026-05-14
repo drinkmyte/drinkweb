@@ -2232,8 +2232,12 @@ details summary::-webkit-details-marker { display: none; }
               <textarea id="message" name="message" placeholder="Vad gör företaget, varför behöver ni en ny sida nu, finns det en befintlig sida att ersätta, och vad är viktigast för er?" required></textarea>
             </div>
 
+            <label style="display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted);line-height:1.6;cursor:pointer;margin-bottom:12px">
+              <input type="checkbox" id="angeratt-consent" name="angeratt_consent" required style="margin-top:3px;flex-shrink:0;accent-color:var(--apricot)" />
+              <span>Jag samtycker till att arbetet påbörjas omedelbart efter bekräftad betalning och förstår att <strong style="color:var(--ink)">ångerrätten därmed bortfaller</strong>. (Gäller dig som privatperson/konsument. Företagskunder berörs inte.)</span>
+            </label>
             <button class="btn btn-apricot" type="submit" style="width:100%;min-height:48px;font-size:15px">Skicka meddelande →</button>
-            <p style="margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.5">Genom att skicka formuläret godkänner du våra <button type="button" id="consent-terms-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Användarvillkor</button> och bekräftar att du har läst vår <button type="button" id="consent-privacy-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Integritetspolicy</button>.</p>
+            <p style="margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.5">Genom att skicka formuläret godkänner du <button type="button" id="consent-terms-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Användarvillkoren</button> och bekräftar att du har läst <button type="button" id="consent-privacy-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Integritetspolicyn</button>.</p>
           </form>
 
           <div class="contact-sidebar">
@@ -2333,7 +2337,7 @@ details summary::-webkit-details-marker { display: none; }
 <footer class="site-footer" aria-label="Sidfot">
   <div class="shell">
     <a class="brand" href="#top"><img class="brand-mark" src="logo-mark-512.png" alt="Drinkmyte logo" width="42" height="42" />Drink<span>myte</span></a>
-    <p>Webbyrå i Göteborg för företag som vill synas bättre online.</p>
+    <p>Webbyrå i Göteborg för företag som vill synas bättre online.<br><span style="font-size:12px;color:var(--muted)">Te Frederik Penson · [DIN ADRESS], Göteborg · kontakt@drinkmyte.com</span></p>
     <div class="footer-meta">
       <div class="footer-links">
         <a href="mailto:kontakt@drinkmyte.com">kontakt@drinkmyte.com</a>
@@ -2355,7 +2359,7 @@ details summary::-webkit-details-marker { display: none; }
   </div>
 </div>
 <div class="cookie-banner" id="cookie-banner">
-  <p>Vi använder Google Analytics för att förstå hur besökare använder sidan. Inga uppgifter säljs eller delas i marknadsföringssyfte. <button class="cookie-link-button" id="cookie-learn-more" type="button">Läs mer</button></p>
+  <p>Jag använder Google Analytics för att förstå hur besökare använder sidan. Inga uppgifter säljs eller delas. <button class="cookie-link-button" id="cookie-learn-more" type="button">Läs mer</button></p>
   <div class="cookie-actions">
     <button class="btn btn-secondary" id="cookie-decline" type="button">Neka</button>
     <button class="btn btn-apricot" id="cookie-accept" type="button">Godkänn</button>
