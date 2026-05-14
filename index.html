@@ -2577,7 +2577,7 @@ if (contactForm) {
     emailjs.send("service_q7vufim", "template_6i09csd", templateParams, "DpeZ9IZHsvSxIroyM")
       .then(() => {
         localStorage.setItem('dm_last_sent', Date.now().toString());
-        submitButton.textContent = "Skickat! Vi hör av oss inom 24 h.";
+        submitButton.textContent = "Skickat! Jag hör av mig inom 24 h.";
         submitButton.style.background = "#1a7a4a";
         contactForm.reset();
         contactForm.querySelectorAll('.has-error').forEach(el => el.classList.remove('has-error'));
