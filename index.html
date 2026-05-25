@@ -589,23 +589,40 @@ section { position: relative; overflow: hidden; }
   line-height: 1.4;
 }
 @media (max-width: 720px) {
-  .compare-row { grid-template-columns: 1fr; }
+  .compare-row {
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1px solid rgba(20,33,61,0.18);
+  }
   .compare-axis {
-    padding: 14px 16px 6px;
+    grid-column: 1 / -1;
+    padding: 14px 14px 6px;
     border-right: none;
     border-bottom: 1px solid rgba(20,33,61,0.06);
     font-size: 11px;
+    background: rgba(20,33,61,0.03);
   }
   .compare-cell {
-    padding: 12px 16px;
-    border-right: none;
-    border-bottom: 1px solid rgba(20,33,61,0.06);
+    padding: 12px;
+    font-size: 12px;
+    line-height: 1.45;
+    border-right: 1px solid rgba(20,33,61,0.1);
+    align-items: flex-start;
   }
-  .compare-cell { flex-direction: column; align-items: flex-start; gap: 4px; }
-  .compare-cell-them::before { content: "Standard webbyrå"; font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); opacity: 0.6; }
-  .compare-cell-us::before { content: "Drinkmyte"; font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--apricot); }
-  .compare-row.compare-head { display: none; }
+  .compare-cell-them { border-right: none; }
+  .compare-cell-us { border-right: none; }
+  .compare-row.compare-head { display: grid; }
+  .compare-row.compare-head .compare-axis { display: none; }
+  .compare-row.compare-head .compare-cell-them,
+  .compare-row.compare-head .compare-cell-us {
+    padding: 10px 12px;
+    font-size: 10px;
+    letter-spacing: 0.06em;
+  }
   .compare-stats { grid-template-columns: 1fr; gap: 18px; }
+}
+@media (max-width: 400px) {
+  .compare-cell { padding: 10px; font-size: 11.5px; }
+  .compare-axis { font-size: 10px; padding: 12px 12px 5px; }
 }
 
 /* Stat duo (replaces weak bar chart in Graph 3) */
@@ -1812,9 +1829,9 @@ details summary::-webkit-details-marker { display: none; }
         <!-- Real client: IThai — Pro tier -->
         <div class="portfolio-card reveal">
           <div class="portfolio-card-header">
-            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
-              <div class="portfolio-tag tag-client" style="margin:0;font-size:13px;padding:5px 11px;font-weight:700">✓ Exempel — riktigt kundprojekt</div>
-              <div class="portfolio-tag" style="margin:0;background:rgba(20,33,61,0.08);color:var(--ink);border:1.5px solid rgba(20,33,61,0.18);font-size:13px;padding:5px 11px">Pro-nivå</div>
+            <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;flex-wrap:wrap">
+              <div class="portfolio-tag tag-client" style="margin:0;font-size:13px;padding:5px 11px;font-weight:700;white-space:nowrap">✓ Riktigt kundprojekt</div>
+              <div class="portfolio-tag" style="margin:0;background:rgba(20,33,61,0.08);color:var(--ink);border:1.5px solid rgba(20,33,61,0.18);font-size:13px;padding:5px 11px;white-space:nowrap">Pro-nivå</div>
             </div>
             <h3>I Thai</h3>
             <p class="meta">Thairestaurang i Göteborg — meny, galleri, kontakt, öppettider och beställningslänk.</p>
@@ -1876,8 +1893,8 @@ details summary::-webkit-details-marker { display: none; }
 
           <!-- Top row: tags -->
           <div style="display:flex;align-items:center;gap:8px;position:relative;flex-wrap:wrap">
-            <div class="portfolio-tag tag-concept" style="background:#E27442;color:#fff;border:none;font-weight:700;letter-spacing:0.5px;font-size:13px;padding:5px 11px">★ Exempel — eget konceptbygge</div>
-            <div class="portfolio-tag" style="background:rgba(20,33,61,0.08);color:var(--ink);border:1.5px solid rgba(20,33,61,0.18);font-size:13px;padding:5px 11px">Komplett-nivå</div>
+            <div class="portfolio-tag tag-concept" style="background:#E27442;color:#fff;border:none;font-weight:700;letter-spacing:0.5px;font-size:13px;padding:5px 11px;white-space:nowrap">★ Eget konceptbygge</div>
+            <div class="portfolio-tag" style="background:rgba(20,33,61,0.08);color:var(--ink);border:1.5px solid rgba(20,33,61,0.18);font-size:13px;padding:5px 11px;white-space:nowrap">Komplett-nivå</div>
           </div>
 
           <!-- Logo + stack -->
