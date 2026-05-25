@@ -495,6 +495,147 @@ section { position: relative; overflow: hidden; }
   margin-top: 10px; opacity: 0.7;
 }
 
+/* Comparison table (section 06) */
+.compare-table {
+  margin: 32px 0 28px;
+  border: 1px solid rgba(20,33,61,0.15);
+  background: var(--paper, #fdfaf3);
+  overflow: hidden;
+}
+.compare-row {
+  display: grid;
+  grid-template-columns: 220px 1fr 1fr;
+  border-bottom: 1px solid rgba(20,33,61,0.08);
+}
+.compare-row:last-child { border-bottom: none; }
+.compare-row.compare-head {
+  background: rgba(20,33,61,0.04);
+  border-bottom: 1px solid rgba(20,33,61,0.18);
+}
+.compare-axis {
+  padding: 18px 20px;
+  font-family: var(--font-display);
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  border-right: 1px solid rgba(20,33,61,0.08);
+  display: flex; align-items: center;
+}
+.compare-cell {
+  padding: 18px 20px;
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--muted);
+  border-right: 1px solid rgba(20,33,61,0.08);
+  display: flex; align-items: center;
+}
+.compare-cell:last-child { border-right: none; }
+.compare-cell-us {
+  background: var(--ink);
+  color: #f6f0e6;
+  font-weight: 500;
+}
+.compare-row.compare-head .compare-cell-them,
+.compare-row.compare-head .compare-cell-us {
+  padding: 12px 20px;
+  font-family: var(--font-display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.compare-row.compare-head .compare-cell-us {
+  color: #f6f0e6;
+}
+.us-tag {
+  color: var(--apricot);
+  letter-spacing: 0.1em;
+}
+.compare-foot {
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(20,33,61,0.08);
+}
+.compare-foot-lead {
+  font-size: 13px;
+  color: var(--muted);
+  text-align: center;
+  margin: 0 0 18px;
+}
+.compare-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 14px;
+}
+.compare-stats > div {
+  text-align: center;
+}
+.compare-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 700;
+  color: var(--apricot);
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.compare-stats span {
+  font-size: 12px;
+  color: var(--ink);
+  line-height: 1.4;
+}
+@media (max-width: 720px) {
+  .compare-row { grid-template-columns: 1fr; }
+  .compare-axis {
+    padding: 14px 16px 6px;
+    border-right: none;
+    border-bottom: 1px solid rgba(20,33,61,0.06);
+    font-size: 11px;
+  }
+  .compare-cell {
+    padding: 12px 16px;
+    border-right: none;
+    border-bottom: 1px solid rgba(20,33,61,0.06);
+  }
+  .compare-cell { flex-direction: column; align-items: flex-start; gap: 4px; }
+  .compare-cell-them::before { content: "Standard webbyrå"; font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink); opacity: 0.6; }
+  .compare-cell-us::before { content: "Drinkmyte"; font-family: var(--font-display); font-weight: 700; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--apricot); }
+  .compare-row.compare-head { display: none; }
+  .compare-stats { grid-template-columns: 1fr; gap: 18px; }
+}
+
+/* Stat duo (replaces weak bar chart in Graph 3) */
+.stat-duo {
+  display: grid; grid-template-columns: 1fr auto 1fr;
+  align-items: center; gap: 16px;
+  padding: 18px 4px 6px;
+}
+.stat-block { text-align: center; }
+.stat-num {
+  font-family: var(--font-display);
+  font-size: clamp(38px, 5vw, 56px);
+  font-weight: 700; color: var(--apricot);
+  line-height: 1; letter-spacing: -0.01em;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 12px; color: var(--ink);
+  line-height: 1.4; max-width: 170px;
+  margin: 0 auto;
+}
+.stat-divider {
+  width: 1px; height: 60px;
+  background: rgba(20,33,61,0.15);
+}
+@media (max-width: 520px) {
+  .stat-duo { grid-template-columns: 1fr; gap: 18px; }
+  .stat-divider { width: 60px; height: 1px; justify-self: center; }
+}
+
 /* Bar chart */
 .bar-chart { display: grid; gap: 8px; }
 .bar-row { display: grid; grid-template-columns: 90px 1fr 40px; align-items: center; gap: 8px; }
@@ -1994,11 +2135,59 @@ details summary::-webkit-details-marker { display: none; }
   <section class="why-section" id="why">
     <div class="section-bg-num">06</div>
     <div class="shell">
-      <p class="section-label">Varför det spelar roll</p>
-      <h2 class="section-title">Siffrorna säger<br>mer än löften.</h2>
-      <p class="section-sub">Ingen branschjargong, bara faktiska data om varför en genomtänkt sida lönar sig.</p>
+      <p class="section-label">Vad du jämför med</p>
+      <h2 class="section-title">Två sätt att bygga<br>en hemsida.</h2>
+      <p class="section-sub">Skillnaden ligger i upplägget, inte i värdet. Båda kan funka. Det här är vad som skiljer dem i praktiken.</p>
 
-      <div class="graphs-grid">
+      <div class="compare-table">
+        <div class="compare-row compare-head" aria-hidden="true">
+          <div class="compare-axis"></div>
+          <div class="compare-cell compare-cell-them">Standard webbyrå</div>
+          <div class="compare-cell compare-cell-us"><span class="us-tag">Drinkmyte</span></div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-axis">Vem du pratar med</div>
+          <div class="compare-cell compare-cell-them">Säljare först. Sen projektledare. Designer och utvecklare i bakgrunden.</div>
+          <div class="compare-cell compare-cell-us">Du mejlar mig. Te. Jag bygger.</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-axis">Tid till live</div>
+          <div class="compare-cell compare-cell-them">4–8 veckor från offert till lansering.</div>
+          <div class="compare-cell compare-cell-us">3–5 arbetsdagar när intaget är ifyllt.</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-axis">Designgrund</div>
+          <div class="compare-cell compare-cell-them">Tema eller komponentbibliotek, justerat med din färg och logga.</div>
+          <div class="compare-cell compare-cell-us">Typografi och layout byggs från noll utifrån din verksamhet.</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-axis">Vad du betalar för</div>
+          <div class="compare-cell compare-cell-them">Säljmöten, statusrapporter, marginal på underleverantörer.</div>
+          <div class="compare-cell compare-cell-us">Koden, designen och driften. Inget mellanlager.</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-axis">Vid problem</div>
+          <div class="compare-cell compare-cell-them">Supportticket. Svar inom servicefönstret.</div>
+          <div class="compare-cell compare-cell-us">Mejl till min inbox. Oftast samma dag.</div>
+        </div>
+        <div class="compare-row">
+          <div class="compare-axis">Småändringar efter lansering</div>
+          <div class="compare-cell compare-cell-them">Ny offert per ändring, eller licens på CMS du måste lära dig.</div>
+          <div class="compare-cell compare-cell-us">Småändringar ingår i abonnemanget. Du mejlar, jag fixar.</div>
+        </div>
+      </div>
+
+      <div class="compare-foot">
+        <p class="compare-foot-lead">Och om du undrar om upplägget håller i praktiken:</p>
+        <div class="compare-stats">
+          <div><strong>58%</strong><span>av besökarna är på mobil</span></div>
+          <div><strong>0,05&nbsp;s</strong><span>räcker för första intrycket</span></div>
+          <div><strong>75%</strong><span>bedömer trovärdighet på designen</span></div>
+        </div>
+        <p class="graph-source" style="text-align:center">Källa: Statista 2024 · Lindgaard et al. (2006) · Stanford Web Credibility Study</p>
+      </div>
+
+      <div class="graphs-grid" style="display:none" aria-hidden="true">
 
         <!-- Graph 1: Local search -->
         <div class="graph-card reveal">
@@ -2064,25 +2253,19 @@ details summary::-webkit-details-marker { display: none; }
         <!-- Graph 3: Trust / first impression -->
         <div class="graph-card reveal">
           <h4>Första intrycket avgör</h4>
-          <p>Hur snabbt besökare bedömer ett företags trovärdighet baserat på hemsidan</p>
-          <div class="bar-chart">
-            <div class="bar-row">
-              <span class="bar-label">0.05 sek</span>
-              <div class="bar-track"><div class="bar-fill" data-bar-width="90%"></div></div>
-              <span class="bar-val">Förtroende</span>
+          <p>Hur snabbt besökare bedömer ett företag baserat på hemsidan</p>
+          <div class="stat-duo">
+            <div class="stat-block">
+              <div class="stat-num">0,05 s</div>
+              <div class="stat-label">så snabbt bildar besökare ett första intryck av sidan</div>
             </div>
-            <div class="bar-row">
-              <span class="bar-label">Litar ej</span>
-              <div class="bar-track"><div class="bar-fill dark" data-bar-width="75%"></div></div>
-              <span class="bar-val">75% p.g.a. design</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Stannar kvar</span>
-              <div class="bar-track"><div class="bar-fill" data-bar-width="55%"></div></div>
-              <span class="bar-val">Bra design</span>
+            <div class="stat-divider" aria-hidden="true"></div>
+            <div class="stat-block">
+              <div class="stat-num">75%</div>
+              <div class="stat-label">bedömer trovärdighet utifrån designen — inte innehållet</div>
             </div>
           </div>
-          <p class="graph-source">Källa: Google Research / Stanford Web Credibility Study</p>
+          <p class="graph-source">Källa: Lindgaard et al. (2006) / Stanford Web Credibility Study</p>
         </div>
 
         <!-- Graph 4: ROI trend -->
@@ -2234,7 +2417,7 @@ details summary::-webkit-details-marker { display: none; }
 
             <label style="display:flex;align-items:flex-start;gap:10px;font-size:12px;color:var(--muted);line-height:1.6;cursor:pointer;margin-bottom:12px">
               <input type="checkbox" id="angeratt-consent" name="angeratt_consent" required style="margin-top:3px;flex-shrink:0;accent-color:var(--apricot)" />
-              <span>Jag samtycker till att arbetet påbörjas omedelbart efter bekräftad betalning och förstår att <strong style="color:var(--ink)">ångerrätten därmed bortfaller</strong>. (Gäller dig som privatperson/konsument. Företagskunder berörs inte.)</span>
+              <span>Jag begär att arbetet påbörjas direkt efter bekräftad betalning. Som privatperson/konsument har jag <strong style="color:var(--ink)">14 dagars ångerrätt</strong> — avbryter jag inom fristen betalar jag endast för det arbete som hunnits utföras, resten återbetalas. Företagskunder omfattas inte av ångerrätten.</span>
             </label>
             <button class="btn btn-apricot" type="submit" style="width:100%;min-height:48px;font-size:15px">Skicka meddelande →</button>
             <p style="margin:10px 0 0;font-size:12px;color:var(--muted);text-align:center;line-height:1.5">Genom att skicka formuläret godkänner du <button type="button" id="consent-terms-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Användarvillkoren</button> och bekräftar att du har läst <button type="button" id="consent-privacy-btn" style="background:none;border:none;padding:0;font:inherit;font-size:12px;color:var(--apricot);cursor:pointer;text-decoration:underline;text-underline-offset:2px">Integritetspolicyn</button>.</p>
@@ -2315,7 +2498,7 @@ details summary::-webkit-details-marker { display: none; }
             <span class="faq-icon">+</span>
           </div>
           <div class="faq-body">
-            <p>Du säger upp med 30 dagars varsel via mejl till kontakt@drinkmyte.com. Sidan tas offline vid periodens slut. Du får alla filer (HTML och bilder) inom 7 arbetsdagar. Byggkostnaden återbetalas inte.</p>
+            <p>Du säger upp abonnemanget med 30 dagars varsel via mejl till kontakt@drinkmyte.com. Sidan tas offline vid periodens slut. Du får alla filer (HTML och bilder) inom 7 arbetsdagar. Byggkostnaden återbetalas inte när sidan är levererad. Konsumenter som ångrar köpet inom 14 dagar från beställning får tillbaka den del av byggkostnaden som motsvarar arbete som inte hunnits utföras.</p>
           </div>
         </div>
 
@@ -2422,7 +2605,7 @@ const TERMS_CONTENT = `
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">7. Support och svarstid</h3>
 <p>Support sker via e-post (kontakt@drinkmyte.com). Vi strävar efter att svara inom <strong>3 arbetsdagar</strong> för alla paket. Support täcker frågor om din befintliga sida och mindre innehållsuppdateringar. Större ändringar debiteras separat.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">8. Uppsägning</h3>
-<p>Du kan säga upp abonnemanget med <strong>30 dagars skriftlig varsel</strong> via e-post. Sidan tas offline vid periodens slut. Byggkostnaden återbetalas inte. Vi förbehåller oss rätten att avsluta abonnemanget om betalning uteblir <strong>14 dagar</strong> efter skriftlig påminnelse.</p>
+<p>Du kan säga upp abonnemanget med <strong>30 dagars skriftlig varsel</strong> via e-post. Sidan tas offline vid periodens slut. Byggkostnaden återbetalas inte när sidan är levererad. För konsumenter gäller dessutom 14 dagars ångerrätt — se nedan. Vi förbehåller oss rätten att avsluta abonnemanget om betalning uteblir <strong>14 dagar</strong> efter skriftlig påminnelse.</p>
 <p>Vid uppsägning levererar Drinkmyte samtliga kundens filer — HTML-kod och bilder — via e-post eller nedladdningslänk inom <strong>7 arbetsdagar</strong> från avtalets slut. Kunden äger rätt att ta över och driftsätta sidan hos valfri annan leverantör. Drinkmyte behåller rätten att använda projektet i sin portfolio om inte annat avtalats skriftligen.</p>
 <h3 style="font-family:var(--font-display);color:var(--ink);font-size:1.1rem;margin:16px 0 8px">9. Ansvarsbegränsning</h3>
 <p>Drinkmyte ansvarar inte för indirekta förluster, utebliven vinst eller skador till följd av driftstopp, tekniska fel hos tredjepartsleverantörer eller force majeure. Vårt totala ansvar är begränsat till det belopp kunden betalat under de senaste 3 månaderna.</p>
