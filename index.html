@@ -38,19 +38,96 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
+  "@type": "LocalBusiness",
+  "@id": "https://drinkmyte.com/#business",
   "name": "Drinkmyte",
-  "description": "Webbyrå som bygger hemsidor för småföretag i Göteborg och hela Sverige.",
+  "alternateName": "Drinkmyte Webbyrå",
+  "description": "Webbyrå i Göteborg som bygger skräddarsydda hemsidor för småföretag. En person, snabb leverans, löpande support.",
   "url": "https://drinkmyte.com",
+  "logo": "https://drinkmyte.com/logo-mark-512.png",
+  "image": "https://drinkmyte.com/og-image.png",
   "email": "kontakt@drinkmyte.com",
+  "priceRange": "1399–8000 kr",
+  "currenciesAccepted": "SEK",
+  "paymentAccepted": "Swish, Bankgiro, Faktura",
+  "knowsLanguage": ["sv", "en"],
+  "founder": {
+    "@type": "Person",
+    "name": "Te Penson",
+    "jobTitle": "Webbutvecklare & Designer"
+  },
+  "foundingLocation": {
+    "@type": "Place",
+    "name": "Göteborg, Sverige"
+  },
   "address": {
     "@type": "PostalAddress",
     "addressLocality": "Göteborg",
     "addressRegion": "Västra Götaland",
     "addressCountry": "SE"
   },
-  "areaServed": ["Göteborg", "Sverige"],
-  "priceRange": "1399–8000 kr"
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 57.7089,
+    "longitude": 11.9746
+  },
+  "areaServed": [
+    { "@type": "City", "name": "Göteborg" },
+    { "@type": "Country", "name": "Sverige" }
+  ],
+  "serviceArea": {
+    "@type": "GeoCircle",
+    "geoMidpoint": { "@type": "GeoCoordinates", "latitude": 57.7089, "longitude": 11.9746 },
+    "geoRadius": 50000
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
+    "opens": "09:00",
+    "closes": "18:00"
+  }],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Hemsidor",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Enkel närvaro",
+        "description": "Ensidig landningssida med kontakt, tjänster och bilder. Snabbt levererad, mobilanpassad.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 1399, "maxPrice": 1999,
+          "priceCurrency": "SEK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Flersidig sida",
+        "description": "Restaurang- eller företagssida med flera sidor, galleri och bokning.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 2500, "maxPrice": 3500,
+          "priceCurrency": "SEK"
+        }
+      },
+      {
+        "@type": "Offer",
+        "name": "Komplett företagssida",
+        "description": "8+ sidor, hero-video, animationer, Instagram-feed och månadsrapporter.",
+        "priceSpecification": {
+          "@type": "PriceSpecification",
+          "minPrice": 5000, "maxPrice": 8000,
+          "priceCurrency": "SEK"
+        }
+      }
+    ]
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "email": "kontakt@drinkmyte.com",
+    "contactType": "Sales & Support",
+    "availableLanguage": ["sv", "en"]
+  }
 }
 </script>
 
@@ -462,34 +539,8 @@ section { position: relative; overflow: hidden; }
 .hero-list strong { display: block; font-size: 14px; }
 .hero-list span { font-size: 13px; color: rgba(255,255,255,0.6); }
 
-/* ── WHY SECTION (GRAPHS) ── */
+/* ── WHY SECTION ── */
 .why-section { background: var(--paper); border-bottom: 2px solid var(--ink); }
-.graphs-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0;
-  margin-top: 32px;
-  border: 2px solid var(--ink);
-}
-.graph-card {
-  background: transparent;
-  border: none;
-  border-right: 2px solid var(--ink);
-  border-bottom: 2px solid var(--ink);
-  border-radius: 0;
-  padding: 24px;
-  box-shadow: none;
-}
-.graph-card:nth-child(2n) { border-right: none; }
-.graph-card:nth-last-child(-n+2) { border-bottom: none; }
-.graph-card h4 {
-  font-size: 14px; font-weight: 700;
-  color: var(--ink); margin: 0 0 4px;
-}
-.graph-card p {
-  font-size: 12px; color: var(--muted);
-  margin: 0 0 18px;
-}
 .graph-source {
   font-size: 11px; color: var(--muted);
   margin-top: 10px; opacity: 0.7;
@@ -624,80 +675,6 @@ section { position: relative; overflow: hidden; }
   .compare-cell { padding: 10px; font-size: 11.5px; }
   .compare-axis { font-size: 10px; padding: 12px 12px 5px; }
 }
-
-/* Stat duo (replaces weak bar chart in Graph 3) */
-.stat-duo {
-  display: grid; grid-template-columns: 1fr auto 1fr;
-  align-items: center; gap: 16px;
-  padding: 18px 4px 6px;
-}
-.stat-block { text-align: center; }
-.stat-num {
-  font-family: var(--font-display);
-  font-size: clamp(38px, 5vw, 56px);
-  font-weight: 700; color: var(--apricot);
-  line-height: 1; letter-spacing: -0.01em;
-  margin-bottom: 8px;
-}
-.stat-label {
-  font-size: 12px; color: var(--ink);
-  line-height: 1.4; max-width: 170px;
-  margin: 0 auto;
-}
-.stat-divider {
-  width: 1px; height: 60px;
-  background: rgba(20,33,61,0.15);
-}
-@media (max-width: 520px) {
-  .stat-duo { grid-template-columns: 1fr; gap: 18px; }
-  .stat-divider { width: 60px; height: 1px; justify-self: center; }
-}
-
-/* Bar chart */
-.bar-chart { display: grid; gap: 8px; }
-.bar-row { display: grid; grid-template-columns: 90px 1fr 40px; align-items: center; gap: 8px; }
-.bar-label { font-size: 12px; color: var(--muted); text-align: right; }
-.bar-track {
-  height: 26px; background: rgba(20,33,61,0.06);
-  border-radius: 6px; overflow: hidden;
-  position: relative;
-}
-.bar-fill {
-  height: 100%; border-radius: 6px;
-  background: linear-gradient(90deg, var(--apricot), var(--gold));
-  width: var(--bar-width, 0%);
-  transition: width 1.2s cubic-bezier(0.23,1,0.32,1);
-  display: flex; align-items: center; padding-left: 8px;
-}
-.bar-fill.dark { background: linear-gradient(90deg, var(--ink), var(--ink-soft)); }
-.bar-val { font-size: 12px; font-weight: 700; color: var(--ink); }
-
-/* Donut chart */
-.donut-wrap {
-  display: flex; align-items: center; gap: 20px;
-}
-.donut { position: relative; width: 100px; height: 100px; flex-shrink: 0; }
-.donut svg { width: 100%; height: 100%; transform: rotate(-90deg); }
-.donut-center {
-  position: absolute; inset: 0;
-  display: flex; flex-direction: column;
-  align-items: center; justify-content: center;
-  line-height: 1.1;
-}
-.donut-center strong {
-  font-family: var(--font-display);
-  font-size: 1.5rem; color: var(--ink);
-}
-.donut-center span { font-size: 10px; color: var(--muted); }
-.donut-legend { display: grid; gap: 8px; flex: 1; }
-.legend-row { display: flex; align-items: center; gap: 8px; font-size: 12px; }
-.legend-dot {
-  width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
-}
-
-/* Trend chart */
-.trend-chart { position: relative; height: 80px; margin-top: 4px; }
-.trend-chart svg { width: 100%; height: 100%; }
 
 /* ── PORTFOLIO ── */
 .portfolio-section { background: var(--sand); border-bottom: 2px solid var(--ink); }
@@ -1443,9 +1420,6 @@ section { position: relative; overflow: hidden; }
   .hero-grid, .contact-grid {
     grid-template-columns: 1fr;
   }
-  .graphs-grid {
-    grid-template-columns: 1fr;
-  }
   .portfolio-grid {
     grid-template-columns: 1fr;
   }
@@ -1475,7 +1449,6 @@ section { position: relative; overflow: hidden; }
   .hero-stat { padding: 10px 12px; }
   .hero-stat strong { font-size: 1.5rem; }
 
-  .graphs-grid { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: repeat(2, 1fr); }
   .process-grid { grid-template-columns: repeat(2, 1fr); }
   .factors-grid { grid-template-columns: 1fr; }
@@ -1768,7 +1741,7 @@ details summary::-webkit-details-marker { display: none; }
       <div class="hero-grid">
         <div>
           <h1>Hemsidor som<br><em class="hatch-stamp-light">betyder</em> något.</h1>
-          <p class="hero-tagline" style="font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:0.04em;color:var(--ink);margin:0 0 18px;line-height:1.05">En sida som <em style="font-style:normal;color:var(--apricot)">känns</em> som dig.</p>
+          <p class="hero-tagline" style="font-family:var(--font-display);font-size:clamp(1.4rem,2.6vw,1.9rem);letter-spacing:0.04em;color:var(--ink);margin:0 0 18px;line-height:1.05">En sida som <em style="font-style:normal;color:var(--apricot)">känns rätt</em> — och faktiskt gör jobbet.</p>
           <p class="hero-sub">Jag är en webbyrå i Göteborg. Bara att den består av en person, inte ett team. Du pratar alltid med den som faktiskt bygger sidan, och inget hamnar i kö bakom tio andra projekt.</p>
           <div class="hero-actions">
             <a class="btn btn-apricot" href="#contact">Få offert inom 24h</a>
@@ -2204,110 +2177,6 @@ details summary::-webkit-details-marker { display: none; }
         <p class="graph-source" style="text-align:center">Källa: Statista 2024 · Lindgaard et al. (2006) · Stanford Web Credibility Study</p>
       </div>
 
-      <div class="graphs-grid" style="display:none" aria-hidden="true">
-
-        <!-- Graph 1: Local search -->
-        <div class="graph-card reveal">
-          <h4>Lokala sökningar driver besök</h4>
-          <p>Andel konsumenter som söker lokala tjänster online innan de bestämmer sig</p>
-          <div class="bar-chart" id="chart-local">
-            <div class="bar-row">
-              <span class="bar-label">Hittar online</span>
-              <div class="bar-track"><div class="bar-fill" data-bar-width="97%"></div></div>
-              <span class="bar-val">97%</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Besöker sedan</span>
-              <div class="bar-track"><div class="bar-fill" data-bar-width="76%"></div></div>
-              <span class="bar-val">76%</span>
-            </div>
-            <div class="bar-row">
-              <span class="bar-label">Köper samma dag</span>
-              <div class="bar-track"><div class="bar-fill dark" data-bar-width="28%"></div></div>
-              <span class="bar-val">28%</span>
-            </div>
-          </div>
-          <p class="graph-source">Källa: BrightLocal Local Consumer Survey / Think with Google</p>
-        </div>
-
-        <!-- Graph 2: Mobile -->
-        <div class="graph-card reveal reveal-d1">
-          <h4>Mobilen är din butiksskylt</h4>
-          <p>Fördelning av global webbtrafik 2024</p>
-          <div class="donut-wrap">
-            <div class="donut">
-              <svg viewBox="0 0 36 36">
-                <circle cx="18" cy="18" r="15.9" fill="none" stroke="#f0ebe0" stroke-width="3.2"/>
-                <!-- Mobile: 58% -->
-                <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--apricot)" stroke-width="3.2"
-                  stroke-dasharray="58 42" stroke-dashoffset="0" id="donut-mobile"
-                  stroke-linecap="round"/>
-                <!-- Desktop: 40%, starts after mobile (offset = -58) -->
-                <circle cx="18" cy="18" r="15.9" fill="none" stroke="var(--gold)" stroke-width="3.2"
-                  stroke-dasharray="40 60" stroke-dashoffset="-59" id="donut-desktop"
-                  stroke-linecap="round"/>
-                <!-- Tablet: 2%, starts after mobile+desktop (offset = -98) -->
-                <circle cx="18" cy="18" r="15.9" fill="none" stroke="rgba(20,33,61,0.25)" stroke-width="3.2"
-                  stroke-dasharray="2 98" stroke-dashoffset="-99" id="donut-tablet"
-                  stroke-linecap="round"/>
-              </svg>
-              <div class="donut-center">
-                <strong>58%</strong>
-                <span>Mobil</span>
-              </div>
-            </div>
-            <div class="donut-legend">
-              <div class="legend-row"><div class="legend-dot" style="background:var(--apricot)"></div><span>Mobil — 58%</span></div>
-              <div class="legend-row"><div class="legend-dot" style="background:var(--gold)"></div><span>Dator — 40%</span></div>
-              <div class="legend-row"><div class="legend-dot" style="background:rgba(20,33,61,0.25)"></div><span>Surfplatta — 2%</span></div>
-              <br>
-              <div style="font-size:12px;color:var(--muted);line-height:1.5">En sida som inte funkar på mobil<br>tappar <strong style="color:var(--apricot)">mer än hälften</strong> av sina besökare.</div>
-            </div>
-          </div>
-          <p class="graph-source">Källa: Statista Global Mobile Traffic Share 2024</p>
-        </div>
-
-        <!-- Graph 3: Trust / first impression -->
-        <div class="graph-card reveal">
-          <h4>Första intrycket avgör</h4>
-          <p>Hur snabbt besökare bedömer ett företag baserat på hemsidan</p>
-          <div class="stat-duo">
-            <div class="stat-block">
-              <div class="stat-num">0,05 s</div>
-              <div class="stat-label">så snabbt bildar besökare ett första intryck av sidan</div>
-            </div>
-            <div class="stat-divider" aria-hidden="true"></div>
-            <div class="stat-block">
-              <div class="stat-num">75%</div>
-              <div class="stat-label">bedömer trovärdighet utifrån designen — inte innehållet</div>
-            </div>
-          </div>
-          <p class="graph-source">Källa: Lindgaard et al. (2006) / Stanford Web Credibility Study</p>
-        </div>
-
-        <!-- Graph 4: ROI trend -->
-        <div class="graph-card reveal reveal-d1">
-          <h4>Synlighet byggs med tid</h4>
-          <p>Typisk organisk räckvidd för ett lokalt företag, månader efter lansering</p>
-          <div class="trend-chart">
-            <svg viewBox="0 0 280 80" preserveAspectRatio="none" id="trend-svg">
-              <defs>
-                <linearGradient id="tg" x1="0" y1="0" x2="0" y2="1">
-                  <stop offset="0%" stop-color="var(--apricot)" stop-opacity="0.25"/>
-                  <stop offset="100%" stop-color="var(--apricot)" stop-opacity="0"/>
-                </linearGradient>
-              </defs>
-              <path id="trend-area" d="M0,75 C45,72 62,64 88,58 C126,49 145,44 174,34 C210,22 234,16 280,8 L280,75 Z" fill="url(#tg)"/>
-              <path id="trend-line" d="M0,75 C45,72 62,64 88,58 C126,49 145,44 174,34 C210,22 234,16 280,8" fill="none" stroke="var(--apricot)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </div>
-          <div style="display:flex;justify-content:space-between;font-size:11px;color:var(--muted);margin-top:4px">
-            <span>Månad 1</span><span>3</span><span>6</span><span>9</span><span>12</span>
-          </div>
-          <p class="graph-source">Källa: Moz Local SEO Growth Benchmarks</p>
-        </div>
-
-      </div>
     </div>
   </section>
 
@@ -2836,10 +2705,6 @@ if (cookieDecline && cookieBanner) {
 const revealElements = document.querySelectorAll(".reveal");
 const showRevealElement = element => {
   element.classList.add("visible");
-  // Animate any bar charts inside this element
-  element.querySelectorAll(".bar-fill[data-bar-width]").forEach(bar => {
-    bar.style.setProperty("--bar-width", bar.dataset.barWidth);
-  });
 };
 
 if (revealElements.length) {
