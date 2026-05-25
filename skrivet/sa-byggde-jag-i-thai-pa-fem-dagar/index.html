@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Så byggde jag I Thai's hemsida på fem dagar — Drinkmyte</title>
+<meta name="description" content="Mitt första riktiga kundprojekt — vad det lärde mig om bilder, bekvämlighet, och varför 3 500 kr för en Wix-mall är vad jag konkurrerar mot. Av Te Penson." />
+<link rel="canonical" href="https://drinkmyte.com/skrivet/sa-byggde-jag-i-thai-pa-fem-dagar/" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#f6f0e6" />
+
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://drinkmyte.com/skrivet/sa-byggde-jag-i-thai-pa-fem-dagar/" />
+<meta property="og:title" content="Så byggde jag I Thai's hemsida på fem dagar" />
+<meta property="og:description" content="Mitt första riktiga kundprojekt — vad det lärde mig om bilder och kontroll." />
+<meta property="og:image" content="https://drinkmyte.com/og-image.png" />
+<meta property="article:author" content="Te Penson" />
+<meta property="article:published_time" content="2026-05-25" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Så byggde jag I Thai's hemsida på fem dagar",
+  "description": "Mitt första riktiga kundprojekt — vad det lärde mig om bilder, bekvämlighet och kontroll.",
+  "image": "https://drinkmyte.com/og-image.png",
+  "datePublished": "2026-05-25",
+  "dateModified": "2026-05-25",
+  "author": { "@type": "Person", "name": "Te Penson", "url": "https://drinkmyte.com/" },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Drinkmyte",
+    "logo": { "@type": "ImageObject", "url": "https://drinkmyte.com/logo-mark-512.png" }
+  },
+  "mainEntityOfPage": "https://drinkmyte.com/skrivet/sa-byggde-jag-i-thai-pa-fem-dagar/"
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #f6f0e6;
+  --cream: #f2ead9;
+  --apricot: #e27442;
+  --gold: #d4a056;
+  --ink: #14213d;
+  --ink-soft: #2a3a5e;
+  --muted: #5a6378;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", -apple-system, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--apricot); text-decoration: underline; text-decoration-thickness: 1.5px; text-underline-offset: 3px; }
+a:hover { text-decoration-thickness: 2.5px; }
+
+.shell { max-width: 680px; margin: 0 auto; padding: 0 24px; }
+
+header.site-header {
+  border-bottom: 1px solid rgba(20,33,61,0.12);
+  padding: 18px 0;
+  background: var(--paper);
+}
+header.site-header .shell {
+  max-width: 1100px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-decoration: none;
+  display: flex; align-items: center; gap: 8px;
+}
+.brand img { height: 32px; width: 32px; }
+.brand span { color: var(--apricot); }
+nav.site-nav { font-size: 14px; }
+nav.site-nav a { color: var(--ink); margin-left: 18px; font-weight: 600; text-decoration: none; }
+nav.site-nav a:hover { text-decoration: underline; }
+nav.site-nav a.cta { background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 2px; }
+nav.site-nav a.cta:hover { background: var(--apricot); text-decoration: none; }
+
+article.post { padding: 56px 0 72px; }
+.post-meta {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--apricot);
+  font-weight: 700;
+  margin-bottom: 18px;
+}
+.post-meta a { color: var(--apricot); text-decoration: none; }
+.post-meta span + span::before { content: " · "; margin: 0 6px; color: var(--muted); }
+article h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.2rem, 5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 14px;
+}
+article .subtitle {
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 500;
+  font-style: italic;
+  color: var(--muted);
+  margin-bottom: 32px;
+  line-height: 1.4;
+}
+article .byline {
+  font-size: 13px;
+  color: var(--muted);
+  margin-bottom: 44px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid rgba(20,33,61,0.1);
+}
+article .byline strong { color: var(--ink); font-weight: 700; }
+
+article h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.4rem, 2.8vw, 1.7rem);
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--ink);
+  margin: 44px 0 16px;
+  letter-spacing: -0.005em;
+}
+article p {
+  font-size: 17px;
+  color: var(--ink-soft);
+  margin-bottom: 18px;
+}
+article p strong { color: var(--ink); font-weight: 700; }
+article em { font-style: italic; }
+
+article blockquote {
+  margin: 28px 0;
+  padding: 18px 24px;
+  border-left: 3px solid var(--apricot);
+  background: rgba(226,116,66,0.05);
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 18px;
+  color: var(--ink);
+}
+
+article .pull {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(1.2rem, 2.4vw, 1.5rem);
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 36px 0;
+  padding: 24px 0;
+  border-top: 1px solid rgba(20,33,61,0.15);
+  border-bottom: 1px solid rgba(20,33,61,0.15);
+}
+
+article hr.section-break {
+  border: none;
+  text-align: center;
+  margin: 44px 0;
+}
+article hr.section-break::before {
+  content: "✦ ✦ ✦";
+  color: var(--apricot);
+  letter-spacing: 0.4em;
+  font-size: 14px;
+}
+
+.post-cta {
+  margin-top: 56px;
+  padding: 28px;
+  background: var(--ink);
+  color: #f2ead9;
+  border-radius: 4px;
+}
+.post-cta strong {
+  font-family: var(--font-display);
+  font-size: 18px;
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+}
+.post-cta p { color: #d4cec0; font-size: 15px; margin-bottom: 14px; }
+.post-cta a.btn {
+  display: inline-block;
+  background: var(--apricot);
+  color: #fff;
+  padding: 12px 22px;
+  font-weight: 700;
+  border-radius: 2px;
+  text-decoration: none;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.post-cta a.btn:hover { background: #d56838; }
+
+.post-related {
+  margin-top: 56px;
+  padding-top: 36px;
+  border-top: 1px solid rgba(20,33,61,0.12);
+}
+.post-related .kicker {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.post-related a {
+  display: block;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(20,33,61,0.08);
+  text-decoration: none;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 17px;
+  transition: color 0.15s;
+}
+.post-related a:hover { color: var(--apricot); }
+.post-related a:last-child { border-bottom: none; }
+
+footer.site-footer {
+  border-top: 1px solid rgba(20,33,61,0.12);
+  padding: 32px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+footer.site-footer .shell {
+  max-width: 1100px;
+  display: flex; flex-wrap: wrap; gap: 20px;
+  align-items: center; justify-content: space-between;
+}
+footer.site-footer a { color: var(--muted); margin-right: 18px; text-decoration: none; }
+footer.site-footer a:hover { color: var(--apricot); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="/"><img src="/logo-mark-512.png" alt=""/>Drink<span>myte</span></a>
+    <nav class="site-nav">
+      <a href="/">Hem</a>
+      <a href="/skrivet/">Skrivet</a>
+      <a href="/#contact" class="cta">Starta projekt</a>
+    </nav>
+  </div>
+</header>
+
+<article class="post">
+  <div class="shell">
+
+    <div class="post-meta">
+      <a href="/skrivet/">Skrivet</a>
+      <span>Kundprojekt</span><span>7 min läsning</span>
+    </div>
+    <h1>Så byggde jag I Thai's hemsida på fem dagar</h1>
+    <p class="subtitle">Mitt första riktiga kundprojekt — och vad det lärde mig om bilder, bekvämlighet och kontroll.</p>
+    <p class="byline">Av <strong>Te Penson</strong> · 25 maj 2026</p>
+
+    <p>Det är nu kunden frågar: <em>"Hur lång tid tar det egentligen att bygga en hemsida?"</em> När jag säger 3–5 dagar tror de mig sällan första gången. Det låter för snabbt. Men det är inte påhitt — det är hur min första riktiga kundsida faktiskt blev till.</p>
+
+    <p>Här är hur det gick.</p>
+
+    <h2>Det började med en granne</h2>
+
+    <p>Jag hade inte Drinkmyte än. Jag hade aldrig byggt en hemsida åt någon. Det jag hade var en omkrets av folk som visste att jag var ung och teknisk. En av dem kände ägaren av I Thai, en thairestaurang i Göteborg som dittills bara hade haft Facebook som digital närvaro. Och en dag mejlade min kontakt: <em>"De vill ha en hemsida. Kan du fixa det?"</em></p>
+
+    <p>Det jag sa till mig själv var ja. Det jag inte sa högt var: <em>jag har aldrig gjort det här förut.</em></p>
+
+    <p>Anledningen till att de frågade mig — och inte en byrå — var inte tillit. Det var avskräckning. En annan thairestaurangsägare som ägaren av I Thai kände hade nyligen betalat <strong>3 500 kr för en hemsida byggd på Wix</strong>. Sidan såg ut som vad den var: en mall någon dragit upp på fem minuter, dåligt anpassad, dåligt strukturerad. Ägaren bakom I Thai såg det och bestämde sig: <em>aldrig.</em> När alternativet var det, var en ungdom utan tidigare projekt ett rimligare val.</p>
+
+    <p class="pull">Konkurrensen på den här marknaden är inte byråer mot byråer. Det är byråer mot folk som blivit brända en gång.</p>
+
+    <h2>Första försöket var inte bra nog</h2>
+
+    <p>Jag fick betalt drygt tusen kronor första gången. Jag använde en gratis hemsidebyggare, drog en mall, satte in I Thai's logga, skrev menyn. Det tog några dagar. Det gick live. Det var en hemsida.</p>
+
+    <p>Den var bara inte <em>deras</em> hemsida. Det var en mall som råkade ha thairestauranginformation på sig. Den kommunicerade ingenting om vad I Thai <em>var</em>. Det var skillnaden mellan att äga en byggnad och att äga en byggnad som ser ut som ett hem.</p>
+
+    <p>Två veckor senare bestämde jag mig för att börja om. Inte för att kunden klagade — för att jag visste att det jag levererat inte var det jag kunde leverera om jag faktiskt kodade det själv.</p>
+
+    <h2>Omstarten — fem dagar från noll</h2>
+
+    <p>Andra omgången byggde jag I Thai's sida från grunden. Inte ovanpå en mall. Riktig kod, riktig struktur, riktig formgivning. Det tog fem dagar.</p>
+
+    <p>De fem dagarna är vad jag idag lovar mina kunder. Det är inte en marknadsföringssiffra — det är ett benchmark från ett verkligt projekt.</p>
+
+    <p>Det jag inte hade var infrastruktur. Hosting? GitHub Pages — som jag aldrig använt förut, men som visade sig vara förvånansvärt enkelt. Domännamn? Det hade jag faktiskt redan löst. Som elvaåring hade jag drivit en Minecraft-server och köpt ett domännamn till den. Jag visste redan hur man köpte domäner och pekade DNS-records. Det jag inte visste tekniskt fanns på Stack Overflow.</p>
+
+    <p>Det jag faktiskt fick lägga tid på var inte kod. Det var två andra saker.</p>
+
+    <h2>Det svåraste var inte teknik. Det var bilder.</h2>
+
+    <p>I Thai hade inga bilder. Ingen Instagram, inga foton från restaurangen, inga bilder på maten. Inte ett enda asset.</p>
+
+    <p>Jag gjorde det varje nybörjare gör: jag hittade thaimatbilder online och la in dem i menyn. Sidan gick live. Den såg professionell ut. Och sen, ett par dagar senare, började kunder höra av sig till restaurangen och fråga varför phad thai på bilden inte såg ut som phad thai de fick på tallriken.</p>
+
+    <p>Det fanns ingen utväg. Vi tog ner stockbilderna. Ägaren tog upp mobilen och började fotografera maten själv — bord för bord, dag för dag — och vi bytte ut bilderna en efter en.</p>
+
+    <p class="pull">Bilder är inte ett tillbehör till en restaurangs hemsida. Det är produkten. Texten kan vara perfekt skriven, layouten kan vara prisvinnande — om bilden ljuger om vad du serverar, sänker det allt annat.</p>
+
+    <h2>Att jobba med någon som inte är teknisk</h2>
+
+    <p>I Thai's ägare var inte en teknisk person. Det märktes redan vid första utkastet — de hade inga starka åsikter om typsnitt, ingen åsikt om färgpalett, inget specifikt önskemål om navigation. Det betyder en av två saker.</p>
+
+    <p>Det första: kunden ger dig fria händer. Du kan göra dina bästa val utan att behöva försvara dem.</p>
+
+    <p>Det andra: kunden ger dig fria händer eftersom de inte vet vad de skulle hindra dig från. Risken är att du gör fel val utan invändning — eftersom det inte finns någon som invänder.</p>
+
+    <p>Båda kan vara sanna samtidigt. Jobbet är att inte missbruka det. Beslut jag tog om I Thai's sida — som att lyfta menyn ovanför fold, att bokningslänken ska finnas i headern på varje sida, att Google My Business-länken ska vara förstklass — gjorde jag baserat på vad jag visste om hur restauranggäster faktiskt använder hemsidor. Inte baserat på vad jag tyckte var snyggt.</p>
+
+    <p><strong>Skillnaden mellan en byrå som gör vad kunden säger och en byrå som gör vad kunden borde be om är där.</strong></p>
+
+    <h2>Resultatet — ett år senare</h2>
+
+    <p>Det senaste året har jag kollat I Thai's Google Analytics då och då. Det har varit några tusen besökare. Inte tiotusentals — men flera tusen. För en thairestaurang i ett kvarter i Göteborg som dittills bara funnits på Facebook är det inte ingenting.</p>
+
+    <p>Och här är den jobbiga delen att erkänna: sidan är inte särskilt SEO-optimerad. Inte när jag byggde den, inte nu. Headers är rätt, metadata är ok, men det är ingen strategisk SEO bakom. Det betyder att de "några tusen" besökare är passiva — folk som redan letade efter I Thai med namn, eller blev tippade av en granne. Trafiken från "thairestaurang göteborg" och liknande söktermer fångar jag inte upp än.</p>
+
+    <p><strong>Det är det enda jag verkligen skulle gjort annorlunda om jag byggde sidan idag.</strong> SEO-grund från dag ett, inte som en eftertanke.</p>
+
+    <p>Det är också anledningen till att varje sida jag bygger nu — varje enskild kund — får SEO-strukturen byggd in från första utkastet. Inte som en uppgradering. Som en del av grunden.</p>
+
+    <div class="post-cta">
+      <strong>Bygger du restaurang eller café?</strong>
+      <p>Vill du en sida som inte ser ut som alla andra? Mejla mig direkt. Du får ett svar inom 24 timmar.</p>
+      <a class="btn" href="/#contact">Få offert →</a>
+    </div>
+
+    <div class="post-related">
+      <p class="kicker">Mer skrivet</p>
+      <a href="/skrivet/wix-ar-inte-problemet/">Wix är inte problemet — det här är.</a>
+      <a href="/restaurang/">Hemsidor för restauranger i Göteborg</a>
+      <a href="/pris/">Vad kostar en hemsida i Göteborg?</a>
+    </div>
+
+  </div>
+</article>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div>
+      <a href="/">Hem</a>
+      <a href="/#contact">Kontakt</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/skrivet/">Skrivet</a>
+    </div>
+    <div>© Drinkmyte · Göteborg</div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Skrivet — Drinkmyte</title>
+<meta name="description" content="Texter från Drinkmyte om hemsidor, prissättning, småföretagare och webbyråbranschen. Skrivet av Te Penson." />
+<link rel="canonical" href="https://drinkmyte.com/skrivet/" />
+<link rel="icon" type="image/x-icon" href="/favicon.ico" />
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+<meta name="theme-color" content="#f6f0e6" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://drinkmyte.com/skrivet/" />
+<meta property="og:title" content="Skrivet — Drinkmyte" />
+<meta property="og:description" content="Texter om hemsidor, prissättning och webbyråbranschen. Av Te Penson." />
+<meta property="og:image" content="https://drinkmyte.com/og-image.png" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700;9..144,900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --paper: #f6f0e6;
+  --cream: #f2ead9;
+  --apricot: #e27442;
+  --gold: #d4a056;
+  --ink: #14213d;
+  --ink-soft: #2a3a5e;
+  --muted: #5a6378;
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Manrope", -apple-system, sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: var(--font-body);
+  background: var(--paper);
+  color: var(--ink);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--apricot); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.shell { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+
+header.site-header {
+  border-bottom: 1px solid rgba(20,33,61,0.12);
+  padding: 18px 0;
+  background: var(--paper);
+}
+header.site-header .shell {
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 22px;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  display: flex; align-items: center; gap: 8px;
+}
+.brand img { height: 32px; width: 32px; }
+.brand span { color: var(--apricot); }
+nav.site-nav { font-size: 14px; }
+nav.site-nav a { color: var(--ink); margin-left: 18px; font-weight: 600; }
+nav.site-nav a.cta { background: var(--ink); color: #fff; padding: 8px 14px; border-radius: 2px; }
+
+main.blog-index { padding: 60px 0 80px; }
+.blog-lede {
+  margin-bottom: 48px;
+  border-bottom: 1px solid rgba(20,33,61,0.1);
+  padding-bottom: 32px;
+}
+.blog-lede .kicker {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--apricot);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+.blog-lede h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 5vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  margin-bottom: 18px;
+}
+.blog-lede p {
+  font-size: 17px;
+  color: var(--muted);
+  max-width: 580px;
+}
+
+.post-list { display: grid; gap: 36px; }
+.post-item {
+  display: block;
+  padding-bottom: 36px;
+  border-bottom: 1px solid rgba(20,33,61,0.1);
+  text-decoration: none;
+  color: inherit;
+}
+.post-item:last-child { border-bottom: none; }
+.post-item:hover { text-decoration: none; }
+.post-item .post-meta {
+  font-family: var(--font-display);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+.post-item .post-meta span + span::before { content: " · "; margin: 0 6px; opacity: 0.6; }
+.post-item h2 {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ink);
+  margin-bottom: 12px;
+  transition: color 0.15s;
+}
+.post-item:hover h2 { color: var(--apricot); }
+.post-item p {
+  font-size: 16px;
+  color: var(--muted);
+  max-width: 600px;
+}
+.post-item .read-more {
+  display: inline-block;
+  margin-top: 14px;
+  color: var(--apricot);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.post-item:hover .read-more { text-decoration: underline; }
+
+footer.site-footer {
+  border-top: 1px solid rgba(20,33,61,0.12);
+  padding: 32px 0;
+  font-size: 13px;
+  color: var(--muted);
+}
+footer.site-footer .shell {
+  display: flex; flex-wrap: wrap; gap: 20px;
+  align-items: center; justify-content: space-between;
+}
+footer.site-footer a { color: var(--muted); margin-right: 18px; }
+footer.site-footer a:hover { color: var(--apricot); }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="shell">
+    <a class="brand" href="/"><img src="/logo-mark-512.png" alt=""/>Drink<span>myte</span></a>
+    <nav class="site-nav">
+      <a href="/">Hem</a>
+      <a href="/#portfolio">Portfolio</a>
+      <a href="/#contact" class="cta">Starta projekt</a>
+    </nav>
+  </div>
+</header>
+
+<main class="blog-index">
+  <div class="shell">
+
+    <section class="blog-lede">
+      <span class="kicker">Skrivet</span>
+      <h1>Texter om hemsidor och småföretagare som hamnar mellan.</h1>
+      <p>Ingen blogg-kalender, inga listicles, inga "topp 10 SEO-tips 2026". Bara texter jag skriver när jag har något att säga som inte får plats på själva hemsidan.</p>
+    </section>
+
+    <div class="post-list">
+
+      <a class="post-item" href="/skrivet/sa-byggde-jag-i-thai-pa-fem-dagar/">
+        <div class="post-meta">
+          <span>Kundprojekt</span><span>7 min läsning</span>
+        </div>
+        <h2>Så byggde jag I Thai's hemsida på fem dagar</h2>
+        <p>Mitt första riktiga kundprojekt — och vad det lärde mig om bilder, bekvämlighet och kontroll. Inte ett mönster jag säljer; ett mönster jag genomlevde.</p>
+        <span class="read-more">Läs hela →</span>
+      </a>
+
+      <a class="post-item" href="/skrivet/wix-ar-inte-problemet/">
+        <div class="post-meta">
+          <span>Opinion</span><span>6 min läsning</span>
+        </div>
+        <h2>Wix är inte problemet — det här är.</h2>
+        <p>Den vanligaste frågan jag aldrig får ställd är "ska jag använda Wix?" Den näst vanligaste är "är Wix bra eller dåligt?" Det är fel fråga.</p>
+        <span class="read-more">Läs hela →</span>
+      </a>
+
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <div class="shell">
+    <div>
+      <a href="/">Hem</a>
+      <a href="/#contact">Kontakt</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/skrivet/">Skrivet</a>
+    </div>
+    <div>© Drinkmyte · Göteborg</div>
+  </div>
+</footer>
+
+</body>
+</html>
